@@ -28,6 +28,7 @@ import Profileview from "./Profileview";
 import Guide from "./Guide";
 import ProfileViewClass from "./ProfileViewClass";
 import ProjectsSubMenu from "./ProjectsSubMenu";
+import CreateChallenge from "./CreateChallenge";
 // Your app...
 const Box = styled("div", { display: "flex", flexDirection: "row" });
 const Flex = styled("div", { display: "flex", flexDirection: "row" });
@@ -103,29 +104,28 @@ const Input = styled("input", {
   "&:focus": { boxShadow: `0 0 0 2px ${violet.violet8}` },
 });
 
-const Navbar = ({ first }) => {
-  console.log(first);
-  const [leaderboards, setLeaderboards] = useState([]);
-  const [challenges, setChallenges] = useState([]);
-  const [profile, setProfile] = useState([]);
+const Navbar = () => {
+  const [openChallenges, setOpenChallenges] = useState([]);
+  const [activeChallenges, setActiveChallenges] = useState([]);
+  const [closedChallenges, setClosedChallenges] = useState([]);
   useEffect(() => {
-    const fetchLeaderboards = async () => {
-      const res = await leaderboardsHandler();
-      setLeaderboards(res);
-    };
-    fetchLeaderboards();
     const fetchChallenges = async () => {
-      const res = await challengeHandler();
-      setChallenges(res);
+      const res = await leaderboardsHandler();
+      setOpenChallenges(res);
     };
     fetchChallenges();
+    const fetchActiveChallenges = async () => {
+      const res = await challengeHandler();
+      setActiveChallenges(res);
+    };
+    fetchActiveChallenges();
     const fetchProfile = async () => {
       const res = await profileHandler();
-      setProfile(res);
+      setClosedChallenges(res);
     };
     fetchProfile();
-  }, [first]);
-  // if (first == "Profile")
+  }, []);
+
   return (
     <div className="w-full h-max  flex flex-col px-4 pt-2 justify-between ">
       <div className=" w-full h-max mb-2 bg-slate-500 flex rounded">
@@ -153,28 +153,24 @@ const Navbar = ({ first }) => {
           <Tabs.Root>
             <Tabs.List>
               <div className="flex">
-                <TabsTrigger value="tab1">Profile</TabsTrigger>
-                <TabsTrigger value="tab2">Projects</TabsTrigger>
-
-                <TabsTrigger value="tab4">Leaderboards</TabsTrigger>
-                <TabsTrigger value="tab5">Guide</TabsTrigger>
+                <TabsTrigger value="tab1">Open Challenges</TabsTrigger>
+                <TabsTrigger value="tab2">Active Challenges</TabsTrigger>
+                <TabsTrigger value="tab3">Closed Challenges</TabsTrigger>
+                <TabsTrigger value="tab4">Create Challenge</TabsTrigger>
               </div>
             </Tabs.List>
             <div className="my-3">
               <Tabs.Content value="tab1">
-                <Profileview profile={profile} />
+                <ProjectsSubMenu />
               </Tabs.Content>
               <Tabs.Content value="tab2">
                 <ProjectsSubMenu />
               </Tabs.Content>
-
-              <Tabs.Content value="tab4">
-                {leaderboards.map((user) => (
-                  <LeaderboardsSubMenu key={user._id} user={user} />
-                ))}
+              <Tabs.Content value="tab3">
+                <ChallengesSubMenu />
               </Tabs.Content>
-              <Tabs.Content value="tab5">
-                <Guide />
+              <Tabs.Content value="tab4">
+                <CreateChallenge />
               </Tabs.Content>
             </div>
           </Tabs.Root>
@@ -182,7 +178,6 @@ const Navbar = ({ first }) => {
       </div>
     </div>
   );
-  // else return <>Hello ji</>;
 };
 
 export default Navbar;

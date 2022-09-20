@@ -1,6 +1,6 @@
 import React from "react";
 
-const ChallengesSubMenu = ({ challenges }) => {
+const ProjectsSubMenu = () => {
   return (
     <div>
       <div className="flex justify-around flex-wrap gap-4 p-1 ">
@@ -102,10 +102,13 @@ const ChallengesSubMenu = ({ challenges }) => {
               />
               <div
                 id="requestbuttons"
-                className="w-full mt-2 flex justify-around items-center"
+                className="w-full mt-2 flex justify-between items-center"
               >
                 <button class="bg-green-400 hover:bg-green-500 text-white font-bold py-2 px-4 border border-green-700 rounded">
                   Accept
+                </button>
+                <button class="bg-red-400 hover:bg-red-500 text-white font-bold py-2 px-4 border border-red-700 rounded">
+                  Reject
                 </button>
               </div>
             </div>
@@ -116,4 +119,4 @@ const ChallengesSubMenu = ({ challenges }) => {
   );
 };
 
-export default ChallengesSubMenu;
+export default ProjectsSubMenu;
