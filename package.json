@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "@radix-ui/colors": "^0.1.8",
+    "@radix-ui/react-alert-dialog": "^1.0.0",
     "@radix-ui/react-scroll-area": "^1.0.0",
     "@radix-ui/react-tabs": "^1.0.0",
     "@stitches/react": "^1.2.8",
@@ -53,5 +54,5 @@
     "postcss": "^8.4.16",
     "tailwindcss": "^3.1.8"
   },
-  "proxy":"http://githubsomehting.com"
+  "proxy": "http://githubsomehting.com"
 }

@@ -1,16 +1,21 @@
 import React, { useState } from "react";
-import Navbar from "../components/Navbar";
-import SideMenu from "../components/SideMenu";
-import ScrollbarWrapper from "../components/ScrollBarWrapper";
-import ChallengesNavbar from "../components/ChallengesNavbar";
+import MainNavbar from "../components/navigation/MainNavbar";
+import SideMenu from "../components/navigation/SideMenu";
+
+import ChallengesNavbar from "../components/navigation/ChallengesNavbar";
+import ShopNav from "../components/navigation/ShopNav";
+import FAQnav from "../components/navigation/FAQnav";
+
 const Homescreen = () => {
-  const [first, setfirst] = useState("Profile");
+  const [navbar, setNavbar] = useState(["Profile"]);
   return (
     <>
       <div id="screen-container" className="flex gap-1">
-        <SideMenu setfirst={setfirst} />
-        {/* <Navbar first={first} /> */}
-        <ChallengesNavbar />
+        <SideMenu setNavbar={setNavbar} />
+        <MainNavbar navbar={navbar} />
+        <ChallengesNavbar navbar={navbar} />
+        <ShopNav navbar={navbar} />
+        <FAQnav navbar={navbar} />
       </div>
     </>
   );
