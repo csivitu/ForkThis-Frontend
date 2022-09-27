@@ -27,7 +27,7 @@ const Charttttttt = () => {
       labels: chartData.map((el) => el.timeStrap),
       datasets: [
         {
-          label: "No. Of PRs",
+          label: "Project 1",
           data: chartData.map((el) => el.noOfPRs),
           backgroundColor: [
             "rgb(253,226,126,1)",
