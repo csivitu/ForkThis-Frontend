@@ -2,11 +2,16 @@
   padding: 0;
   margin: 0;
   /* background-color: #170f1e; */
-  background-color: aquamarine;
-  background-image: "../../../public/texture.png";
 }
-
+body {
+  background-image: url(/public/designpack/backgroundvector.svg);
+  background-color: #0f0a13;
+}
 #profile-tab {
+  background-color: #170f1e;
+  border-radius: 0.75rem;
+  border: 0.15rem solid #9092ff;
+  padding: 1rem;
 }
 #menu-icons-container {
   /* background-color: #a000c8; */
@@ -34,7 +39,7 @@
   /* background-color: #a000c8; */
 }
 #menu-icon img:hover {
-  fill: aqua;
+  fill: #170f1e;
   /* background-color: #a000c8; */
 }
 #menu-icon p {
