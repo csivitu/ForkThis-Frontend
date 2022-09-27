@@ -39,9 +39,9 @@ const Profileview = ({ profile }) => {
           className=" w-1/2  rounded overflow-hidden shadow-lg"
         >
           <div>
-            <div className="px-6 py-4">
-              <div className="font-bold text-xl mb-2">Recents</div>
-              {/* <Recents/> */}
+            <div id="graph-border" className="px-6 py-4 bg-HTpurple-900">
+              <div className="font-bold text-2xl mb-3 ">Recents</div>
+              {/* <Recents/> */}asd
             </div>
           </div>
         </div>

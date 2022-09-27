@@ -136,12 +136,11 @@ const AlertDialogDemo = () => (
     </AlertDialogTrigger>
     <AlertDialogContent className="bg-white">
       <AlertDialogTitle>
-        <div className="bg-white">Are you absolutely sure?</div>
+        <div className="bg-white">Do you want to add this to your cart ?</div>
       </AlertDialogTitle>
       <AlertDialogDescription>
-        <div className="bg-white">
-          This action cannot be undone. This will permanently delete your
-          account and remove your data from our servers.
+        <div className="bg-white mt-2">
+          Once an order is placed , it cannot be cancelled.
         </div>
       </AlertDialogDescription>
       <Flex

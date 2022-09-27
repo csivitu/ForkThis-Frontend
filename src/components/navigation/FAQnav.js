@@ -30,7 +30,7 @@ const FAQnav = (props) => {
 
           <div id="name" className="flex flex-col align-middle w-2/5 p-3 ">
             <h1 className="text-2xl font-medium">{profile.name}</h1>
-            <h3>{profile.username}</h3>
+            <h3>@{profile.username}</h3>
           </div>
           <div id="name" className="flex flex-col align-middle w-1/5 p-3 ">
             <h1 className="text-2xl font-medium">Score</h1>

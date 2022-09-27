@@ -54,7 +54,7 @@ const Charttttttt = () => {
 
     // Lines are Projects
     return (
-      <div className="bg-HTpurple-900 ">
+      <div id="graph-border" className="bg-HTpurple-900 ">
         <Bar
           className="bg-HTpurple-900"
           options={{
@@ -68,10 +68,16 @@ const Charttttttt = () => {
                   color: "#D9D9d9",
                   stepSize: 2,
                 },
+                grid: {
+                  color: "#271933",
+                },
               },
               x: {
                 ticks: {
                   color: "#D9D9d9",
+                },
+                grid: {
+                  color: "#271933",
                 },
               },
             },

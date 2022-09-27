@@ -54,7 +54,7 @@ const Charttttttt = () => {
     };
 
     return (
-      <div className="bg-HTpurple-900">
+      <div id="graph-border" className="bg-HTpurple-900">
         <Line
           className="bg-HTpurple-900"
           id="canvas"
@@ -70,10 +70,16 @@ const Charttttttt = () => {
                   color: "#D9D9d9",
                   stepSize: 1,
                 },
+                grid: {
+                  color: "#271933",
+                },
               },
               x: {
                 ticks: {
                   color: "#D9D9d9",
+                },
+                grid: {
+                  color: "#271933",
                 },
               },
             },
@@ -91,7 +97,7 @@ const Charttttttt = () => {
     );
   }
   return (
-    <div class="flex justify-center items-center space-x-2 w-full bg-white  rounded overflow-hidden shadow-lg">
+    <div class="flex justify-center items-center space-x-2 w-full  bg-HTpurple-900  rounded overflow-hidden shadow-lg">
       <div
         class="spinner-grow inline-block w-8 h-8 bg-current rounded-full opacity-0 text-blue-600"
         role="status"

@@ -129,23 +129,22 @@ const Button = styled("button", {
 
 //   await acceptChallengeHandler(formdata);
 // };
-const acceptthischallenge = id => async()=> {
+const acceptthischallenge = (id) => async () => {
   await acceptChallengeHandler(id);
 };
 
-const AlertDialogDemo = ({id}) => (
+const AlertDialogDemo = ({ id }) => (
   <AlertDialog>
     <AlertDialogTrigger asChild>
       <Button>Accept</Button>
     </AlertDialogTrigger>
     <AlertDialogContent className="bg-white">
       <AlertDialogTitle>
-        <div className="bg-white">Are you absolutely sure?</div>
+        <div className="bg-white">Are you absolutely sure ?</div>
       </AlertDialogTitle>
       <AlertDialogDescription>
-        <div className="bg-white">
-          This action cannot be undone. This will permanently delete your
-          account and remove your data from our servers.
+        <div className="bg-white mt-2">
+          Once a challenge is accepted , your bets are placed.
         </div>
       </AlertDialogDescription>
       <Flex

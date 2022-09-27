@@ -4,7 +4,10 @@ const Shopitem = () => {
   return (
     <>
       <div className="py-6 text-gray-250">
-        <div className="flex max-w-md bg-HTpurple-900 shadow-lg rounded-lg overflow-hidden">
+        <div
+          id="shop-item-border"
+          className="flex max-w-md bg-HTpurple-900 shadow-lg rounded-lg overflow-hidden"
+        >
           <div className="w-1/3 bg-cover"></div>
           <div className="w-2/3 p-4 bg-HTpurple-900">
             <h1 className="text-white font-bold bg-HTpurple-900 text-2xl">

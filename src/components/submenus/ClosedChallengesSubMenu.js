@@ -29,7 +29,7 @@ const ClosedChallengesSubMenu = (challenges) => {
             <div className="mt-5 px-6 bg-HTpurple-900">
               <p className="bg-HTpurple-900 text-sm leading-none text-justify text-black-800 dark:text-black-100 mt-1">
                 <span className=" bg-HTpurple-900 text-xs mr-1 text-black-400">
-                  Points Bet
+                  Points Bet:
                 </span>
                 {challenges.challenge.pointsBet}
               </p>
@@ -37,7 +37,7 @@ const ClosedChallengesSubMenu = (challenges) => {
             <div className="bg-HTpurple-900 mt-5 px-6 flex items-center w-full">
               <div className="bg-HTpurple-900">
                 <p className="text-xs text-black-400 bg-HTpurple-900">
-                  Started At
+                  Started At:
                 </p>
                 <p className="text-sm bg-HTpurple-900 leading-none text-justify text-black-800 dark:text-black-100 mt-1">
                   {challenges.challenge.startsAt}
@@ -45,7 +45,7 @@ const ClosedChallengesSubMenu = (challenges) => {
               </div>
               <div className=" bg-HTpurple-900 ml-14">
                 <p className="bg-HTpurple-900 text-xs text-black-400">
-                  Ended At
+                  Ended At:
                 </p>
                 <p className="bg-HTpurple-900 text-sm leading-none text-justify text-black-800 dark:text-black-100 mt-1">
                   {challenges.challenge.startsAt}
