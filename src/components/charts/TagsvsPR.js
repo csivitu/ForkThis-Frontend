@@ -2,7 +2,18 @@ import React from "react";
 import { Line, PolarArea } from "react-chartjs-2";
 import { useState } from "react";
 import { Chart as ChartJS } from "chart.js/auto";
+import PolarAreaGraphHandler from "../../controllers/PolarAreaGraphHandler";
+import { useEffect } from "react";
 const Charttttttt = () => {
+  const [chartData, setChartData] = useState();
+  useEffect(() => {
+    const fetchChartData = async () => {
+      const res = await PolarAreaGraphHandler();
+      setChartData(res);
+    };
+    fetchChartData();
+  }, []);
+
   const UserData = [
     {
       id: 1,
@@ -22,34 +33,60 @@ const Charttttttt = () => {
       userGain: 80220,
       userLost: 823,
     },
+    {
+      // id: 4,
+      year: 2016,
+      userGain: 80000,
+      userLost: 823,
+    },
   ];
-  const [userData, setUserData] = useState({
-    labels: UserData.map((data) => data.year),
-    datasets: [
-      {
-        label: "Users Gained",
-        data: UserData.map((data) => data.userGain),
-        backgroundColor: ["green"],
-        borderColor: "black",
-        borderWidth: 1,
-      },
-      {
-        label: "Users Gained",
-        data: UserData.map((data) => data.userLost),
-        backgroundColor: ["green"],
-        borderColor: "black",
-        borderWidth: 1,
-      },
-    ],
-  });
+  let maxPRS = 0;
+  if (chartData) {
+    chartData.forEach((el) => {
+      el.noOfPRs > maxPRS ? (maxPRS = el.noOfPRs) : (maxPRS = maxPRS);
+    });
+  }
+  if (chartData) {
+    const userData = {
+      labels: chartData.map((el) => el.tag),
+      datasets: [
+        {
+          label: "Users Gained",
+          data: chartData.map((el) => el.noOfPRs),
+          backgroundColor: [
+            "rgb(253,226,126,0.8)",
+            "rgb(157,227,207,0.8)",
+            "rgb(114,196,255,0.8)",
+            "rgb(142,148,254,0.8)",
+          ],
+          borderColor: ["black"],
+          borderWidth: 1,
+        },
+      ],
+    };
 
-  // Number of issues solved
-
-  return (
-    <div className="">
-      <PolarArea data={userData} />
-    </div>
-  );
+    // Lines are Projects
+    return (
+      <div className="">
+        <PolarArea
+          data={userData}
+          options={{
+            scales: {
+              r: {
+                beginAtZero: true,
+                suggestedMin: 0,
+                suggestedMax: maxPRS > 10 ? maxPRS + 5 : 5,
+                ticks: {
+                  stepSize: 1,
+                },
+              },
+            },
+          }}
+        />
+      </div>
+    );
+  }
+  return <></>;
 };
 
 export default Charttttttt;

@@ -1,7 +1,7 @@
 import postHandler from "../reqHandlers/postHandler.js";
 
 const createChallengeHandler = async (formData) => {
-  const URL = `https://794a-136-233-9-97.in.ngrok.io/challenge/raise`;
+  const URL = `http://localhost:8000/challenge/raise`;
   const res = await postHandler(URL, formData);
 };
 

@@ -2,6 +2,7 @@ import PRvsTime from "../charts/PRvsTime";
 import React from "react";
 import TagsvsPR from "../charts/TagsvsPR";
 import PRvsDifficulty from "../charts/PRvsDifficulty";
+
 const Profileview = ({ profile }) => {
   return (
     <>

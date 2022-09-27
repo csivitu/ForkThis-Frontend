@@ -172,9 +172,9 @@ const Navbar = (props) => {
                 </Tabs.Content>
                 <Tabs.Content value="tab3">
                   <LeaderboardTableHeader />
-                  {/* {leaderboards.map((user) => (
+                   {leaderboards.map((user) => (
                     <LeaderboardsSubMenu key={user._id} user={user} />
-                  ))} */}
+                  ))}
                 </Tabs.Content>
                 <Tabs.Content value="tab4">
                   <Guide />

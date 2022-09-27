@@ -2,14 +2,16 @@ import axios from "axios";
 
 const getHandler = async (URL) => {
   const token =
-    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzMjk5OTgzZDY4YTJhODIwNWZiMjI4YyIsImlhdCI6MTY2NDA5MjQxOCwiZXhwIjoxNjY0MjIyMDE4fQ.79kM41hl4b8AP8NfMzQOowZmJkkNtlRAKwIIB7aw8QY";
-  const headers = {
-    Authorization: `Bearer ${token}`,
-    "Content-Type": "application/json",
+    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzMjk5OTgzZDY4YTJhODIwNWZiMjI4YyIsImlhdCI6MTY2NDIxMDkyNSwiZXhwIjoxNjY0MzQwNTI1fQ.gJtLFdlsqgddke6dc536Sv0lb7sgthoppiUs9ZELy-4";
+  const config = {
+    headers: {
+      Authorization: `Bearer ${token}`,
+      "Content-Type": "application/json",
+    },
   };
   let response;
   await axios
-    .get(URL, headers)
+    .get(URL, config)
     .then((res) => {
       response = {
         status: 1,
@@ -22,7 +24,6 @@ const getHandler = async (URL) => {
         data: err.response.data,
       };
     });
-
   return response;
 };
 

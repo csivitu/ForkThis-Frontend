@@ -1,60 +1,79 @@
 import React from "react";
 import { Bar } from "react-chartjs-2";
 import { useState } from "react";
-
+import { useEffect } from "react";
+import BarGraphHandler from "../../controllers/BarGraphHandler";
 const Charttttttt = () => {
-  const UserData = [
-    {
-      id: 1,
-      year: 2016,
-      userGain: 80000,
-      userLost: 82322,
-    },
-    {
-      id: 2,
-      year: 2017,
-      userGain: 12330,
-      userLost: 663,
-    },
-    {
-      id: 3,
-      year: 2018,
-      userGain: 80220,
-      userLost: 823,
-    },
-    {
-      id: 4,
-      year: 2016,
-      userGain: 80000,
-      userLost: 823,
-    },
-  ];
-  const [userData, setUserData] = useState({
-    labels: UserData.map((data) => data.year),
-    datasets: [
-      {
-        label: "Users Gained",
-        data: UserData.map((data) => data.userGain),
-        backgroundColor: ["green"],
-        borderColor: "black",
-        borderWidth: 1,
+  const [chartData, setChartData] = useState();
+  useEffect(() => {
+    const fetchChartData = async () => {
+      const res = await BarGraphHandler();
+      setChartData(res);
+    };
+    fetchChartData();
+  }, []);
+  console.log(chartData);
+  let maxPRS = 0;
+  if (chartData) {
+    chartData.forEach((el) => {
+      el.noOfPRs > maxPRS ? (maxPRS = el.noOfPRs) : (maxPRS = maxPRS);
+    });
+  }
+  if (chartData) {
+    const userData = {
+      labels: chartData.map((el) => el.difficulty),
+      datasets: [
+        {
+          label: "No. of PRs",
+          data: chartData.map((el) => el.noOfPRs),
+          backgroundColor: [
+            "rgb(253,226,126,0.8)",
+            "rgb(157,227,207,0.8)",
+            "rgb(114,196,255,0.8)",
+            "rgb(142,148,254,0.8)",
+          ],
+          borderColor: "black",
+          borderWidth: 1,
+        },
+      ],
+    };
+    const config = {
+      type: "bar",
+      data: { userData },
+      options: {
+        scales: {
+          y: {
+            beginAtZero: true,
+            ticks: {
+              stepSize: 2,
+            },
+          },
+        },
       },
-      {
-        label: "Users Gained",
-        data: UserData.map((data) => data.userLost),
-        backgroundColor: ["green"],
-        borderColor: "black",
-        borderWidth: 1,
-      },
-    ],
-  });
+    };
 
-  //   No of prs merged
-  return (
-    <div className="">
-      <Bar data={userData} />
-    </div>
-  );
+    // Lines are Projects
+    return (
+      <div className="">
+        <Bar
+          options={{
+            scales: {
+              y: {
+                beginAtZero: true,
+                min: 0,
+                max: maxPRS > 10 ? maxPRS + 10 : 10,
+                ticks: {
+                  stepSize: 2,
+                },
+              },
+            },
+          }}
+          data={userData}
+        />
+      </div>
+    );
+  }
+  return <></>;
 };
 
 export default Charttttttt;

@@ -2,7 +2,7 @@ import axios from "axios";
 
 const postHandler = async (URL, formData) => {
   const token =
-    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzMjk5OTgzZDY4YTJhODIwNWZiMjI4YyIsImlhdCI6MTY2NDA5MjQxOCwiZXhwIjoxNjY0MjIyMDE4fQ.79kM41hl4b8AP8NfMzQOowZmJkkNtlRAKwIIB7aw8QY";
+    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzMjk5OTgzZDY4YTJhODIwNWZiMjI4YyIsImlhdCI6MTY2NDIxMDkyNSwiZXhwIjoxNjY0MzQwNTI1fQ.gJtLFdlsqgddke6dc536Sv0lb7sgthoppiUs9ZELy-4";
   const headers = {
     "Content-Type": "application/json",
     Authorization: `Bearer ${token}`,
