@@ -29,7 +29,7 @@ const Profileview = ({ profile }) => {
           id="card-shadow"
           className=" h-full w-2/5 rounded overflow-hidden shadow-lg"
         >
-          <div>
+          <div className="bg-white">
             <PRvsDifficulty />
           </div>
         </div>

@@ -1,6 +1,15 @@
 import React from "react";
-
+import { useState, useEffect } from "react";
+import profileHandler from "../../controllers/profileHandler";
 const FAQnav = (props) => {
+  const [profile, setProfile] = useState([]);
+  useEffect(() => {
+    const fetchProfile = async () => {
+      const res = await profileHandler();
+      setProfile(res);
+    };
+    fetchProfile();
+  }, []);
   if (props.navbar == "FAQ")
     return (
       <div className="w-full h-max  flex flex-col px-4 pt-2 justify-between ">
@@ -20,12 +29,12 @@ const FAQnav = (props) => {
           </div>
 
           <div id="name" className="flex flex-col align-middle w-2/5 p-3 ">
-            <h1 className="text-2xl font-medium">Name</h1>
-            <h3>name</h3>
+            <h1 className="text-2xl font-medium">{profile.name}</h1>
+            <h3>{profile.username}</h3>
           </div>
           <div id="name" className="flex flex-col align-middle w-1/5 p-3 ">
-            <h1 className="text-2xl font-medium">Name</h1>
-            <h3>name</h3>
+            <h1 className="text-2xl font-medium">Score</h1>
+            <h3>{profile.score}</h3>
           </div>
           <div id="rank" className="w-1/5 p-3">
             <h1 className="text-2xl font-medium">Rank</h1>
