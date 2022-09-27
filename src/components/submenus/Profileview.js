@@ -41,7 +41,7 @@ const Profileview = ({ profile }) => {
           <div>
             <div className="px-6 py-4">
               <div className="font-bold text-xl mb-2">Recents</div>
-              <Recents/>
+              {/* <Recents/> */}
             </div>
           </div>
         </div>

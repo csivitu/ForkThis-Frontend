@@ -94,7 +94,7 @@ const ShopNav = (props) => {
   if (props.navbar == "Shop")
     return (
       <>
-        <div className="w-full h-max flex flex-col px-4 pt-2 justify-between ">
+        <div className="w-full text-gray-250 h-max flex flex-col px-4 pt-2 justify-between ">
           <div
             id="profile-tab"
             className=" w-full h-max mb-2 bg-slate-500 flex rounded "
@@ -129,7 +129,7 @@ const ShopNav = (props) => {
                   fill="#ffcc00"
                   viewBox="0 0 24 24"
                   strokeWidth="1.5"
-                  stroke="currentColor"
+                  stroke="black"
                   className="w-6 h-6"
                 >
                   <path

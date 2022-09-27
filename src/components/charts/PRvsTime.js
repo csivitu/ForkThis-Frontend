@@ -54,19 +54,34 @@ const Charttttttt = () => {
     };
 
     return (
-      <div className="">
+      <div className="bg-HTpurple-900">
         <Line
-          className="bg-white"
+          className="bg-HTpurple-900"
           id="canvas"
           data={userData}
           options={{
+            responsive: true,
             scales: {
               y: {
                 beginAtZero: true,
-                min: 0,
+                min: -1,
                 max: maxPRS > 10 ? maxPRS + 10 : 5,
                 ticks: {
+                  color: "#D9D9d9",
                   stepSize: 1,
+                },
+              },
+              x: {
+                ticks: {
+                  color: "#D9D9d9",
+                },
+              },
+            },
+            plugins: {
+              legend: {
+                display: true,
+                labels: {
+                  color: "white",
                 },
               },
             },

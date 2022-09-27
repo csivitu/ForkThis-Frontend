@@ -14,6 +14,10 @@ module.exports = {
       colors: {
         gray: {
           900: "#0f1011",
+          250: "#D9D9D9",
+        },
+        HTpurple: {
+          900: "#170F1E",
         },
       },
       minWidth: {

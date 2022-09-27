@@ -2,7 +2,7 @@ import React from "react";
 
 const issues = () => {
   return (
-    <div className="w-full  bg-white">
+    <div className="w-full text-gray-250  bg-HTpurple-900">
       <div className="flex flex-col">
         <div id="issuename" className="flex items-baseline gap-4 justify-start">
           <h1 className="text-2xl">Issue1</h1>
@@ -14,7 +14,7 @@ const issues = () => {
           </p>
         </div>
         <div id="issuetags">
-          <div class="mt-1 text-xs inline-flex items-center font-bold leading-sm uppercase px-3 py-1 rounded-full bg-white text-gray-700 border">
+          <div class="mt-1 text-xs inline-flex items-center font-bold leading-sm uppercase px-3 py-1 rounded-full bg-HTpurple-900 text-gray-700 border">
             #Tag
           </div>
         </div>

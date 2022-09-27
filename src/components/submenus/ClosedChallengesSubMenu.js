@@ -4,61 +4,87 @@ const ClosedChallengesSubMenu = (challenges) => {
   console.log(challenges);
   return (
     <>
-      <div className=" flex justify-around flex-wrap gap-4 p-1">
-        <div className=" rounded-md   relative">
-          <div id="cut-corner" className="py-8 bg-white">
-            <div className="px-6 bg-white">
-              <p className="bg-white text-sm leading-none text-justify text-black-800 dark:text-black-100 mt-1">
-                Challenge Name
-              </p>
+      <div className=" flex justify-around flex-wrap gap-4 p-1 text-gray-250 ">
+        <div id="card-design" className=" rounded-md bg-HTpurple-900  relative">
+          <div id="cut-corner" className="py-8 bg-HTpurple-900">
+            <div className="px-6 bg-HTpurple-900">
+              <p className="bg-HTpurple-900 text-sm leading-none text-justify text-black-800 dark:text-black-100 mt-1"></p>
             </div>
-            <div className="mt-5 px-6 bg-white">
-              <p className="bg-white text-sm leading-none text-justify text-black-800 dark:text-black-100 mt-1">
-                <span className="text-xs bg-white mr-1 text-black-400">
+            <div className="mt-5 px-6 bg-HTpurple-900">
+              <p className="bg-HTpurple-900 text-sm leading-none text-justify text-black-800 dark:text-black-100 mt-1">
+                <span className="text-xs bg-HTpurple-900 mr-1 text-black-400">
                   Raised By:
                 </span>
-                Tuesday, 9:00pm - 11:00pm
+                {challenges.challenge.raisedBy}
               </p>
             </div>
-            <div className="mt-5 px-6 bg-white">
-              <p className="bg-white text-sm leading-none text-justify text-black-800 dark:text-black-100 mt-1">
-                <span className=" bg-white text-xs mr-1 text-black-400">
-                  Raised By:
+            <div className="mt-5 px-6 bg-HTpurple-900">
+              <p className="bg-HTpurple-900 text-sm leading-none text-justify text-black-800 dark:text-black-100 mt-1">
+                <span className=" bg-HTpurple-900 text-xs mr-1 text-black-400">
+                  Accepted By:
                 </span>
-                Tuesday, 9:00pm - 11:00pm
+                {challenges.challenge.acceptedBy}
               </p>
             </div>
-            <div className="bg-white mt-5 px-6 flex items-center w-full">
-              <div className="bg-white">
-                <p className="text-xs text-black-400 bg-white">Tickets Sold</p>
-                <p className="text-sm bg-white leading-none text-justify text-black-800 dark:text-black-100 mt-1">
-                  857
+            <div className="mt-5 px-6 bg-HTpurple-900">
+              <p className="bg-HTpurple-900 text-sm leading-none text-justify text-black-800 dark:text-black-100 mt-1">
+                <span className=" bg-HTpurple-900 text-xs mr-1 text-black-400">
+                  Points Bet
+                </span>
+                {challenges.challenge.pointsBet}
+              </p>
+            </div>
+            <div className="bg-HTpurple-900 mt-5 px-6 flex items-center w-full">
+              <div className="bg-HTpurple-900">
+                <p className="text-xs text-black-400 bg-HTpurple-900">
+                  Started At
+                </p>
+                <p className="text-sm bg-HTpurple-900 leading-none text-justify text-black-800 dark:text-black-100 mt-1">
+                  {challenges.challenge.startsAt}
                 </p>
               </div>
-              <div className=" bg-white ml-14">
-                <p className="bg-white text-xs text-black-400">
-                  Revenue Earned
+              <div className=" bg-HTpurple-900 ml-14">
+                <p className="bg-HTpurple-900 text-xs text-black-400">
+                  Ended At
                 </p>
-                <p className="bg-white text-sm leading-none text-justify text-black-800 dark:text-black-100 mt-1">
-                  $7698
+                <p className="bg-HTpurple-900 text-sm leading-none text-justify text-black-800 dark:text-black-100 mt-1">
+                  {challenges.challenge.startsAt}
                 </p>
               </div>
+            </div>
+            <div className="bg-HTpurple-900 mt-5 px-6 flex items-center w-full">
+              {challenges.challenge.tags.map((el) => {
+                return (
+                  <div class="mt-1 text-xs inline-flex items-center font-bold leading-sm uppercase px-3 py-1 rounded-full bg-HTpurple-900 text-gray-700 border">
+                    {el}
+                  </div>
+                );
+              })}
             </div>
 
-            <div className="bg-white pt-6 flex justify-between relative items-center w-full">
-              <div className="bg-white w-3 h-5  dark:bg-gray-400 rounded-r-3xl" />
-              <div className=" bg-white w-full border-b-2 border-dashed border-gray-100 dark:border-gray-400" />
-              <div className=" bg-white w-3 h-5  dark:bg-gray-400 rounded-l-3xl" />
+            <div className="bg-HTpurple-900 pt-6 flex justify-between relative items-center w-full">
+              <div
+                id="card-dashed-line-end"
+                className="bg-HTpurple-900 w-3 h-5   rounded-r-3xl"
+              />
+              <div
+                id="card-dashed-line"
+                className=" bg-HTpurple-900 w-full border-b-2 border-dashed border-gray-100 dark:border-gray-400"
+              />
+              <div
+                id="card-dashed-line-end"
+                className=" bg-HTpurple-900 w-3 h-5   rounded-l-3xl"
+              />
             </div>
-            <div className="bg-white mt-4 px-6 flex flex-col w-full justify-center items-center">
+            <div className="bg-HTpurple-900 mt-4 px-6 flex flex-col w-full justify-center items-center">
               <img
-                src="https://cdn.tuk.dev/assets/templates/virtual-event-management/barCode.png"
+                src="/images/barcode.svg"
                 alt="barcode"
-                className="bg-white"
+                className="bg-HTpurple-900 h-10"
               />
               <div
                 id="requestbuttons"
-                className="bg-white w-full mt-2 flex justify-around items-center"
+                className="bg-HTpurple-900 w-full mt-2 flex justify-around items-center"
               ></div>
             </div>
           </div>

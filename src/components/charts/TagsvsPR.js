@@ -67,18 +67,28 @@ const Charttttttt = () => {
 
     // Lines are Projects
     return (
-      <div className="bg-white">
+      <div className="bg-HTpurple-900">
         <PolarArea
-          className="bg-white"
+          className="bg-HTpurple-900"
           data={userData}
           options={{
+            responsive: true,
             scales: {
               r: {
                 beginAtZero: true,
                 suggestedMin: 0,
                 suggestedMax: maxPRS > 10 ? maxPRS + 5 : 5,
                 ticks: {
+                  color: "black",
                   stepSize: 1,
+                },
+              },
+            },
+            plugins: {
+              legend: {
+                display: true,
+                labels: {
+                  color: "white",
                 },
               },
             },

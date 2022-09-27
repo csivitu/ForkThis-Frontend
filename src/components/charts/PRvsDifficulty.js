@@ -54,17 +54,32 @@ const Charttttttt = () => {
 
     // Lines are Projects
     return (
-      <div className="bg-white">
+      <div className="bg-HTpurple-900 ">
         <Bar
-          className="bg-white"
+          className="bg-HTpurple-900"
           options={{
+            responsive: true,
             scales: {
               y: {
                 beginAtZero: true,
                 min: 0,
                 max: maxPRS > 10 ? maxPRS + 10 : 10,
                 ticks: {
+                  color: "#D9D9d9",
                   stepSize: 2,
+                },
+              },
+              x: {
+                ticks: {
+                  color: "#D9D9d9",
+                },
+              },
+            },
+            plugins: {
+              legend: {
+                display: true,
+                labels: {
+                  color: "white",
                 },
               },
             },
@@ -75,7 +90,7 @@ const Charttttttt = () => {
     );
   }
   return (
-    <div class="flex justify-center items-center space-x-2 w-full bg-white rounded overflow-hidden shadow-lg">
+    <div class="flex justify-center items-center space-x-2 w-full bg-HTpurple-900 rounded overflow-hidden shadow-lg">
       <div
         class="spinner-grow inline-block w-8 h-8 bg-current rounded-full opacity-0 text-blue-600"
         role="status"

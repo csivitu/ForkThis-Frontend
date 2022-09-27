@@ -7,16 +7,9 @@ import Issues from "../miscellaneous/Issues";
 
 const ProjectsSubMenu = ({ project }) => {
   console.log(project);
-  // const [projects, setProjects] = useState([]);
-  // useEffect(() => {
-  //   const fetchProjects = async () => {
-  //     const res = await projectsHandler();
-  //     setProjects(res);
-  //   };
-  //   fetchProjects();
-  // });
+
   return (
-    <div className=" w-full h-full">
+    <div className=" w-full h-full text-gray-250">
       <div id="header">
         <div className="flex">
           <div>
