@@ -3,10 +3,6 @@ import acceptChallengeHandler from "../../controllers/acceptChallengeHandler";
 import AcceptAlert from "../miscellaneous/AcceptAlert";
 
 const OpenChallengesSubMenu = ({ challenge }) => {
-  console.log(challenge);
-  const onAccept = () => {
-    <AcceptAlert />;
-  };
   return (
     <div className="flex flex-wrap justify-around items-center gap-y-2 gap-x-4">
       <div className=" flex justify-around flex-wrap  p-1 ">
@@ -15,9 +11,9 @@ const OpenChallengesSubMenu = ({ challenge }) => {
             <div className="mt-5 px-6 bg-white">
               <p className="bg-white text-sm leading-none text-justify text-black-800 dark:text-black-100 mt-1">
                 <span className="text-xs bg-white mr-1 text-black-400">
-                  {challenge._id}
+                  Raised By:
                 </span>
-                Tuesday, 9:00pm - 11:00pm
+                  {challenge.raisedBy.username}
               </p>
             </div>
             <div className="mt-5 px-6 bg-white">
@@ -25,7 +21,7 @@ const OpenChallengesSubMenu = ({ challenge }) => {
                 <span className=" bg-white text-xs mr-1 text-black-400">
                   Starts At:
                 </span>
-                Tuesday, 9:00pm - 11:00pm
+                  {challenge.startsAt}
               </p>
             </div>
             <div className="mt-5 px-6 bg-white">
@@ -33,7 +29,7 @@ const OpenChallengesSubMenu = ({ challenge }) => {
                 <span className=" bg-white text-xs mr-1 text-black-400">
                   Ends At:
                 </span>
-                Tuesday, 9:00pm - 11:00pm
+                {challenge.endsAt}
               </p>
             </div>
             <div className="bg-white mt-5 px-6 flex items-center w-full">
@@ -45,10 +41,10 @@ const OpenChallengesSubMenu = ({ challenge }) => {
               </div>
               <div className=" bg-white ml-14">
                 <p className="bg-white text-xs text-black-400">
-                  Revenue Earned
+                  Points Bet
                 </p>
                 <p className="bg-white text-sm leading-none text-justify text-black-800 dark:text-black-100 mt-1">
-                  $7698
+                  {challenge.pointsBet}
                 </p>
               </div>
             </div>
@@ -68,7 +64,7 @@ const OpenChallengesSubMenu = ({ challenge }) => {
                 id="requestbuttons"
                 className="bg-white w-full mt-2 flex justify-around items-center"
               >
-                <AcceptAlert />
+                <AcceptAlert id={challenge.id}/>
               </div>
             </div>
           </div>

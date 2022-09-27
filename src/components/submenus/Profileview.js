@@ -2,6 +2,7 @@ import PRvsTime from "../charts/PRvsTime";
 import React from "react";
 import TagsvsPR from "../charts/TagsvsPR";
 import PRvsDifficulty from "../charts/PRvsDifficulty";
+import Recents from "../miscellaneous/Recents";
 
 const Profileview = ({ profile }) => {
   return (
@@ -39,8 +40,8 @@ const Profileview = ({ profile }) => {
         >
           <div>
             <div className="px-6 py-4">
-              <div className="font-bold text-xl mb-2">Recent Activity</div>
-              <div className="border-gray-600 border-2 h-1/2">asd</div>
+              <div className="font-bold text-xl mb-2">Recents</div>
+              <Recents/>
             </div>
           </div>
         </div>

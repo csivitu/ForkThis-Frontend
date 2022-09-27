@@ -129,10 +129,11 @@ const Button = styled("button", {
 
 //   await acceptChallengeHandler(formdata);
 // };
-const acceptthischallenge = async (props) => {
-  await acceptChallengeHandler(props._id);
+const acceptthischallenge = id => async()=> {
+  await acceptChallengeHandler(id);
 };
-const AlertDialogDemo = () => (
+
+const AlertDialogDemo = ({id}) => (
   <AlertDialog>
     <AlertDialogTrigger asChild>
       <Button>Accept</Button>
@@ -156,7 +157,7 @@ const AlertDialogDemo = () => (
       >
         <div className="bg-white">
           <AlertDialogAction asChild>
-            <Button variant="green" onClick={acceptthischallenge}>
+            <Button variant="green" onClick={acceptthischallenge(id)}>
               Accept
             </Button>
           </AlertDialogAction>

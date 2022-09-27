@@ -2,17 +2,18 @@ import React from "react";
 import { useState } from "react";
 import createChallengeHandler from "../../controllers/createChallengeHandler";
 const CreateChallenge = () => {
-  const [starttime, setstarttime] = useState([]);
-  const [endtime, setendtime] = useState([]);
+  const [startsAt, setstartsAt] = useState([]);
+  const [endsAt, setendsAt] = useState([]);
   const [tags, settags] = useState([]);
-  const [pointsbet, setpointsbet] = useState([]);
+  const [pointsBet, setpointsBet] = useState([]);
   const [difficulty, setDifficulty] = useState("");
   const submitHandler = async () => {
     const formdata = {
-      starttime,
-      endtime,
-      tags: [...tags, difficulty],
-      pointsbet,
+      startsAt,
+      endsAt,
+      tags,
+      pointsBet,
+      difficulty
     };
     console.log(formdata);
     await createChallengeHandler(formdata);
@@ -36,10 +37,10 @@ const CreateChallenge = () => {
                       </label>
                       <input
                         className="bg-white w-full px-3 py-2 text-sm leading-tight text-gray-700 border  shadow appearance-none focus:outline-none focus:shadow-outline"
-                        id="starttime"
+                        id="startsAt"
                         type="datetime-local"
-                        value={starttime}
-                        onChange={(el) => setstarttime(el.target.value)}
+                        value={startsAt}
+                        onChange={(el) => setstartsAt(el.target.value)}
                       />
                     </div>
                     <div className="w-1/2  bg-white">
@@ -51,10 +52,10 @@ const CreateChallenge = () => {
                       </label>
                       <input
                         className="bg-white w-full px-3 py-2 text-sm leading-tight text-gray-700 border  shadow appearance-none focus:outline-none focus:shadow-outline"
-                        id="endtime"
+                        id="endsAt"
                         type="datetime-local"
-                        value={endtime}
-                        onChange={(el) => setendtime(el.target.value)}
+                        value={endsAt}
+                        onChange={(el) => setendsAt(el.target.value)}
                       />
                     </div>
                   </div>
@@ -268,9 +269,9 @@ const CreateChallenge = () => {
                       className="bg-white w-full px-3 py-2 mb-3 text-sm leading-tight text-gray-700 border  shadow appearance-none focus:outline-none focus:shadow-outline"
                       id="password"
                       type="number"
-                      value={pointsbet}
+                      value={pointsBet}
                       onChange={(el) => {
-                        setpointsbet(el.target.value);
+                        setpointsBet(el.target.value);
                       }}
                     />
                   </div>
