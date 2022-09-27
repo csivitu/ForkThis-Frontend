@@ -1,9 +1,9 @@
 import React from "react";
-import getHandler from "../reqHandlers/getHandler";
+import getGitHubHandler from "../reqHandlers/getGitHubHandler";
 const projectsHandler = async () => {
-  const URL = "http://localhost:8000/users/";
-  const res = await getHandler(URL);
-  console.log(res);
+  const URL = "https://api.github.com/repos/Pratham-Mishra04/interact-old";
+  const res = await getGitHubHandler(URL);
+  return res;
 };
 
 export default projectsHandler;

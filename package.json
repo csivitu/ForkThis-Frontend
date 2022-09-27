@@ -5,7 +5,9 @@
   "dependencies": {
     "@radix-ui/colors": "^0.1.8",
     "@radix-ui/react-alert-dialog": "^1.0.0",
+    "@radix-ui/react-hover-card": "^1.0.0",
     "@radix-ui/react-scroll-area": "^1.0.0",
+    "@radix-ui/react-separator": "^1.0.0",
     "@radix-ui/react-tabs": "^1.0.0",
     "@stitches/react": "^1.2.8",
     "@testing-library/jest-dom": "^5.16.5",
@@ -15,7 +17,6 @@
     "chart.js": "^3.9.1",
     "dotenv": "^16.0.2",
     "env-cmd": "^10.1.0",
-    "flowbite": "^1.5.3",
     "flowbite-react": "^0.1.11",
     "react": "^18.2.0",
     "react-chartjs-2": "^4.3.1",

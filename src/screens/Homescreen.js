@@ -5,7 +5,7 @@ import SideMenu from "../components/navigation/SideMenu";
 import ChallengesNavbar from "../components/navigation/ChallengesNavbar";
 import ShopNav from "../components/navigation/ShopNav";
 import FAQnav from "../components/navigation/FAQnav";
-
+import ProjectsNav from "../components/navigation/ProjectsNav";
 const Homescreen = () => {
   const [navbar, setNavbar] = useState(["Profile"]);
   return (
@@ -16,6 +16,7 @@ const Homescreen = () => {
         <ChallengesNavbar navbar={navbar} />
         <ShopNav navbar={navbar} />
         <FAQnav navbar={navbar} />
+        <ProjectsNav navbar={navbar} />
       </div>
     </>
   );

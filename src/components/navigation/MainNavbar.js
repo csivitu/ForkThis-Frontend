@@ -158,7 +158,7 @@ const Navbar = (props) => {
               <Tabs.List>
                 <div className="flex">
                   <TabsTrigger value="tab1">Profile</TabsTrigger>
-                  <TabsTrigger value="tab2">Projects</TabsTrigger>
+                  {/* <TabsTrigger value="tab2">Projects</TabsTrigger> */}
                   <TabsTrigger value="tab3">Leaderboards</TabsTrigger>
                   <TabsTrigger value="tab4">Guide</TabsTrigger>
                 </div>
@@ -167,9 +167,9 @@ const Navbar = (props) => {
                 <Tabs.Content value="tab1">
                   <Profileview profile={profile} />
                 </Tabs.Content>
-                <Tabs.Content value="tab2">
+                {/* <Tabs.Content value="tab2">
                   <ProjectsSubMenu />
-                </Tabs.Content>
+                </Tabs.Content> */}
                 <Tabs.Content value="tab3">
                   <LeaderboardTableHeader />
                   {leaderboards.map((user) => (
