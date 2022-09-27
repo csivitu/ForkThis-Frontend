@@ -12,7 +12,7 @@ const Charttttttt = () => {
     };
     fetchChartData();
   }, []);
-  console.log(chartData);
+
   let maxPRS = 0;
   if (chartData) {
     chartData.forEach((el) => {

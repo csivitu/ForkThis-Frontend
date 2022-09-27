@@ -2,7 +2,7 @@ import React from "react";
 
 const LeaderboardTableHeader = () => {
   return (
-    <div className="xl:w-3/4 2xl:w-4/5 w-full  bg-white px-2 mb-2 ">
+    <div className="xl:w-3/4 2xl:w-4/5 w-full  bg-white px-2 mb-3 ">
       <div className="overflow-x-auto bg-white">
         <table className="w-full whitespace-nowrap bg-white">
           <tbody>

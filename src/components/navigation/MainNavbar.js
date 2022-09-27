@@ -122,7 +122,7 @@ const Navbar = (props) => {
   }, []);
   if (props.navbar == "Profile")
     return (
-      <div className="w-full h-max  flex flex-col px-4 pt-2 justify-between ">
+      <div className="w-full h-max flex flex-col px-4 pt-2 justify-between ">
         <div
           id="profile-tab"
           className=" w-full h-max mb-2 bg-slate-500 flex rounded"
@@ -139,12 +139,12 @@ const Navbar = (props) => {
           </div>
 
           <div id="name" className="flex flex-col align-middle w-2/5 p-3 ">
-            <h1 className="text-2xl font-medium">Name</h1>
-            <h3>name</h3>
+            <h1 className="text-2xl font-medium">{profile.name}</h1>
+            <h3>@{profile.username}</h3>
           </div>
           <div id="name" className="flex flex-col align-middle w-1/5 p-3 ">
-            <h1 className="text-2xl font-medium">Name</h1>
-            <h3>name</h3>
+            <h1 className="text-2xl font-medium">Score</h1>
+            <h3>{profile.score}</h3>
           </div>
           <div id="rank" className="w-1/5 p-3">
             <h1 className="text-2xl font-medium">Rank</h1>
@@ -172,7 +172,7 @@ const Navbar = (props) => {
                 </Tabs.Content>
                 <Tabs.Content value="tab3">
                   <LeaderboardTableHeader />
-                   {leaderboards.map((user) => (
+                  {leaderboards.map((user) => (
                     <LeaderboardsSubMenu key={user._id} user={user} />
                   ))}
                 </Tabs.Content>

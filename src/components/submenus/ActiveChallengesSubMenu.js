@@ -3,7 +3,7 @@ import React from "react";
 const ActiveChallengesSubMenu = (challenges) => {
   console.log(challenges);
   return (
-    <div className="flex flex-wrap justify-around items-center gap-y-2">
+    <>
       <div className=" flex justify-around flex-wrap gap-4 p-1 ">
         <div className=" rounded-md   relative">
           <div id="cut-corner" className="py-8 bg-white">
@@ -64,7 +64,7 @@ const ActiveChallengesSubMenu = (challenges) => {
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

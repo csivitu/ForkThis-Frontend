@@ -5,7 +5,10 @@ import { styled } from "@stitches/react";
 import { violet, mauve, blackA, green } from "@radix-ui/colors";
 import { TabsTrigger } from "../miscellaneous/Tabs";
 // import "../miscellaneous/Tabs";
+import { useEffect } from "react";
+import { useState } from "react";
 import * as Tabs from "@radix-ui/react-tabs";
+import profileHandler from "../../controllers/profileHandler";
 const Box = styled("div", { display: "flex", flexDirection: "row" });
 const Flex = styled("div", { display: "flex", flexDirection: "row" });
 
@@ -80,6 +83,14 @@ const Input = styled("input", {
   "&:focus": { boxShadow: `0 0 0 2px ${violet.violet8}` },
 });
 const ShopNav = (props) => {
+  const [profile, setProfile] = useState([]);
+  useEffect(() => {
+    const fetchProfile = async () => {
+      const res = await profileHandler();
+      setProfile(res);
+    };
+    fetchProfile();
+  }, []);
   if (props.navbar == "Shop")
     return (
       <>
@@ -100,34 +111,19 @@ const ShopNav = (props) => {
             </div>
 
             <div id="name" className="flex flex-col align-middle w-2/5 p-3 ">
-              <h1 className="text-2xl font-medium">Name</h1>
-              <h3>name</h3>
+              <h1 className="text-2xl font-medium">{profile.name}</h1>
+              <h3>@{profile.username}</h3>
             </div>
             <div id="name" className="flex flex-col align-middle w-1/5 p-3 ">
-              <h1 className="text-2xl font-medium">Name</h1>
-              <h3>name</h3>
+              <h1 className="text-2xl font-medium">Score</h1>
+              <h3>{profile.score}</h3>
             </div>
             <div
               id="profile-data"
               className="w-1/5 p-3 flex flex-col justify-around"
             >
-              <div id="profile-icon">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="yellow"
-                  viewBox="0 0 24 24"
-                  strokeWidth="1.5"
-                  stroke="currentColor"
-                  className="w-6 h-6"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.563.563 0 00-.586 0L6.982 20.54a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.563.563 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z"
-                  />
-                </svg>
-              </div>
-              <div id="profile-icon">
+              <h1 className="text-2xl font-medium pl-1">Coins</h1>
+              <div className="flex " id="profile-icon">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="#ffcc00"
@@ -142,6 +138,7 @@ const ShopNav = (props) => {
                     d="M20.25 6.375c0 2.278-3.694 4.125-8.25 4.125S3.75 8.653 3.75 6.375m16.5 0c0-2.278-3.694-4.125-8.25-4.125S3.75 4.097 3.75 6.375m16.5 0v11.25c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125V6.375m16.5 0v3.75m-16.5-3.75v3.75m16.5 0v3.75C20.25 16.153 16.556 18 12 18s-8.25-1.847-8.25-4.125v-3.75m16.5 0c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125"
                   />
                 </svg>
+                <h3>{profile.coins}</h3>
               </div>
             </div>
           </div>

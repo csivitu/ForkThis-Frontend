@@ -129,7 +129,9 @@ const Button = styled("button", {
 
 //   await acceptChallengeHandler(formdata);
 // };
-
+const acceptthischallenge = async (props) => {
+  await acceptChallengeHandler(props._id);
+};
 const AlertDialogDemo = () => (
   <AlertDialog>
     <AlertDialogTrigger asChild>
@@ -154,7 +156,9 @@ const AlertDialogDemo = () => (
       >
         <div className="bg-white">
           <AlertDialogAction asChild>
-            <Button variant="green">Accept</Button>
+            <Button variant="green" onClick={acceptthischallenge}>
+              Accept
+            </Button>
           </AlertDialogAction>
           <AlertDialogCancel asChild>
             <Button variant="red" css={{ marginLeft: 25 }}>

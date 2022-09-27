@@ -23,27 +23,29 @@ const Navbar = (props) => {
   const [openChallenges, setOpenChallenges] = useState();
   const [activeChallenges, setActiveChallenges] = useState([]);
   const [closedChallenges, setClosedChallenges] = useState([]);
+  const [profile, setProfile] = useState([]);
   useEffect(() => {
     const fetchOpenChallenges = async () => {
       const res = await openchallengehandler();
+
       setOpenChallenges(res);
     };
     fetchOpenChallenges();
     const fetchActiveChallenges = async () => {
       const res = await activeChallengeHandler();
-      console.log(res);
+
       setActiveChallenges(res);
     };
-    // fetchActiveChallenges();
+    fetchActiveChallenges();
     const fetchClosedChallenges = async () => {
       const res = await closedChallengeHandler();
-      console.log(res);
+      // console.log(res);
       setClosedChallenges(res);
     };
-    // fetchClosedChallenges();
+    fetchClosedChallenges();
     const fetchProfile = async () => {
       const res = await profileHandler();
-      setClosedChallenges(res);
+      setProfile(res);
     };
     fetchProfile();
   }, []);
@@ -67,16 +69,16 @@ const Navbar = (props) => {
           </div>
 
           <div id="name" className="flex flex-col align-middle w-2/5 p-3 ">
-            <h1 className="text-2xl font-medium">Name</h1>
-            <h3>name</h3>
+            <h1 className="text-2xl font-medium">{profile.name}</h1>
+            <h3>{profile.username}</h3>
           </div>
           <div id="name" className="flex flex-col align-middle w-1/5 p-3 ">
-            <h1 className="text-2xl font-medium">Name</h1>
-            <h3>name</h3>
+            <h1 className="text-2xl font-medium">Score</h1>
+            <h3>{profile.score}</h3>
           </div>
           <div id="rank" className="w-1/5 p-3">
-            <h1 className="text-2xl font-medium">Rank</h1>
-            <h3>name</h3>
+            <h1 className="text-2xl font-medium">Issues Solved</h1>
+            <h3>{profile.noOfIssuesSolved}</h3>
           </div>
         </div>
         <div id="Nav-items" className="flex ">
@@ -100,26 +102,27 @@ const Navbar = (props) => {
                         challenge={challenge}
                       />
                     ))}
-                    {/* <OpenChallengesSubMenu /> */}
                   </div>
                 </Tabs.Content>
                 <Tabs.Content value="tab2">
-                  {activeChallenges.map((activechallenge) => (
-                    <ActiveChallengesSubMenu
-                      key={activechallenge._id}
-                      challenge={activechallenge}
-                    />
-                  ))}
-                  {/* <ActiveChallengesSubMenu /> */}
+                  <div className="flex flex-wrap justify-around items-center gap-y-2">
+                    {activeChallenges.map((activechallenge) => (
+                      <ActiveChallengesSubMenu
+                        key={activechallenge._id}
+                        challenge={activechallenge}
+                      />
+                    ))}
+                  </div>
                 </Tabs.Content>
                 <Tabs.Content value="tab3">
-                  {/* {closedChallenges.map((closedchallenge) => (
-                    <ActiveChallengesSubMenu
-                      key={closedchallenge._id}
-                      challenge={closedchallenge}
-                    />
-                  ))} */}
-                  <ClosedChallengesSubMenu />
+                  <div className="flex flex-wrap justify-around items-center gap-y-3 gap-x-3">
+                    {closedChallenges.map((closedchallenge) => (
+                      <ClosedChallengesSubMenu
+                        key={closedchallenge._id}
+                        challenge={closedchallenge}
+                      />
+                    ))}
+                  </div>
                 </Tabs.Content>
                 <Tabs.Content value="tab4">
                   <CreateChallenge />

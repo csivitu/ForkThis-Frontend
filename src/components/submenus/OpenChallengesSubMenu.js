@@ -3,19 +3,19 @@ import acceptChallengeHandler from "../../controllers/acceptChallengeHandler";
 import AcceptAlert from "../miscellaneous/AcceptAlert";
 
 const OpenChallengesSubMenu = ({ challenge }) => {
-  // console.log(challenge);
+  console.log(challenge);
   const onAccept = () => {
     <AcceptAlert />;
   };
   return (
-    <div className="flex flex-wrap justify-around items-center gap-y-2">
+    <div className="flex flex-wrap justify-around items-center gap-y-2 gap-x-4">
       <div className=" flex justify-around flex-wrap  p-1 ">
         <div className=" rounded-md   relative">
           <div id="cut-corner" className="py-8 bg-white">
             <div className="mt-5 px-6 bg-white">
               <p className="bg-white text-sm leading-none text-justify text-black-800 dark:text-black-100 mt-1">
                 <span className="text-xs bg-white mr-1 text-black-400">
-                  Raised By:
+                  {challenge._id}
                 </span>
                 Tuesday, 9:00pm - 11:00pm
               </p>
