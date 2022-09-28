@@ -68,6 +68,16 @@ body {
   border: 0.15rem solid #9092ff;
   box-shadow: 18px 16px 11px -8px rgba(0, 0, 0, 0.75);
 }
+#contributors {
+  border-left: 0.15rem solid #9092ff;
+  padding-left: 1rem;
+}
+#issues-container {
+  box-shadow: 18px 16px 11px -8px rgba(0, 0, 0, 0.75);
+  border: 0.15rem solid #9092ff;
+}
+#issues {
+}
 #card-design {
   border-radius: 2rem;
   border: 0.15rem solid #9092ff;

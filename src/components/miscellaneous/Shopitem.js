@@ -1,6 +1,6 @@
 import React from "react";
 import AddtoCart from "../miscellaneous/AddtoCart";
-const Shopitem = ({id, name, description, countInStock, coins}) => {
+const Shopitem = ({ id, name, description, countInStock, coins }) => {
   return (
     <>
       <div className="py-6 w-1/3 text-gray-250">
@@ -14,7 +14,15 @@ const Shopitem = ({id, name, description, countInStock, coins}) => {
               {name}
             </h1>
             <p className="mt-2 bg-HTpurple-900 text-gray-250 text-sm ">
-              {description===''?<>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum sint architecto vero voluptatibus et quibusdam accusamus ab dolor fugit unde cupiditate delectus ea, possimus eligendi cum labore veritatis omnis tempore illo error. Ducimus cupiditate earum nostrum?</>:description}
+              {description === "" ? (
+                <>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto
+                  totam quis omnis molestias natus! Dolorum consequuntur modi
+                  similique sit temporibus eveniet cupiditate neque excepturi.
+                </>
+              ) : (
+                description
+              )}
             </p>
 
             <div className="flex item-center justify-around my-3 bg-HTpurple-900">
