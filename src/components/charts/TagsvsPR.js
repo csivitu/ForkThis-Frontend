@@ -67,7 +67,7 @@ const Charttttttt = () => {
 
     // Lines are Projects
     return (
-      <div id="graph-border" className="bg-HTpurple-900">
+      <div className="bg-HTpurple-900">
         <PolarArea
           className="bg-HTpurple-900"
           data={userData}

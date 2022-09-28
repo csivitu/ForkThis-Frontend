@@ -11,16 +11,24 @@ const Loginscreen = () => {
     window.location.replace(URL);
   };
   return (
-    <div className="flex justify-around items-center h-screen w-screen">
-      <div id="loginscreen" className="text-gray-250 h-2/3 w-1/3 ">
-        <img className="w-full h-auto" src="images/Logo-Text.svg" alt="logo" />
-        <div className="flex justify-around h-1/4 w-full items-center">
-          <button
-            onClick={submitHandler}
-            class=" text-white font-bold py-2 px-4  h-1/2 w-1/2 rounded"
-          >
-            Log In
-          </button>
+    <div className="flex flex-col justify-around items-center h-screen w-screen">
+      <div className="h-1/10 w-full flex justify-start">
+        <img className="mt-3 h-3/5 ml-3" src="images/CSILight.svg" alt="" />
+      </div>
+      <div className="h-9/10 w-full flex justify-around ">
+        <div className="text-gray-250 h-5/6 flex flex-col justify-around items-center">
+          <img className="w-full h-5/6" src="images/LogoTag.svg" alt="logo" />
+
+          {/* <img src="images/Tagline.svg" alt="" /> */}
+          <div className="flex justify-around h-1/4 w-full items-center">
+            <button
+              id="loginbtn"
+              onClick={submitHandler}
+              className=" text-white font-bold  px-4  h-1/2 w-1/2 rounded"
+            >
+              Log In
+            </button>
+          </div>
         </div>
       </div>
     </div>

@@ -7,6 +7,10 @@ module.exports = {
   theme: {
     extend: {
       backgroundImage: {},
+      height: {
+        "1/10": "10%",
+        "9/10": "90%",
+      },
       padding: {
         "1/2": "50%",
         full: "100%",

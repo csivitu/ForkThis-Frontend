@@ -53,7 +53,10 @@ const Navbar = (props) => {
   }, []);
   if (props.navbar == "Challenges")
     return (
-      <div className="w-full h-max text-gray-250 flex flex-col px-4 pt-2 justify-between ">
+      <div
+        id="scroll-nav-bar"
+        className="w-full h-max text-gray-250 flex flex-col px-4 pt-2 justify-between "
+      >
         <div
           id="profile-tab"
           className=" w-full h-max mb-2 bg-slate-500 flex rounded"
@@ -106,23 +109,25 @@ const Navbar = (props) => {
                   </div>
                 </Tabs.Content>
                 <Tabs.Content value="tab2">
-                  {activeChallenges.map((activechallenge) => (
+                  {/* {activeChallenges.map((activechallenge) => (
                     <ActiveChallengesSubMenu
                       key={activechallenge._id}
                       challenge={activechallenge}
                     />
-                  ))}
+                  ))} */}
                   {/* Map is above */}
-                  {/* <ActiveChallengesSubMenu /> */}
+                  <ActiveChallengesSubMenu />
                 </Tabs.Content>
                 <Tabs.Content value="tab3">
                   <div className="flex flex-wrap justify-around items-center gap-y-3 gap-x-3">
-                    {closedChallenges.map((closedchallenge) => (
+                    {/* {closedChallenges.map((closedchallenge) => (
                       <ClosedChallengesSubMenu
                         key={closedchallenge._id}
                         challenge={closedchallenge}
                       />
-                    ))}
+                    ))} */}
+                    {/* Map is above */}
+                    {/* <ClosedChallengesSubMenu /> */}
                   </div>
                 </Tabs.Content>
                 <Tabs.Content value="tab4">
