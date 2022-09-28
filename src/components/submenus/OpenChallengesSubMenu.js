@@ -6,8 +6,8 @@ import AcceptAlert from "../miscellaneous/AcceptAlert";
 const OpenChallengesSubMenu = ({ challenge }) => {
   return (
     <>
-        <ToastContainer/>
       <div className=" flex justify-around flex-wrap gap-4 p-1 text-gray-250 ">
+      <ToastContainer/>
       <div id="card-design" className=" rounded-md bg-HTpurple-900  relative">
         <div id="cut-corner" className="py-8 bg-HTpurple-900">
           <div className="px-6 bg-HTpurple-900">

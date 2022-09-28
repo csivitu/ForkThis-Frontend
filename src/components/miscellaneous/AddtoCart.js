@@ -3,6 +3,8 @@ import { styled, keyframes } from "@stitches/react";
 import { violet, blackA, red, mauve, green } from "@radix-ui/colors";
 import * as AlertDialogPrimitive from "@radix-ui/react-alert-dialog";
 import { useState } from "react";
+import purchaseHandler from "../../controllers/purchaseHandler";
+import { ToastContainer } from "react-toastify";
 
 const overlayShow = keyframes({
   "0%": { opacity: 0 },
@@ -125,12 +127,14 @@ const Button = styled("button", {
   },
 });
 
-const submitHandler= (id, quantity) => async()=>{
+const submitHandler= (id, quantity, size) => async()=>{
   const formData = {
     item:id,
-    count:quantity
+    count:quantity*1,
+    size
   }
-  await 
+  console.log(formData)
+  await purchaseHandler(formData);
 }
 
 // const acceptbutton = (props) => {
@@ -140,6 +144,7 @@ const submitHandler= (id, quantity) => async()=>{
 
 const AlertDialogDemo = ({id, name, coins, countInStock})=>{
   const [quantity, setQuantity] = useState(0)
+  const [size, setSize] = useState('')
 
   const quantityarr=[];
   for(var i=1;i<=countInStock;i++){
@@ -149,6 +154,7 @@ const AlertDialogDemo = ({id, name, coins, countInStock})=>{
 
   return (
   <AlertDialog>
+    <ToastContainer/>
     <AlertDialogTrigger asChild>
       <Button variant="mauve">Order Item</Button>
     </AlertDialogTrigger>
@@ -163,8 +169,8 @@ const AlertDialogDemo = ({id, name, coins, countInStock})=>{
             Item : {name}
           </div>
           <div>
-            {countInStock>0?<>Quantity: <select as="select" value={quantity} onChange={(element)=>setQuantity(element.target.value)}>
-                                        {
+            {countInStock>0?<>Quantity:<select onchange={(element)=>setQuantity(element.target.value)}>
+                                        { 
                                             quantityarr.map((x)=>(
                                                 <option key={x} value={x}>
                                                     {x}
@@ -176,6 +182,16 @@ const AlertDialogDemo = ({id, name, coins, countInStock})=>{
                   Out of Stock
               </>}
           </div>
+          {countInStock>0?<>
+            {name==='T-Shirts'?<>
+                <select className="" onchange={(element)=>setSize(element.target.value)}>
+                  <option value="">Size</option>
+                  <option value="M">M</option>
+                  <option value="L">L</option>
+                  <option value="XL">XL</option>
+                </select>
+            </>:''}
+          </>:''}
           <div>
             {countInStock>0?
               <>Total Coins: {quantity*coins} </>:""
@@ -193,10 +209,10 @@ const AlertDialogDemo = ({id, name, coins, countInStock})=>{
           justifyContent: "flex-end",
         }}
       >
+        {countInStock>0?<AlertDialogAction asChild>
+            <Button variant="green" onClick={submitHandler(id, quantity, size)}>Confirm Order</Button>
+          </AlertDialogAction>:""}
         <div className="bg-white">
-          <AlertDialogAction asChild>
-            <Button variant="green" onClick={submitHandler(id, name, quantity*coins, quantity)}>Confirm Order</Button>
-          </AlertDialogAction>
           <AlertDialogCancel asChild>
             <Button variant="red" css={{ marginLeft: 25 }}>
               Cancel

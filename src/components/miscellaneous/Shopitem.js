@@ -18,19 +18,6 @@ const Shopitem = ({id, name, description, countInStock, coins}) => {
             </p>
 
             <div className="flex item-center justify-around my-3 bg-HTpurple-900">
-              <div className="flex items-center justify-between w-1/2">
-              <h3>{countInStock}</h3>
-{/* 
-                {name==="T-Shirts"?<>
-                <select className="">
-                  <option value="0">Size</option>
-                  <option value="1">M</option>
-                  <option value="2">L</option>
-                  <option value="3">XL</option>
-                </select>
-                </>:""} */}
-
-              </div>
               <div className="flex bg-HTpurple-900" id="profile-icon">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -48,9 +35,8 @@ const Shopitem = ({id, name, description, countInStock, coins}) => {
                 </svg>
                 <h3 className="bg-HTpurple-900">{coins}</h3>
               </div>
-              
+              <AddtoCart name={name} id={id} coins={coins} countInStock={countInStock}/>
             </div>
-            <AddtoCart name={name} id={id} coins={coins} countInStock={countInStock}/>
           </div>
         </div>
       </div>
