@@ -23,7 +23,7 @@ const Recents = () => {
         </div>
         <div className="py-2">
           {recents.map((el) => {
-            console.log(el.data);
+            // console.log(el.data);
             return (
               <a href={el.URL}>
                 <div>{el.data}</div>

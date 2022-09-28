@@ -1,6 +1,6 @@
 import React from "react";
 
-const LeaderboardsSubMenu = ({ user }) => {
+const LeaderboardsSubMenu = ({ user, staticrank }) => {
   // console.log(user);
   return (
     <>
@@ -11,7 +11,8 @@ const LeaderboardsSubMenu = ({ user }) => {
               <tr className=" text-sm leading-none text-gray-250 h-16 bg-HTpurple-900">
                 <td className="w-1/2 bg-HTpurple-900">
                   <div className="flex items-center bg-HTpurple-900">
-                    <div className="w-10 h-10  bg-gray-700 bg-HTpurple-900 rounded-full flex items-center justify-center">
+                    <div>{staticrank}</div>
+                    <div className=" w-10 h-10  bg-gray-700 bg-HTpurple-900 rounded-full flex items-center justify-center">
                       <p className="text-xs font-bold leading-3 text-white"></p>
                     </div>
                     <div className="pl-2 bg-HTpurple-900">

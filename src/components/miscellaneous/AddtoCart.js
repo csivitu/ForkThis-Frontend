@@ -125,87 +125,94 @@ const Button = styled("button", {
   },
 });
 
-const submitHandler= (id, quantity) => async()=>{
+const submitHandler = (id, quantity) => async () => {
   const formData = {
-    item:id,
-    count:quantity
-  }
-  await 
-}
+    item: id,
+    count: quantity,
+  };
+};
 
 // const acceptbutton = (props) => {
 
 //   await acceptChallengeHandler(formdata);
 // };
 
-const AlertDialogDemo = ({id, name, coins, countInStock})=>{
-  const [quantity, setQuantity] = useState(0)
+const AlertDialogDemo = ({ id, name, coins, countInStock }) => {
+  const [quantity, setQuantity] = useState(0);
 
-  const quantityarr=[];
-  for(var i=1;i<=countInStock;i++){
-      quantityarr.push(i)
-      if(i===10)break
+  const quantityarr = [];
+  for (var i = 1; i <= countInStock; i++) {
+    quantityarr.push(i);
+    if (i === 10) break;
   }
 
   return (
-  <AlertDialog>
-    <AlertDialogTrigger asChild>
-      <Button variant="mauve">Order Item</Button>
-    </AlertDialogTrigger>
-    <AlertDialogContent className="bg-white">
-      {/* <AlertDialogTitle>
+    <AlertDialog>
+      <AlertDialogTrigger asChild>
+        <Button variant="mauve">Order Item</Button>
+      </AlertDialogTrigger>
+      <AlertDialogContent className="bg-white">
+        {/* <AlertDialogTitle>
         <div className="bg-white">Do you want to order this item ?</div>
       </AlertDialogTitle> */}
-      
-      <AlertDialogDescription>
-        <div>
+
+        <AlertDialogDescription>
           <div>
-            Item : {name}
+            <div>Item : {name}</div>
+            <div>
+              {countInStock > 0 ? (
+                <>
+                  Quantity:{" "}
+                  <select
+                    as="select"
+                    value={quantity}
+                    onChange={(element) => setQuantity(element.target.value)}
+                  >
+                    {quantityarr.map((x) => (
+                      <option key={x} value={x}>
+                        {x}
+                      </option>
+                    ))}
+                  </select>
+                </>
+              ) : (
+                <>Out of Stock</>
+              )}
+            </div>
+            <div>
+              {countInStock > 0 ? <>Total Coins: {quantity * coins} </> : ""}
+            </div>
           </div>
-          <div>
-            {countInStock>0?<>Quantity: <select as="select" value={quantity} onChange={(element)=>setQuantity(element.target.value)}>
-                                        {
-                                            quantityarr.map((x)=>(
-                                                <option key={x} value={x}>
-                                                    {x}
-                                                </option>
-                                            ))
-                                            
-                                        }
-              </select></>:<>
-                  Out of Stock
-              </>}
+          <div className="bg-white mt-2">
+            <b> Once an order is placed , it cannot be cancelled.</b>
           </div>
-          <div>
-            {countInStock>0?
-              <>Total Coins: {quantity*coins} </>:""
-            }
-            
+        </AlertDialogDescription>
+        <Flex
+          css={{
+            backgroundColor: "white",
+            width: "100%",
+            justifyContent: "flex-end",
+          }}
+        >
+          <div className="bg-white">
+            <AlertDialogAction asChild>
+              <Button
+                variant="green"
+                onClick={submitHandler(id, name, quantity * coins, quantity)}
+              >
+                Confirm Order
+              </Button>
+            </AlertDialogAction>
+            <AlertDialogCancel asChild>
+              <Button variant="red" css={{ marginLeft: 25 }}>
+                Cancel
+              </Button>
+            </AlertDialogCancel>
           </div>
-        </div>
-        <div className="bg-white mt-2"><b> Once an order is placed , it cannot be cancelled.</b>
-        </div>
-      </AlertDialogDescription>
-      <Flex
-        css={{
-          backgroundColor: "white",
-          width: "100%",
-          justifyContent: "flex-end",
-        }}
-      >
-        <div className="bg-white">
-          <AlertDialogAction asChild>
-            <Button variant="green" onClick={submitHandler(id, name, quantity*coins, quantity)}>Confirm Order</Button>
-          </AlertDialogAction>
-          <AlertDialogCancel asChild>
-            <Button variant="red" css={{ marginLeft: 25 }}>
-              Cancel
-            </Button>
-          </AlertDialogCancel>
-        </div>
-      </Flex>
-    </AlertDialogContent>
-  </AlertDialog>
-)};
+        </Flex>
+      </AlertDialogContent>
+    </AlertDialog>
+  );
+};
 
 export default AlertDialogDemo;
