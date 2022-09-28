@@ -11,6 +11,7 @@ import * as Tabs from "@radix-ui/react-tabs";
 import profileHandler from "../../controllers/profileHandler";
 import ProjectsSubMenu from "../submenus/ProjectsSubMenu";
 import projectsHandler from "../../controllers/projectsHandler"
+import projectsURL from '../../projects.json'
 
 const Box = styled("div", { display: "flex", flexDirection: "row" });
 const Flex = styled("div", { display: "flex", flexDirection: "row" });
@@ -85,10 +86,11 @@ const Input = styled("input", {
   height: 35,
   "&:focus": { boxShadow: `0 0 0 2px ${violet.violet8}` },
 });
+
 const ShopNav = (props) => {
-  const [project, setProject] = useState([]);
   const [profile, setProfile] = useState([]);
   const [projects, setProjects] = useState([])
+
   useEffect(() => {
     const fetchProfile = async () => {
       const res = await profileHandler();
@@ -96,12 +98,17 @@ const ShopNav = (props) => {
     };
     fetchProfile();
     const fetchProjects = async () => {
-      const res = await projectsHandler();
-      setProject(res);
+      const projectsData=[];
+      projectsURL.forEach(async el=>{
+        const res = await projectsHandler(el.user, el.repo);
+        projectsData.push(res)
+      })
+      setProjects(projectsData);
     };
     fetchProjects();
-    console.log(project)
   }, []);
+
+  console.log(projectsURL)
   if (props.navbar == "Projects")
     return (
       <>
@@ -148,39 +155,31 @@ const ShopNav = (props) => {
                 <Tabs.Root defaultValue="tab1">
                   <Tabs.List>
                     <div className="flex">
-                      <TabsTrigger value="tab1">Project 1</TabsTrigger>
-                      <TabsTrigger value="tab2">Project 2</TabsTrigger>
-                      <TabsTrigger value="tab3">Project 2</TabsTrigger>
-                      <TabsTrigger value="tab4">Project 2</TabsTrigger>
-                      <TabsTrigger value="tab5">Project 2</TabsTrigger>
+                      {
+                        projectsURL.map((el, index)=>{
+                          return(
+                            <TabsTrigger value={`tab${index+1}`}>Project {index+1}</TabsTrigger>
+                          )
+                        })
+                      }
                     </div>
                   </Tabs.List>
                   <div className="my-3">
-                    <Tabs.Content value="tab1">
-                      <div>
-                        <ProjectsSubMenu project={project} />
-                      </div>
-                    </Tabs.Content>
-                    <Tabs.Content value="tab2">
-                      <div>
-                        <ProjectsSubMenu project={project} />
-                      </div>
-                    </Tabs.Content>
-                    <Tabs.Content value="tab3">
-                      <div>
-                        <ProjectsSubMenu project={project} />
-                      </div>
-                    </Tabs.Content>
-                    <Tabs.Content value="tab4">
-                      <div>
-                        <ProjectsSubMenu project={project} />
-                      </div>
-                    </Tabs.Content>
-                    <Tabs.Content value="tab5">
-                      <div>
-                        <ProjectsSubMenu project={project} />
-                      </div>
-                    </Tabs.Content>
+
+                  <div className="flex">
+                      {
+                        projects.map((el, index)=>{
+                          return(
+                            <Tabs.Content value={`tab${index+1}`}>
+                              <div>
+                                <ProjectsSubMenu project={el} />
+                              </div>
+                            </Tabs.Content>
+                          )
+                        })
+                      }
+                    </div>
+
                   </div>
                 </Tabs.Root>
               </div>
