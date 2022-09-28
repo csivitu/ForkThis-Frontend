@@ -88,7 +88,7 @@ const Navbar = (props) => {
               <Tabs.List>
                 <div className="flex">
                   <TabsTrigger value="tab1">Open Challenges</TabsTrigger>
-                  <TabsTrigger value="tab2">Active Challenges</TabsTrigger>
+                  <TabsTrigger value="tab2">Active Challenge</TabsTrigger>
                   <TabsTrigger value="tab3">Closed Challenges</TabsTrigger>
                   <TabsTrigger value="tab4">Create Challenge</TabsTrigger>
                 </div>
@@ -105,16 +105,14 @@ const Navbar = (props) => {
                   </div>
                 </Tabs.Content>
                 <Tabs.Content value="tab2">
-                  <div className="flex flex-wrap justify-around items-center gap-y-2">
-                    {/* {activeChallenges.map((activechallenge) => (
+                  {/* {activeChallenges.map((activechallenge) => (
                       <ActiveChallengesSubMenu
                         key={activechallenge._id}
                         challenge={activechallenge}
                       />
                     ))} */}
-                    {/* Map is above */}
-                    <ActiveChallengesSubMenu />
-                  </div>
+                  {/* Map is above */}
+                  <ActiveChallengesSubMenu />
                 </Tabs.Content>
                 <Tabs.Content value="tab3">
                   <div className="flex flex-wrap justify-around items-center gap-y-3 gap-x-3">

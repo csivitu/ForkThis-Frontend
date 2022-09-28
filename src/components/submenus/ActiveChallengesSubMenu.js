@@ -4,8 +4,11 @@ const ActiveChallengesSubMenu = (challenges) => {
   console.log(challenges);
   return (
     <>
-      <div className=" flex justify-around flex-wrap gap-4 p-1 text-gray-250 ">
-        <div id="card-design" className=" rounded-md bg-HTpurple-900  relative">
+      <div className=" flex justify-around flex-wrap w-full gap-4 p-1 text-gray-250 ">
+        <div
+          id="card-design"
+          className="w-4/5 rounded-md bg-HTpurple-900  relative"
+        >
           <div id="cut-corner" className="py-8 bg-HTpurple-900">
             <div className="px-6 bg-HTpurple-900">
               <p className="bg-HTpurple-900 text-sm leading-none text-justify text-black-800 dark:text-black-100 mt-1"></p>
@@ -34,7 +37,7 @@ const ActiveChallengesSubMenu = (challenges) => {
                 {/* {challenges.challenge.pointsBet} */}
               </p>
             </div>
-            <div className="bg-HTpurple-900 mt-5 px-6 flex items-center w-full">
+            <div className="bg-HTpurple-900 mt-5 px-6 flex justify-around items-center w-full">
               <div className="bg-HTpurple-900">
                 <p className="text-xs text-black-400 bg-HTpurple-900">
                   Started At:
