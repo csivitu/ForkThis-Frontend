@@ -12,34 +12,55 @@ const Recents = () => {
     };
     setData();
   }, []);
-  if (recents.length != 0) {
-    const recentData = [];
-    console.log(recents);
-    recents.forEach((el) => {
-      const obj = {
-        data: "",
-        URL: "/",
-      };
-      if (el.type == "pr") {
-        obj.data = `${el.user.username} raised a new Pull Request.`;
-        if (el.prURL) obj.URL = el.prURL;
-      } else if (el.type == "issue") {
-        obj.data = `${el.raisedBy.username} raised a new Issue in ${el.repo}.`;
-        obj.URL = el.issueURL;
-      } else if (el.type == "challenge") {
-        obj.data = `${el.raisedBy.username} raised a new Challenge.`;
-        // obj.URL=  // redirect to challenges page
-      }
-      recentData.push(obj);
-    });
-    setRecents(recentData);
-  }
   return (
     <>
-      {recents.forEach((el) => {
-        <a href={el.URL}>
-          <div>{el.data}</div>
-        </a>;
+      {recents.map((el) => {
+        console.log(el.data)
+        return(
+          <a href={el.URL}>
+            <div>{el.data}</div>
+          </a>
+          )
+      })}
+      {recents.map((el) => {
+        console.log(el.data)
+        return(
+          <a href={el.URL}>
+            <div>{el.data}</div>
+          </a>
+          )
+      })}
+      {recents.map((el) => {
+        console.log(el.data)
+        return(
+          <a href={el.URL}>
+            <div>{el.data}</div>
+          </a>
+          )
+      })}
+      {recents.map((el) => {
+        console.log(el.data)
+        return(
+          <a href={el.URL}>
+            <div>{el.data}</div>
+          </a>
+          )
+      })}
+      {recents.map((el) => {
+        console.log(el.data)
+        return(
+          <a href={el.URL}>
+            <div>{el.data}</div>
+          </a>
+          )
+      })}
+      {recents.map((el) => {
+        console.log(el.data)
+        return(
+          <a href={el.URL}>
+            <div>{el.data}</div>
+          </a>
+          )
       })}
     </>
   );

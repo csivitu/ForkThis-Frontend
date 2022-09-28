@@ -1,9 +1,8 @@
 import axios from "axios";
 
 const getHandler = async (URL) => {
-  const token =
-    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzMjk5OTgzZDY4YTJhODIwNWZiMjI4YyIsImlhdCI6MTY2NDIxMDkyNSwiZXhwIjoxNjY0MzQwNTI1fQ.gJtLFdlsqgddke6dc536Sv0lb7sgthoppiUs9ZELy-4";
-  const config = {
+  const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzMjk5OTgzZDY4YTJhODIwNWZiMjI4YyIsImlhdCI6MTY2NDM0MzgyNCwiZXhwIjoxNjY0NDczNDI0fQ.8AXYwevp4TmzNAa2i8T1Bt1UHfe2IcWLr5ruhX-0MEo"
+   const config={
     headers: {
       Authorization: `Bearer ${token}`,
       "Content-Type": "application/json",
