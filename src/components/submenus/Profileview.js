@@ -12,7 +12,7 @@ const Profileview = ({ profile }) => {
           id="card-shadow"
           className=" w-3/5  rounded overflow-hidden shadow-lg"
         >
-          <div>
+          <div id="graph-border">
             <PRvsTime />
           </div>
         </div>
@@ -20,7 +20,7 @@ const Profileview = ({ profile }) => {
           id="card-shadow"
           className=" w-2/6 rounded overflow-hidden shadow-lg"
         >
-          <div>
+          <div id="graph-border">
             <TagsvsPR />
           </div>
         </div>
@@ -30,7 +30,7 @@ const Profileview = ({ profile }) => {
           id="card-shadow"
           className=" h-full w-5/12 rounded overflow-hidden shadow-lg"
         >
-          <div className="bg-white">
+          <div id="graph-border" className="bg-white">
             <PRvsDifficulty />
           </div>
         </div>

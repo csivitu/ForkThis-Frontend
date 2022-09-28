@@ -20,6 +20,7 @@ import CreateChallenge from "../miscellaneous/CreateChallenge";
 import OpenChallengesSubMenu from "../submenus/OpenChallengesSubMenu";
 
 const Navbar = (props) => {
+  // console.log(props);
   const [openChallenges, setOpenChallenges] = useState();
   const [activeChallenges, setActiveChallenges] = useState([]);
   const [closedChallenges, setClosedChallenges] = useState([]);
@@ -45,14 +46,17 @@ const Navbar = (props) => {
     fetchClosedChallenges();
     const fetchProfile = async () => {
       const res = await profileHandler();
+      // console.log(res);
       setProfile(res);
     };
     fetchProfile();
   }, []);
-
   if (props.navbar == "Challenges")
     return (
-      <div className="w-full h-max text-gray-250 flex flex-col px-4 pt-2 justify-between ">
+      <div
+        id="scroll-nav-bar"
+        className="w-full h-max text-gray-250 flex flex-col px-4 pt-2 justify-between "
+      >
         <div
           id="profile-tab"
           className=" w-full h-max mb-2 bg-slate-500 flex rounded"
@@ -106,22 +110,24 @@ const Navbar = (props) => {
                 </Tabs.Content>
                 <Tabs.Content value="tab2">
                   {/* {activeChallenges.map((activechallenge) => (
-                      <ActiveChallengesSubMenu
-                        key={activechallenge._id}
-                        challenge={activechallenge}
-                      />
-                    ))} */}
+                    <ActiveChallengesSubMenu
+                      key={activechallenge._id}
+                      challenge={activechallenge}
+                    />
+                  ))} */}
                   {/* Map is above */}
                   <ActiveChallengesSubMenu />
                 </Tabs.Content>
                 <Tabs.Content value="tab3">
                   <div className="flex flex-wrap justify-around items-center gap-y-3 gap-x-3">
-                    {closedChallenges.map((closedchallenge) => (
+                    {/* {closedChallenges.map((closedchallenge) => (
                       <ClosedChallengesSubMenu
                         key={closedchallenge._id}
                         challenge={closedchallenge}
                       />
-                    ))}
+                    ))} */}
+                    {/* Map is above */}
+                    {/* <ClosedChallengesSubMenu /> */}
                   </div>
                 </Tabs.Content>
                 <Tabs.Content value="tab4">

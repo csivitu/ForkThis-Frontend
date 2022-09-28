@@ -24,7 +24,7 @@ const Charttttttt = () => {
       labels: chartData.map((el) => el.difficulty),
       datasets: [
         {
-          label: "No. of PRs",
+          label: "",
           data: chartData.map((el) => el.noOfPRs),
           backgroundColor: [
             "rgb(253,226,126,0.8)",
@@ -54,7 +54,7 @@ const Charttttttt = () => {
 
     // Lines are Projects
     return (
-      <div id="graph-border" className="bg-HTpurple-900 ">
+      <div className="bg-HTpurple-900 ">
         <Bar
           className="bg-HTpurple-900"
           options={{

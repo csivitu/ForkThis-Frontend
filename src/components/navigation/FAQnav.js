@@ -12,7 +12,10 @@ const FAQnav = (props) => {
   }, []);
   if (props.navbar == "FAQ")
     return (
-      <div className="text-gray-250 w-full h-max  flex flex-col px-4 pt-2 justify-between ">
+      <div
+        id="scroll-nav-bar"
+        className="text-gray-250 w-full h-max  flex flex-col px-4 pt-2 justify-between "
+      >
         <div
           id="profile-tab"
           className=" w-full h-max mb-2 bg-slate-500 flex rounded"
@@ -38,7 +41,7 @@ const FAQnav = (props) => {
           </div>
           <div id="rank" className="w-1/5 p-3">
             <h1 className="text-2xl font-medium">Rank</h1>
-            <h3>name</h3>
+            <h3>{profile.rank}</h3>
           </div>
         </div>
         <div className="mt-3">FAQs here</div>

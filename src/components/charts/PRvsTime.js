@@ -35,43 +35,43 @@ const Charttttttt = () => {
             // "rgb(114,196,255,1)",
             // "rgb(142,148,254,1)",
           ],
-          borderColor: "white",
+          borderColor: "#D9d9d9",
           borderWidth: 1,
         },
         {
           label: "Project 2",
           data: chartData.map((el) => el.noOfPRsOfProject2),
           backgroundColor: [
-            "rgb(253,226,126,1)",
-            // "rgb(157,227,207,1)",
+            // "rgb(253,226,126,1)",
+            "rgb(157,227,207,1)",
             // "rgb(114,196,255,1)",
             // "rgb(142,148,254,1)",
           ],
-          borderColor: "white",
+          borderColor: "#D9d9d9",
           borderWidth: 1,
         },
         {
           label: "Project 3",
           data: chartData.map((el) => el.noOfPRsOfProject3),
           backgroundColor: [
-            "rgb(253,226,126,1)",
+            // "rgb(253,226,126,1)",
             // "rgb(157,227,207,1)",
-            // "rgb(114,196,255,1)",
+            "rgb(114,196,255,1)",
             // "rgb(142,148,254,1)",
           ],
-          borderColor: "white",
+          borderColor: "#D9d9d9",
           borderWidth: 1,
         },
         {
           label: "Project 4",
           data: chartData.map((el) => el.noOfPRsOfProject4),
           backgroundColor: [
-            "rgb(253,226,126,1)",
+            // "rgb(253,226,126,1)",
             // "rgb(157,227,207,1)",
             // "rgb(114,196,255,1)",
-            // "rgb(142,148,254,1)",
+            "rgb(142,148,254,1)",
           ],
-          borderColor: "white",
+          borderColor: "#D9d9d9",
           borderWidth: 1,
         },
         {
@@ -83,9 +83,9 @@ const Charttttttt = () => {
             // "rgb(114,196,255,1)",
             // "rgb(142,148,254,1)",
           ],
-          borderColor: "white",
+          borderColor: "#D9d9d9",
           borderWidth: 1,
-        }
+        },
       ],
     };
     const options = {
@@ -102,7 +102,7 @@ const Charttttttt = () => {
     };
 
     return (
-      <div id="graph-border" className="bg-HTpurple-900">
+      <div className="bg-HTpurple-900">
         <Line
           className="bg-HTpurple-900"
           id="canvas"
@@ -112,7 +112,8 @@ const Charttttttt = () => {
             scales: {
               y: {
                 beginAtZero: true,
-                min: -1,
+                min: 0,
+
                 max: maxPRS > 10 ? maxPRS + 10 : 5,
                 ticks: {
                   color: "#D9D9d9",
