@@ -10,6 +10,9 @@ import { useState } from "react";
 import * as Tabs from "@radix-ui/react-tabs";
 import profileHandler from "../../controllers/profileHandler";
 import itemsHandler from "../../controllers/itemsHandler";
+import purchaseHandler from "../../controllers/purchaseHandler";
+import Purchaseitem from "../miscellaneous/Purchaseitem";
+
 const Box = styled("div", { display: "flex", flexDirection: "row" });
 const Flex = styled("div", { display: "flex", flexDirection: "row" });
 
@@ -86,6 +89,8 @@ const Input = styled("input", {
 const ShopNav = (props) => {
   const [profile, setProfile] = useState([]);
   const [items, setItems] = useState([]);
+  const [purchases, setPurchases] = useState([])
+  const [reload, setReload] = useState("")
   useEffect(() => {
     const fetchProfile = async () => {
       const res = await profileHandler();
@@ -95,10 +100,14 @@ const ShopNav = (props) => {
       const res = await itemsHandler();
       setItems(res);
     };
+    const getPurchases = async () => {
+      const res = await purchaseHandler();
+      setPurchases(res);
+    };
     fetchProfile();
     getItems();
-    console.log(items);
-  }, []);
+    getPurchases();
+  }, [reload]);
   if (props.navbar == "Shop")
     return (
       <>
@@ -177,13 +186,27 @@ const ShopNav = (props) => {
                               key={el.id}
                               countInStock={el.countInStock}
                               coins={el.coins}
+                              reloader={setReload}
                             />
                           );
                         })}
                       </div>
                     </Tabs.Content>
                     <Tabs.Content value="tab2">
-                      <div>asdasd</div>
+                    <div className="flex flex-wrap justify-around items-center gap-y-3 gap-x-1">
+                        {purchases.map((el) => {
+                          return (
+                            <Purchaseitem
+                              name={el.item.name}
+                              purchasedAt={el.purchasedAt}
+                              key={el.id}
+                              quantity={el.count}
+                              coins={el.item.coins}
+                        
+                            />
+                          );
+                        })}
+                      </div>
                     </Tabs.Content>
                   </div>
                 </Tabs.Root>

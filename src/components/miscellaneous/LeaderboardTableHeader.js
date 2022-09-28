@@ -4,7 +4,7 @@ const LeaderboardTableHeader = () => {
   return (
     <div
       id="leaderboards-table-border"
-      className="xl:w-3/4 2xl:w-4/5 w-full text-gray-250  bg-HTpurple-900 px-2 mb-3 "
+      className="w-full text-gray-250  bg-HTpurple-900 px-2 mb-3 "
     >
       <div className="overflow-x-auto bg-HTpurple-900">
         <table className="w-full whitespace-nowrap bg-HTpurple-900">

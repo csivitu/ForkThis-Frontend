@@ -4,7 +4,7 @@ const LeaderboardsSubMenu = ({ user, staticrank }) => {
   // console.log(user);
   return (
     <>
-      <div className="xl:w-3/4 2xl:w-4/5 w-full bg-HTpurple-900  px-2 ">
+      <div className="w-full bg-HTpurple-900  px-2 ">
         <div className="overflow-x-auto bg-HTpurple-900">
           <table className="w-full whitespace-nowrap bg-HTpurple-900">
             <tbody>

@@ -10,7 +10,8 @@ import { useState } from "react";
 import * as Tabs from "@radix-ui/react-tabs";
 import profileHandler from "../../controllers/profileHandler";
 import ProjectsSubMenu from "../submenus/ProjectsSubMenu";
-import projectsHandler from "../../controllers/projectsHandler";
+import projectsHandler from "../../controllers/projectsHandler"
+
 const Box = styled("div", { display: "flex", flexDirection: "row" });
 const Flex = styled("div", { display: "flex", flexDirection: "row" });
 
@@ -87,6 +88,7 @@ const Input = styled("input", {
 const ShopNav = (props) => {
   const [project, setProject] = useState([]);
   const [profile, setProfile] = useState([]);
+  const [projects, setProjects] = useState([])
   useEffect(() => {
     const fetchProfile = async () => {
       const res = await profileHandler();
@@ -98,6 +100,7 @@ const ShopNav = (props) => {
       setProject(res);
     };
     fetchProjects();
+    console.log(project)
   }, []);
   if (props.navbar == "Projects")
     return (

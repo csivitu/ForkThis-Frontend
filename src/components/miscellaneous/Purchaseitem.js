@@ -1,6 +1,6 @@
 import React from "react";
-import AddtoCart from "../miscellaneous/AddtoCart";
-const Shopitem = ({ id, name, description, countInStock, coins, reloader }) => {
+
+const Purchaseitem = ({ name, purchasedAt, quantity, coins }) => {
   return (
     <>
       <div className="py-6 w-5/12 text-gray-250">
@@ -13,19 +13,12 @@ const Shopitem = ({ id, name, description, countInStock, coins, reloader }) => {
             <h1 className="text-white font-bold bg-HTpurple-900 text-2xl">
               {name}
             </h1>
-            <p className="mt-2 bg-HTpurple-900 text-gray-250 text-sm ">
-              {description === "" ? (
-                <>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto
-                  totam quis omnis molestias natus! Dolorum consequuntur modi
-                  similique sit temporibus eveniet cupiditate neque excepturi.
-                </>
-              ) : (
-                description
-              )}
-            </p>
 
-            <div className="flex item-center justify-around my-3 bg-HTpurple-900">
+            <div className="my-4">Quantity: {quantity}</div>
+
+            <div className="my-4">Ordered At: {purchasedAt}</div>
+
+            <div className="flex items-center justify-start bg-HTpurple-900">
               <div className="flex bg-HTpurple-900" id="profile-icon">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -43,7 +36,6 @@ const Shopitem = ({ id, name, description, countInStock, coins, reloader }) => {
                 </svg>
                 <h3 className="bg-HTpurple-900">{coins}</h3>
               </div>
-              <AddtoCart name={name} id={id} coins={coins} countInStock={countInStock} reloader={reloader}/>
             </div>
           </div>
         </div>
@@ -52,4 +44,4 @@ const Shopitem = ({ id, name, description, countInStock, coins, reloader }) => {
   );
 };
 
-export default Shopitem;
+export default Purchaseitem;
