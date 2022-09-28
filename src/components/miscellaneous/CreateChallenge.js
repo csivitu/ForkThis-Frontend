@@ -15,7 +15,6 @@ const CreateChallenge = () => {
       pointsBet,
       difficulty,
     };
-    console.log(formdata);
     await createChallengeHandler(formdata);
   };
 

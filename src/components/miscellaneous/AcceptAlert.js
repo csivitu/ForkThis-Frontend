@@ -129,7 +129,7 @@ const Button = styled("button", {
 
 //   await acceptChallengeHandler(formdata);
 // };
-const acceptthischallenge = (id) => async () => {
+const acceptthischallenge = id => async () => {
   await acceptChallengeHandler(id);
 };
 

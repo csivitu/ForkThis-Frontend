@@ -15,15 +15,7 @@ const OpenChallengesSubMenu = ({ challenge }) => {
               <span className="text-xs bg-HTpurple-900 mr-1 text-black-400">
                 Raised By:
               </span>
-              {/* {challenge.raisedBy} */}
-            </p>
-          </div>
-          <div className="mt-5 px-6 bg-HTpurple-900">
-            <p className="bg-HTpurple-900 text-sm leading-none text-justify text-black-800 dark:text-black-100 mt-1">
-              <span className=" bg-HTpurple-900 text-xs mr-1 text-black-400">
-                Accepted By:
-              </span>
-              {/* {challenge.acceptedBy} */}
+              {challenge.raisedBy.username}
             </p>
           </div>
           <div className="mt-5 px-6 bg-HTpurple-900">
@@ -31,7 +23,7 @@ const OpenChallengesSubMenu = ({ challenge }) => {
               <span className=" bg-HTpurple-900 text-xs mr-1 text-black-400">
                 Points Bet:
               </span>
-              {/* {challenge.pointsBet} */}
+              {challenge.pointsBet}
             </p>
           </div>
           <div className="bg-HTpurple-900 mt-5 px-6 flex items-center w-full">
@@ -40,24 +32,24 @@ const OpenChallengesSubMenu = ({ challenge }) => {
                 Starts At:
               </p>
               <p className="text-sm bg-HTpurple-900 leading-none text-justify text-black-800 dark:text-black-100 mt-1">
-                {/* {challenge.startsAt} */}
+                {challenge.startsAt}
               </p>
             </div>
             <div className=" bg-HTpurple-900 ml-14">
               <p className="bg-HTpurple-900 text-xs text-black-400">Ends At:</p>
               <p className="bg-HTpurple-900 text-sm leading-none text-justify text-black-800 dark:text-black-100 mt-1">
-                {/* {challenge.startsAt} */}
+                {challenge.endsAt}
               </p>
             </div>
           </div>
           <div className="bg-HTpurple-900 mt-5 px-6 flex items-center w-full">
-            {/* {challenge.tags.map((el) => {
+            {challenge.tags.map((el) => {
               return (
-                <div class="mt-1 text-xs inline-flex items-center font-bold leading-sm uppercase px-3 py-1 rounded-full bg-HTpurple-900 text-gray-700 border">
+                <div class="mt-1 text-xs inline-flex items-center font-bold leading-sm uppercase px-3 mx-2 py-1 rounded-full bg-HTpurple-900 text-gray-700 border">
                   {el}
                 </div>
               );
-            })} */}
+            })}
           </div>
 
           <div className="bg-HTpurple-900 pt-6 flex justify-between relative items-center w-full">
@@ -84,7 +76,7 @@ const OpenChallengesSubMenu = ({ challenge }) => {
               id="requestbuttons"
               className="bg-HTpurple-900 w-full mt-7 flex justify-around items-center"
             >
-              <AcceptAlert />
+              <AcceptAlert id={challenge._id}/>
             </div>
           </div>
         </div>
