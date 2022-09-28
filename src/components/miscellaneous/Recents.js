@@ -22,46 +22,6 @@ const Recents = () => {
           </a>
           )
       })}
-      {recents.map((el) => {
-        console.log(el.data)
-        return(
-          <a href={el.URL}>
-            <div>{el.data}</div>
-          </a>
-          )
-      })}
-      {recents.map((el) => {
-        console.log(el.data)
-        return(
-          <a href={el.URL}>
-            <div>{el.data}</div>
-          </a>
-          )
-      })}
-      {recents.map((el) => {
-        console.log(el.data)
-        return(
-          <a href={el.URL}>
-            <div>{el.data}</div>
-          </a>
-          )
-      })}
-      {recents.map((el) => {
-        console.log(el.data)
-        return(
-          <a href={el.URL}>
-            <div>{el.data}</div>
-          </a>
-          )
-      })}
-      {recents.map((el) => {
-        console.log(el.data)
-        return(
-          <a href={el.URL}>
-            <div>{el.data}</div>
-          </a>
-          )
-      })}
     </>
   );
 };

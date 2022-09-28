@@ -1,6 +1,8 @@
 import React from "react";
 import { useState } from "react";
 import createChallengeHandler from "../../controllers/createChallengeHandler";
+import { ToastContainer } from 'react-toastify';
+
 const CreateChallenge = () => {
   const [startsAt, setstartsAt] = useState([]);
   const [endsAt, setendsAt] = useState([]);
@@ -21,6 +23,7 @@ const CreateChallenge = () => {
   return (
     <>
       <div className="font-mono w-full">
+
         <div className="mx-auto">
           <div className="flex justify-center px-6 my-12">
             <div className="w-fuxll lg:w-11/12 flex">
@@ -28,8 +31,11 @@ const CreateChallenge = () => {
                 id="card-design"
                 className="w-full  bg-HTpurple-900 p-5 -lg "
               >
+                   
                 <form className="px-8 pt-6 pb-8 mb-4 bg-HTpurple-900 ">
+                  
                   <div className="bg-HTpurple-900 mb-4 md:flex md:justify-between">
+                  <ToastContainer />
                     <div className="bg-HTpurple-900 w-1/2 mb-4 md:mr-2 md:mb-0">
                       <label
                         className="bg-HTpurple-900 block mb-2 text-sm font-bold text-gray-250"

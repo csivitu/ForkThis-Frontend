@@ -2,6 +2,7 @@ import React from "react";
 import { styled, keyframes } from "@stitches/react";
 import { violet, blackA, red, mauve, green } from "@radix-ui/colors";
 import * as AlertDialogPrimitive from "@radix-ui/react-alert-dialog";
+import { useState } from "react";
 
 const overlayShow = keyframes({
   "0%": { opacity: 0 },
@@ -124,23 +125,65 @@ const Button = styled("button", {
   },
 });
 
+const submitHandler= (id, quantity) => async()=>{
+  const formData = {
+    item:id,
+    count:quantity
+  }
+  await 
+}
+
 // const acceptbutton = (props) => {
 
 //   await acceptChallengeHandler(formdata);
 // };
 
-const AlertDialogDemo = () => (
+const AlertDialogDemo = ({id, name, coins, countInStock})=>{
+  const [quantity, setQuantity] = useState(0)
+
+  const quantityarr=[];
+  for(var i=1;i<=countInStock;i++){
+      quantityarr.push(i)
+      if(i===10)break
+  }
+
+  return (
   <AlertDialog>
     <AlertDialogTrigger asChild>
-      <Button variant="mauve">Add To Cart</Button>
+      <Button variant="mauve">Order Item</Button>
     </AlertDialogTrigger>
     <AlertDialogContent className="bg-white">
-      <AlertDialogTitle>
-        <div className="bg-white">Do you want to add this to your cart ?</div>
-      </AlertDialogTitle>
+      {/* <AlertDialogTitle>
+        <div className="bg-white">Do you want to order this item ?</div>
+      </AlertDialogTitle> */}
+      
       <AlertDialogDescription>
-        <div className="bg-white mt-2">
-          Once an order is placed , it cannot be cancelled.
+        <div>
+          <div>
+            Item : {name}
+          </div>
+          <div>
+            {countInStock>0?<>Quantity: <select as="select" value={quantity} onChange={(element)=>setQuantity(element.target.value)}>
+                                        {
+                                            quantityarr.map((x)=>(
+                                                <option key={x} value={x}>
+                                                    {x}
+                                                </option>
+                                            ))
+                                            
+                                        }
+              </select></>:<>
+                  Out of Stock
+              </>}
+          </div>
+          <div>
+            {countInStock>0?
+              <>Total Coins: {quantity*coins} </>:""
+            }
+            
+          </div>
+        </div>
+        <div className="bg-white mt-2"><b> Once an order is placed , it cannot be cancelled.</b>
         </div>
       </AlertDialogDescription>
       <Flex
@@ -152,7 +195,7 @@ const AlertDialogDemo = () => (
       >
         <div className="bg-white">
           <AlertDialogAction asChild>
-            <Button variant="green">Add to Cart</Button>
+            <Button variant="green" onClick={submitHandler(id, name, quantity*coins, quantity)}>Confirm Order</Button>
           </AlertDialogAction>
           <AlertDialogCancel asChild>
             <Button variant="red" css={{ marginLeft: 25 }}>
@@ -163,6 +206,6 @@ const AlertDialogDemo = () => (
       </Flex>
     </AlertDialogContent>
   </AlertDialog>
-);
+)};
 
 export default AlertDialogDemo;

@@ -9,6 +9,7 @@ import { useEffect } from "react";
 import { useState } from "react";
 import * as Tabs from "@radix-ui/react-tabs";
 import profileHandler from "../../controllers/profileHandler";
+import itemsHandler from "../../controllers/itemsHandler";
 const Box = styled("div", { display: "flex", flexDirection: "row" });
 const Flex = styled("div", { display: "flex", flexDirection: "row" });
 
@@ -84,12 +85,19 @@ const Input = styled("input", {
 });
 const ShopNav = (props) => {
   const [profile, setProfile] = useState([]);
+  const [items, setItems] = useState([])
   useEffect(() => {
     const fetchProfile = async () => {
       const res = await profileHandler();
       setProfile(res);
     };
+    const getItems = async () =>{
+      const res = await itemsHandler();
+      setItems(res);
+    }
     fetchProfile();
+    getItems();
+    console.log(items)
   }, []);
   if (props.navbar == "Shop")
     return (
@@ -160,10 +168,13 @@ const ShopNav = (props) => {
                   <div className="my-3">
                     <Tabs.Content value="tab1">
                       <div className="flex flex-wrap justify-around items-center gap-y-3 gap-x-1">
-                        <Shopitem />
-                        <Shopitem />
-                        <Shopitem />
-                        <Shopitem />
+                        {
+                          items.map(el=>{
+                            return(
+                              <Shopitem id={el._id} name={el.name} description={el.description} countInStock={el.countInStock} coins={el.coins}/>
+                            )
+                          })
+                        }
                       </div>
                     </Tabs.Content>
                     <Tabs.Content value="tab2">

@@ -24,6 +24,7 @@ const postHandler = async (URL, formData) => {
         data: err.response.data,
       };
     });
+  console.log(response)
   return response;
 };
 

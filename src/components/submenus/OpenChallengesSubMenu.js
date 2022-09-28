@@ -1,10 +1,13 @@
 import React from "react";
+import { ToastContainer } from "react-toastify";
 import acceptChallengeHandler from "../../controllers/acceptChallengeHandler";
 import AcceptAlert from "../miscellaneous/AcceptAlert";
 
 const OpenChallengesSubMenu = ({ challenge }) => {
   return (
-    <div className=" flex justify-around flex-wrap gap-4 p-1 text-gray-250 ">
+    <>
+        <ToastContainer/>
+      <div className=" flex justify-around flex-wrap gap-4 p-1 text-gray-250 ">
       <div id="card-design" className=" rounded-md bg-HTpurple-900  relative">
         <div id="cut-corner" className="py-8 bg-HTpurple-900">
           <div className="px-6 bg-HTpurple-900">
@@ -82,6 +85,7 @@ const OpenChallengesSubMenu = ({ challenge }) => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 
