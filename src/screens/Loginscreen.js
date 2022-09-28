@@ -13,7 +13,7 @@ const Loginscreen = () => {
   return (
     <div className="flex flex-col justify-around items-center h-screen w-screen">
       <div className="h-1/10 w-full flex justify-start">
-        <img className="mt-3 h-3/5 ml-3" src="images/CSILight.svg" alt="" />
+        <img className="mt-4 h-3/5 ml-4" src="images/CSILight.svg" alt="" />
       </div>
       <div className="h-9/10 w-full flex justify-around ">
         <div className="text-gray-250 h-5/6 flex flex-col justify-around items-center">

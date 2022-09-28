@@ -9,8 +9,8 @@ import Loginscreen from "./screens/Loginscreen";
 function App() {
   return (
     <>
-      {/* <Homescreen /> */}
-      <Loginscreen />
+      <Homescreen />
+      {/* <Loginscreen /> */}
     </>
   );
 }

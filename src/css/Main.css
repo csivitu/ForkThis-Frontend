@@ -96,6 +96,26 @@ body {
   background: linear-gradient(135deg, transparent 1.6rem, #170f1e 0);
   border-radius: 2rem;
 }
+#active-challenge-card-left {
+  border-top: 0.15rem solid #9092ff;
+
+  border-right: 0.15rem solid #9092ff;
+}
+#active-challenge-card-right {
+  border-top: 0.15rem solid #9092ff;
+  border-left: 0.15rem solid #9092ff;
+}
+#active-challenge-card-left-down {
+  border-bottom: 0.15rem solid #9092ff;
+  border-right: 0.15rem solid #9092ff;
+}
+#active-challenge-card-right-down {
+  border-bottom: 0.15rem solid #9092ff;
+  border-left: 0.15rem solid #9092ff;
+}
+#pointsbet-circle-active-challenge {
+  border: 0.3rem solid #9092ff;
+}
 
 #card-shadow {
   box-shadow: 18px 16px 11px -8px rgba(0, 0, 0, 0.75);
@@ -109,10 +129,32 @@ body {
   background-color: #9092ff;
 }
 
+#issues-separator {
+  border: 0.15rem solid #9092ff;
+}
+
 #loginbtn {
   -webkit-box-shadow: inset 10px 10px 32px -21px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: inset 10px 10px 32px -21px rgba(0, 0, 0, 0.75);
   box-shadow: inset 10px 10px 32px -21px rgba(0, 0, 0, 0.75);
+  background-image: linear-gradient(
+    to right,
+    #d8d479,
+    #afda8c,
+    #87dda8,
+    #65dbc6,
+    #57d7e0,
+    #4dd2ec,
+    #51cbf5,
+    #63c3fb,
+    #61baff,
+    #69b0ff,
+    #79a4ff,
+    #8e97ff
+  );
+}
+
+#create-challenge-submit-btn {
   background-image: linear-gradient(
     to right,
     #d8d479,

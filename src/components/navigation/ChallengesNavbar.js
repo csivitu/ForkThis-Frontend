@@ -46,7 +46,7 @@ const Navbar = (props) => {
     fetchClosedChallenges();
     const fetchProfile = async () => {
       const res = await profileHandler();
-      // console.log(res);
+
       setProfile(res);
     };
     fetchProfile();
@@ -109,23 +109,23 @@ const Navbar = (props) => {
                   </div>
                 </Tabs.Content>
                 <Tabs.Content value="tab2">
-                  {/* {activeChallenges.map((activechallenge) => (
+                  {activeChallenges.map((activechallenge) => (
                     <ActiveChallengesSubMenu
                       key={activechallenge._id}
                       challenge={activechallenge}
                     />
-                  ))} */}
+                  ))}
                   {/* Map is above */}
-                  <ActiveChallengesSubMenu />
+                  {/* <ActiveChallengesSubMenu /> */}
                 </Tabs.Content>
                 <Tabs.Content value="tab3">
                   <div className="flex flex-wrap justify-around items-center gap-y-3 gap-x-3">
-                    {/* {closedChallenges.map((closedchallenge) => (
+                    {closedChallenges.map((closedchallenge) => (
                       <ClosedChallengesSubMenu
                         key={closedchallenge._id}
                         challenge={closedchallenge}
                       />
-                    ))} */}
+                    ))}
                     {/* Map is above */}
                     {/* <ClosedChallengesSubMenu /> */}
                   </div>

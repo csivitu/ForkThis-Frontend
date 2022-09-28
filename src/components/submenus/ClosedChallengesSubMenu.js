@@ -1,97 +1,116 @@
 import React from "react";
 
-const ClosedChallengesSubMenu = (challenges) => {
-  console.log(challenges);
-  return (
-    <>
-      <div className=" flex justify-around flex-wrap gap-4 p-1 text-gray-250 ">
-        <div id="card-design" className=" rounded-md bg-HTpurple-900  relative">
-          <div id="cut-corner" className="py-8 bg-HTpurple-900">
-            <div className="px-6 bg-HTpurple-900">
-              <p className="bg-HTpurple-900 text-sm leading-none text-justify text-black-800 dark:text-black-100 mt-1"></p>
-            </div>
-            <div className="mt-5 px-6 bg-HTpurple-900">
-              <p className="bg-HTpurple-900 text-sm leading-none text-justify text-black-800 dark:text-black-100 mt-1">
-                <span className="text-xs bg-HTpurple-900 mr-1 text-black-400">
-                  Raised By:
-                </span>
-                {challenges.challenge.raisedBy}
-              </p>
-            </div>
-            <div className="mt-5 px-6 bg-HTpurple-900">
-              <p className="bg-HTpurple-900 text-sm leading-none text-justify text-black-800 dark:text-black-100 mt-1">
-                <span className=" bg-HTpurple-900 text-xs mr-1 text-black-400">
-                  Accepted By:
-                </span>
-                {challenges.challenge.acceptedBy}
-              </p>
-            </div>
-            <div className="mt-5 px-6 bg-HTpurple-900">
-              <p className="bg-HTpurple-900 text-sm leading-none text-justify text-black-800 dark:text-black-100 mt-1">
-                <span className=" bg-HTpurple-900 text-xs mr-1 text-black-400">
-                  Points Bet:
-                </span>
-                {challenges.challenge.pointsBet}
-              </p>
-            </div>
-            <div className="bg-HTpurple-900 mt-5 px-6 flex items-center w-full">
-              <div className="bg-HTpurple-900">
-                <p className="text-xs text-black-400 bg-HTpurple-900">
-                  Started At:
-                </p>
-                <p className="text-sm bg-HTpurple-900 leading-none text-justify text-black-800 dark:text-black-100 mt-1">
-                  {challenges.challenge.startsAt}
+const ClosedChallengesSubMenu = ({ challenge }) => {
+  // console.log(challenge);
+  if (challenge)
+    return (
+      <>
+        <div className=" flex justify-around flex-wrap w-full gap-4 p-1 text-gray-250 ">
+          <div
+            id="card-design"
+            className="w-4/5 rounded-md bg-HTpurple-900  relative"
+          >
+            <div
+              id="cut-corner"
+              className="flex flex-col justify-around items-center pb-8 bg-HTpurple-900"
+            >
+              <div className="py-2 w-full justify-center items-center flex text-2xl">
+                <p>
+                  <span className="text-sm">Winner :</span>Name
                 </p>
               </div>
-              <div className=" bg-HTpurple-900 ml-14">
-                <p className="bg-HTpurple-900 text-xs text-black-400">
-                  Ended At:
-                </p>
-                <p className="bg-HTpurple-900 text-sm leading-none text-justify text-black-800 dark:text-black-100 mt-1">
-                  {challenges.challenge.startsAt}
-                </p>
+              <div className="flex w-full justify-around items-center">
+                <div id="active-challenge-card-left" className="w-1/2 p-2 h-10">
+                  <p className="text-2xl">
+                    <span className="text-xs">Raised By: </span>
+                    {challenge.raisedBy}
+                  </p>
+                </div>
+                <div
+                  id="active-challenge-card-right"
+                  className="w-1/2 p-2 text-right h-10  "
+                >
+                  <p className="text-2xl">
+                    <span className="text-xs">Accepted By: </span>
+                    {challenge.acceptedBy}
+                  </p>
+                </div>
               </div>
-            </div>
-            <div className="bg-HTpurple-900 mt-5 px-6 flex items-center w-full">
-              {challenges.challenge.tags.map((el) => {
+              <div className="flex justify-around items-center w-full">
+                {/* <div className="text-2xl">Name</div> */}
+                {/* circle div */}
+                <div
+                  id="pointsbet-circle-active-challenge"
+                  className="flex flex-col justify-center items-center rounded-full w-28 h-28"
+                >
+                  <p className="text-5xl">{challenge.pointsBet}</p>
+                  <p className="text-xs">coins</p>
+                </div>
+                {/* <div className="text-2xl">Name</div> */}
+              </div>
+              <div className="flex w-full justify-around items-center">
+                <div
+                  id="active-challenge-card-left-down"
+                  className="w-1/2 h-10 p-2 "
+                >
+                  <p className="text-2xl">
+                    <span className="text-xs">Accepted At: </span>
+                    {challenge.acceptedAt}
+                  </p>
+                </div>
+                <div
+                  id="active-challenge-card-right-down"
+                  className="w-1/2 h-10 p-2  text-right"
+                >
+                  <p className="text-2xl">
+                    <span className="text-xs">Ended At: </span>
+                    {challenge.endedAt}
+                  </p>
+                </div>
+              </div>
+              <div className="bg-HTpurple-900 mt-5 px-6 flex items-center w-full">
+                {/* {challenges.challenge.tags.map((el) => {
                 return (
                   <div class="mt-1 text-xs inline-flex items-center font-bold leading-sm uppercase px-3 py-1 rounded-full bg-HTpurple-900 text-gray-700 border">
                     {el}
                   </div>
                 );
-              })}
-            </div>
+              })} */}
+              </div>
 
-            <div className="bg-HTpurple-900 pt-6 flex justify-between relative items-center w-full">
-              <div
-                id="card-dashed-line-end"
-                className="bg-HTpurple-900 w-3 h-5   rounded-r-3xl"
-              />
-              <div
-                id="card-dashed-line"
-                className=" bg-HTpurple-900 w-full border-b-2 border-dashed border-gray-100 dark:border-gray-400"
-              />
-              <div
-                id="card-dashed-line-end"
-                className=" bg-HTpurple-900 w-3 h-5   rounded-l-3xl"
-              />
-            </div>
-            <div className="bg-HTpurple-900 mt-4 px-6 flex flex-col w-full justify-center items-center">
-              <img
-                src="/images/barcode.svg"
-                alt="barcode"
-                className="bg-HTpurple-900 h-10"
-              />
-              <div
-                id="requestbuttons"
-                className="bg-HTpurple-900 w-full mt-2 flex justify-around items-center"
-              ></div>
+              <div className="bg-HTpurple-900 pt-6 flex justify-between relative items-center w-full">
+                <div
+                  id="card-dashed-line-end"
+                  className="bg-HTpurple-900 w-3 h-5   rounded-r-3xl"
+                />
+                <div
+                  id="card-dashed-line"
+                  className=" bg-HTpurple-900 w-full border-b-2 border-dashed border-gray-100 dark:border-gray-400"
+                />
+                <div
+                  id="card-dashed-line-end"
+                  className=" bg-HTpurple-900 w-3 h-5   rounded-l-3xl"
+                />
+              </div>
+              <div className="bg-HTpurple-900 mt-4 px-6 flex flex-col w-full justify-center items-center">
+                <img
+                  src="/images/barcode.svg"
+                  alt="barcode"
+                  className="bg-HTpurple-900 h-10"
+                />
+                <div
+                  id="requestbuttons"
+                  className="bg-HTpurple-900 w-full mt-2 flex justify-around items-center"
+                ></div>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </>
-  );
+      </>
+    );
+  else {
+    return <div></div>;
+  }
 };
 
 export default ClosedChallengesSubMenu;

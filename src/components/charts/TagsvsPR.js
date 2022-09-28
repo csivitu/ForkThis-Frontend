@@ -4,6 +4,7 @@ import { useState } from "react";
 import { Chart as ChartJS } from "chart.js/auto";
 import PolarAreaGraphHandler from "../../controllers/PolarAreaGraphHandler";
 import { useEffect } from "react";
+import Loader from "../../utils/Loader";
 const Charttttttt = () => {
   const [chartData, setChartData] = useState();
   useEffect(() => {
@@ -102,12 +103,7 @@ const Charttttttt = () => {
   }
   return (
     <div class="flex justify-center items-center space-x-2 w-full  bg-HTpurple-900  rounded overflow-hidden shadow-lg">
-      <div
-        class="spinner-grow inline-block w-8 h-8 bg-current rounded-full opacity-0 text-blue-600"
-        role="status"
-      >
-        <span class="visually-hidden">Loading...</span>
-      </div>
+      <Loader />
     </div>
   );
 };

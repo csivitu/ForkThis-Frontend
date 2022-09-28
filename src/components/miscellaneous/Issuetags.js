@@ -1,8 +1,8 @@
 import React from "react";
 
-const Issuetags = ({tag}) => {
+const Issuetags = ({ tag }) => {
   return (
-    <div class="mt-1 text-xs inline-flex items-center font-bold leading-sm uppercase px-3 py-1 rounded-full bg-HTpurple-900 text-gray-700 border">
+    <div class="mt-1 mx-1  text-xs inline-flex items-center font-bold leading-sm uppercase px-3 py-1 rounded-full bg-HTpurple-900 text-gray-500 border">
       {tag}
     </div>
   );
