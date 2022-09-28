@@ -25,10 +25,10 @@ const Profileview = ({ profile }) => {
           </div>
         </div>
       </div>
-      <div className="flex flex-wrap items-center justify-around">
+      <div className="flex flex-wrap mt-6 items-center justify-around">
         <div
           id="card-shadow"
-          className=" h-full w-2/5 rounded overflow-hidden shadow-lg"
+          className=" h-full w-5/12 rounded overflow-hidden shadow-lg"
         >
           <div className="bg-white">
             <PRvsDifficulty />
@@ -38,10 +38,9 @@ const Profileview = ({ profile }) => {
           id="card-shadow"
           className=" w-1/2  rounded overflow-hidden shadow-lg"
         >
-          <div>
-            <div id="graph-border" className="px-6 py-4 bg-HTpurple-900">
-              <div className="font-bold text-2xl mb-3 ">Recents</div>
-              <Recents/>
+          <div id="graph-border">
+            <div className="w-full px-6 py-2 bg-HTpurple-900">
+              <Recents />
             </div>
           </div>
         </div>

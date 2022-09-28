@@ -45,10 +45,10 @@ const OpenChallengesSubMenu = ({ challenge }) => {
               </p>
             </div>
           </div>
-          <div className="bg-HTpurple-900 mt-5 px-6 flex items-center w-full">
+          <div className="bg-HTpurple-900 mt-5 px-1 flex flex-wrap items-center w-full">
             {challenge.tags.map((el) => {
               return (
-                <div class="mt-1 text-xs inline-flex items-center font-bold leading-sm uppercase px-3 mx-2 py-1 rounded-full bg-HTpurple-900 text-gray-700 border">
+                <div class="mt-1 text-xs  inline-flex items-center font-bold leading-sm uppercase px-3 mx-2 py-1 rounded-full bg-HTpurple-900 text-gray-700 border">
                   {el}
                 </div>
               );
@@ -79,7 +79,7 @@ const OpenChallengesSubMenu = ({ challenge }) => {
               id="requestbuttons"
               className="bg-HTpurple-900 w-full mt-7 flex justify-around items-center"
             >
-              <AcceptAlert id={challenge._id}/>
+              <AcceptAlert id={challenge._id} />
             </div>
           </div>
         </div>
