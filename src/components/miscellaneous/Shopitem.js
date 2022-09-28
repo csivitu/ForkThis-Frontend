@@ -3,10 +3,10 @@ import AddtoCart from "../miscellaneous/AddtoCart";
 const Shopitem = ({ id, name, description, countInStock, coins }) => {
   return (
     <>
-      <div className="py-6 w-1/3 text-gray-250">
+      <div className="py-6 w-5/12 flex justify-around items-center text-gray-250">
         <div
           id="shop-item-border"
-          className="flex max-w-md bg-HTpurple-900 shadow-lg rounded-lg overflow-hidden"
+          className="flex  bg-HTpurple-900 shadow-lg rounded-lg overflow-hidden"
         >
           <div className="w-1/3 bg-cover"></div>
           <div className="w-2/3 p-4 bg-HTpurple-900">
@@ -43,7 +43,12 @@ const Shopitem = ({ id, name, description, countInStock, coins }) => {
                 </svg>
                 <h3 className="bg-HTpurple-900">{coins}</h3>
               </div>
-              <AddtoCart name={name} id={id} coins={coins} countInStock={countInStock}/>
+              <AddtoCart
+                name={name}
+                id={id}
+                coins={coins}
+                countInStock={countInStock}
+              />
             </div>
           </div>
         </div>

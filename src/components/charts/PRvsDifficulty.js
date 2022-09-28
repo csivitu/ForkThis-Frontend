@@ -24,7 +24,7 @@ const Charttttttt = () => {
       labels: chartData.map((el) => el.difficulty),
       datasets: [
         {
-          label: "No. of PRs",
+          label: "",
           data: chartData.map((el) => el.noOfPRs),
           backgroundColor: [
             "rgb(253,226,126,0.8)",

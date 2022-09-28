@@ -128,7 +128,7 @@ const ShopNav = (props) => {
             </div>
             <div id="rank" className="w-1/5 p-3">
               <h1 className="text-2xl font-medium">Rank</h1>
-              <h3>name</h3>
+              <h3>{profile.rank}</h3>
             </div>
           </div>
           <div
