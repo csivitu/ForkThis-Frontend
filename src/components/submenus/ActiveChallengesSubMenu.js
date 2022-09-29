@@ -7,14 +7,16 @@ const ActiveChallengesSubMenu = ({ challenge }) => {
   const [duration, setDuration] = useState("");
 
   useEffect(() => {
-    const time = moment(challenge.endsAt).from(moment());
-    setDuration(time);
+    if (challenge) {
+      const time = moment(challenge.endsAt).from(moment());
+      setDuration(time);
+    }
   }, []);
   // console.log(challenge.endsAt + "asdasd");
   // console.log(challenge.startsAt);
 
   // console.log(minutes);
-  if (challenge)
+  if (challenge) {
     return (
       <>
         <div className=" flex justify-around flex-wrap w-full gap-4 p-1 text-gray-250 ">
@@ -115,6 +117,13 @@ const ActiveChallengesSubMenu = ({ challenge }) => {
         </div>
       </>
     );
+  } else {
+    return (
+      <div className="w-full text-center text-2xl mt-6">
+        Please accept a challenge from open challenges first.
+      </div>
+    );
+  }
 };
 
 export default ActiveChallengesSubMenu;

@@ -109,13 +109,6 @@ const Navbar = (props) => {
                   </div>
                 </Tabs.Content>
                 <Tabs.Content value="tab2">
-                  {/* {activeChallenges.map((activechallenge) => (
-                    <ActiveChallengesSubMenu
-                      key={activechallenge._id}
-                      challenge={activechallenge}
-                    />
-                  ))} */}
-                  {/* Map is above */}
                   <ActiveChallengesSubMenu challenge={activeChallenges} />
                 </Tabs.Content>
                 <Tabs.Content value="tab3">
@@ -126,8 +119,6 @@ const Navbar = (props) => {
                         challenge={closedchallenge}
                       />
                     ))}
-                    {/* Map is above */}
-                    {/* <ClosedChallengesSubMenu /> */}
                   </div>
                 </Tabs.Content>
                 <Tabs.Content value="tab4">

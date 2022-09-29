@@ -110,8 +110,8 @@ const ClosedChallengesSubMenu = ({ challenge }) => {
     );
   else {
     return (
-      <div>
-        <Loader />
+      <div className="w-full text-center text-2xl mt-6">
+        Expired challenges appear here
       </div>
     );
   }
