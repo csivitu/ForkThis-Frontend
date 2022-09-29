@@ -1,6 +1,8 @@
 import React from "react";
 
 const Purchaseitem = ({ name, purchasedAt, quantity, coins }) => {
+  const purchasedAtTime = Date.parse(purchasedAt);
+  console.log(purchasedAtTime);
   return (
     <>
       <div className="py-6 w-5/12 text-gray-250">

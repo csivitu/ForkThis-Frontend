@@ -28,7 +28,7 @@ const Shopitem = ({ id, name, description, countInStock, coins, reloader }) => {
                 )}
               </p>
 
-              <div className="flex item-center justify-around my-3 bg-HTpurple-900">
+              <div className="flex item-center justify-between mr-20 my-3 bg-HTpurple-900">
                 <div className="flex bg-HTpurple-900" id="profile-icon">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"

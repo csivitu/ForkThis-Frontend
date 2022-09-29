@@ -12,18 +12,22 @@ const Recents = (recents) => {
       <>
         <div
           id="graph-border-bottom"
-          className="font-bold w-full py-2 text-2xl bg-HTpurple-900 "
+          className="font-bold w-full text-center py-2 text-2xl bg-HTpurple-900 "
         >
           Recents
         </div>
-        <div className="py-2">
-          {userRecents.map((el) => {
-            return (
-              <a href={el.URL}>
-                <div>{el.data}</div>
-              </a>
-            );
-          })}
+        <div className="py-2 flex flex-col">
+          {userRecents ? (
+            userRecents.map((el) => {
+              return (
+                <a href={el.URL}>
+                  <div>{el.data}</div>
+                </a>
+              );
+            })
+          ) : (
+            <Loader />
+          )}
         </div>
       </>
     );

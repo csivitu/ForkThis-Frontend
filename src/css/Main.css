@@ -119,8 +119,16 @@ body {
   border-bottom: 0.15rem solid #9092ff;
   border-left: 0.15rem solid #9092ff;
 }
+
 #pointsbet-circle-active-challenge {
   border: 0.3rem solid #9092ff;
+}
+
+#user-recents-left {
+  border-right: 0.15rem solid #9092ff;
+}
+#user-recents-right {
+  border-left: 0.15rem solid #9092ff;
 }
 
 #card-shadow {

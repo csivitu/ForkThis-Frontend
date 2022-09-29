@@ -4,18 +4,16 @@ import moment from "moment";
 import UserRecents from "../miscellaneous/UserRecents";
 const ActiveChallengesSubMenu = ({ challenge }) => {
   // console.log(challenge.acceptedUserActivity);
+  // const hehehehehe = "2022-09-29T13:30:00Z";
   const [duration, setDuration] = useState("");
-  const [minutes, setMinutes] = useState("");
+
   useEffect(() => {
-    const time = moment(challenge.endsAt).fromNow();
-    if (time === "in an hour") {
-      const mili = new Date(challenge.endsAt) - Date.now();
-      setMinutes(Math.floor(mili / (60 * 1000)));
-    }
+    const time = moment(challenge.endsAt).from(moment());
     setDuration(time);
   }, []);
+  // console.log(challenge.endsAt + "asdasd");
+  // console.log(challenge.startsAt);
 
-  // console.log(minutes);
   return (
     <>
       <div className=" flex justify-around flex-wrap w-full gap-4 p-1 text-gray-250 ">
@@ -75,8 +73,17 @@ const ActiveChallengesSubMenu = ({ challenge }) => {
                 );
               })} */}
             </div>
-            <UserRecents recents={challenge.acceptedUserActivity} />
-            <UserRecents recents={challenge.raisedUserActivity} />
+            <div
+              id="user-recents"
+              className="flex w-full justify-around items-center"
+            >
+              <div id="user-recents-left" className="w-full ">
+                <UserRecents recents={challenge.acceptedUserActivity} />
+              </div>
+              <div id="user-recents-right" className="w-full">
+                <UserRecents recents={challenge.raisedUserActivity} />
+              </div>
+            </div>
             <div className="bg-HTpurple-900 pt-6 flex justify-between relative items-center w-full">
               <div
                 id="card-dashed-line-end"

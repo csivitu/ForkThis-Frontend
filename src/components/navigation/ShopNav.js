@@ -131,18 +131,20 @@ const ShopNav = (props) => {
             </div>
 
             <div id="name" className="flex flex-col align-middle w-2/5 p-3 ">
-              <h1 className="text-2xl font-medium">{profile.name}</h1>
+              <h1 className="text-2xl text-white font-medium">
+                {profile.name}
+              </h1>
               <h3>@{profile.username}</h3>
             </div>
             <div id="name" className="flex flex-col align-middle w-1/5 p-3 ">
-              <h1 className="text-2xl font-medium">Score</h1>
+              <h1 className="text-2xl text-white font-medium">Score</h1>
               <h3>{profile.score}</h3>
             </div>
             <div
               id="profile-data"
               className="w-1/5 p-3 flex flex-col justify-around"
             >
-              <h1 className="text-2xl font-medium pl-1">Coins</h1>
+              <h1 className="text-2xl font-medium pl-1 text-white">Coins</h1>
               <div className="flex " id="profile-icon">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"

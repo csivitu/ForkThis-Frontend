@@ -26,10 +26,10 @@ const LeaderboardsSubMenu = ({ user, staticrank }) => {
                   </div>
                 </td>
                 <td className="flex pt-6 h-full justify-around items-center bg-HTpurple-900">
-                  <div className="bg-HTpurple-900 text-center ">
+                  <div className="bg-HTpurple-900 w-full text-center ">
                     <p className="bg-HTpurple-900">{user.noOfIssuesSolved}</p>
                   </div>
-                  <div className="bg-HTpurple-900 text-center">
+                  <div className="bg-HTpurple-900  w-full text-center">
                     <p className="bg-HTpurple-900">{user.score}</p>
                   </div>
                 </td>
