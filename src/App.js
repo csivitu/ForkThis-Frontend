@@ -11,6 +11,7 @@ import {
 import Homescreen from "./screens/Homescreen";
 import Loginscreen from "./screens/Loginscreen";
 import AuthTokenHandler from "./controllers/AuthTokenHandler";
+import AuthTokenHandler2 from "./controllers/AuthTokenHandler copy";
 import { useCookies,  } from "react-cookie"
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
           token?<Route path="/" element={ <Homescreen />}/>:<Route path="/" element={ <Loginscreen />}/>
         }
         <Route path="/oauth" element={<AuthTokenHandler/>}/>
+        <Route path="/github/username" element={<AuthTokenHandler2/>}/>
       </Routes>
     </BrowserRouter>
     </>
