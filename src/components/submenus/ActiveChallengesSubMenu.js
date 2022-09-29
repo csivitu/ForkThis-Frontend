@@ -7,16 +7,18 @@ const ActiveChallengesSubMenu = ({ challenge }) => {
   const [duration, setDuration] = useState("");
   const [minutes, setMinutes] = useState("");
   useEffect(() => {
-    const time = moment(challenge.endsAt).fromNow();
-    if (time === "in an hour") {
-      const mili = new Date(challenge.endsAt) - Date.now();
-      setMinutes(Math.floor(mili / (60 * 1000)));
+    if(challenge){
+      const time = moment(challenge.endsAt).fromNow();
+      if (time === "in an hour") {
+        const mili = new Date(challenge.endsAt) - Date.now();
+        setMinutes(Math.floor(mili / (60 * 1000)));
+      }
+      setDuration(time);
     }
-    setDuration(time);
   }, []);
 
   // console.log(minutes);
-  return (
+  if(challenge) return (
     <>
       <div className=" flex justify-around flex-wrap w-full gap-4 p-1 text-gray-250 ">
         <div
