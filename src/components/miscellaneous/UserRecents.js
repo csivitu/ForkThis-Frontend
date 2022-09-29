@@ -16,7 +16,7 @@ const Recents = (recents) => {
         >
           Recents
         </div>
-        <div className="py-2 flex flex-col">
+        <div id="graph-border-bottom" className="py-2 flex flex-col">
           {userRecents ? (
             userRecents.map((el) => {
               return (

@@ -81,8 +81,8 @@ const Navbar = (props) => {
             <h3>{profile.score}</h3>
           </div>
           <div id="rank" className="w-1/5 p-3">
-            <h1 className="text-2xl text-white font-medium">Issues Solved</h1>
-            <h3>{profile.noOfIssuesSolved}</h3>
+            <h1 className="text-2xl text-white font-medium">Rank</h1>
+            <h3>{profile.rank}</h3>
           </div>
         </div>
         <div id="Nav-items" className="flex ">
@@ -109,13 +109,6 @@ const Navbar = (props) => {
                   </div>
                 </Tabs.Content>
                 <Tabs.Content value="tab2">
-                  {/* {activeChallenges.map((activechallenge) => (
-                    <ActiveChallengesSubMenu
-                      key={activechallenge._id}
-                      challenge={activechallenge}
-                    />
-                  ))} */}
-                  {/* Map is above */}
                   <ActiveChallengesSubMenu challenge={activeChallenges} />
                 </Tabs.Content>
                 <Tabs.Content value="tab3">
@@ -126,8 +119,6 @@ const Navbar = (props) => {
                         challenge={closedchallenge}
                       />
                     ))}
-                    {/* Map is above */}
-                    {/* <ClosedChallengesSubMenu /> */}
                   </div>
                 </Tabs.Content>
                 <Tabs.Content value="tab4">

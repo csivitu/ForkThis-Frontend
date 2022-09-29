@@ -102,14 +102,14 @@ const ShopNav = (props) => {
     };
     const getPurchases = async () => {
       const res = await purchaseHandler();
-      console.log("here")
+      console.log("here");
       setPurchases(res);
     };
     getPurchases();
     fetchProfile();
     getItems();
   }, [reload]);
-  console.log(purchases)
+  // console.log(purchases);
   if (props.navbar == "Shop")
     return (
       <>
