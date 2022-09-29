@@ -89,8 +89,8 @@ const Input = styled("input", {
 const ShopNav = (props) => {
   const [profile, setProfile] = useState([]);
   const [items, setItems] = useState([]);
-  const [purchases, setPurchases] = useState([])
-  const [reload, setReload] = useState("")
+  const [purchases, setPurchases] = useState([]);
+  const [reload, setReload] = useState("");
   useEffect(() => {
     const fetchProfile = async () => {
       const res = await profileHandler();
@@ -196,7 +196,7 @@ const ShopNav = (props) => {
                       </div>
                     </Tabs.Content>
                     <Tabs.Content value="tab2">
-                    <div className="flex flex-wrap justify-around items-center gap-y-3 gap-x-1">
+                      <div className="flex flex-wrap justify-around items-center gap-y-3 gap-x-1">
                         {purchases.map((el) => {
                           return (
                             <Purchaseitem
@@ -205,7 +205,6 @@ const ShopNav = (props) => {
                               key={el.id}
                               quantity={el.count}
                               coins={el.item.coins}
-                        
                             />
                           );
                         })}

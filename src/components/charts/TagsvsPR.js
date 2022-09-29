@@ -48,11 +48,13 @@ const Charttttttt = () => {
     });
   }
   if (chartData) {
+    function capitalizeFirstLetter(string) {
+      return string.charAt(0).toUpperCase() + string.slice(1);
+    }
     const userData = {
-      labels: chartData.map((el) => el.tag),
+      labels: chartData.map((el) => capitalizeFirstLetter(el.tag)),
       datasets: [
         {
-          label: "Users Gained",
           data: chartData.map((el) => el.noOfPRs),
           backgroundColor: [
             "rgb(253,226,126,0.8)",

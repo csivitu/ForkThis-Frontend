@@ -1,5 +1,5 @@
 import React from "react";
-
+import Loader from "../../utils/Loader";
 const ClosedChallengesSubMenu = ({ challenge }) => {
   // console.log(challenge);
   if (challenge)
@@ -109,7 +109,11 @@ const ClosedChallengesSubMenu = ({ challenge }) => {
       </>
     );
   else {
-    return <div></div>;
+    return (
+      <div>
+        <Loader />
+      </div>
+    );
   }
 };
 
