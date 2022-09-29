@@ -1,7 +1,17 @@
 import axios from "axios";
 
 const postHandler = async (URL, formData) => {
-  const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzMjk5OTgzZDY4YTJhODIwNWZiMjI4YyIsImlhdCI6MTY2NDM0MzgyNCwiZXhwIjoxNjY0NDczNDI0fQ.8AXYwevp4TmzNAa2i8T1Bt1UHfe2IcWLr5ruhX-0MEo"
+  function getAllCookies(){
+    var pairs = document.cookie.split(";");
+    var cookies = {};
+    for (var i=0; i<pairs.length; i++){
+      var pair = pairs[i].split("=");
+      cookies[(pair[0]+'').trim()] = unescape(pair.slice(1).join('='));
+    }
+    return cookies;
+  }
+  const allCookies = getAllCookies()
+  const token = allCookies.token
   const config={
     headers: {
       "Content-Type": "application/json",
