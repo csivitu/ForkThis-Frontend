@@ -7,14 +7,14 @@ const CreateChallenge = () => {
   const [startsAt, setstartsAt] = useState([]);
   const [endsAt, setendsAt] = useState([]);
   const [tags, settags] = useState([]);
-  const [pointsBet, setpointsBet] = useState([]);
+  const [coinsBet, setcoinsBet] = useState([]);
   const [difficulty, setDifficulty] = useState("");
   const submitHandler = async () => {
     const formdata = {
       startsAt,
       endsAt,
       tags,
-      pointsBet,
+      coinsBet,
       difficulty,
     };
     await createChallengeHandler(formdata);
@@ -268,15 +268,15 @@ const CreateChallenge = () => {
                       className="bg-HTpurple-900 block mb-2 text-sm font-bold text-gray-250"
                       htmlFor="password"
                     >
-                      Points Bet :
+                      Coins Bet :
                     </label>
                     <input
                       className="bg-HTpurple-900 w-full px-3 py-2 mb-3 text-sm leading-tight text-gray-250 border  shadow appearance-none focus:outline-none focus:shadow-outline"
                       id="password"
                       type="number"
-                      value={pointsBet}
+                      value={coinsBet}
                       onChange={(el) => {
-                        setpointsBet(el.target.value);
+                        setcoinsBet(el.target.value);
                       }}
                     />
                   </div>

@@ -50,7 +50,7 @@ const ActiveChallengesSubMenu = ({ challenge }) => {
                   id="pointsbet-circle-active-challenge"
                   className="flex flex-col justify-center items-center rounded-full w-28 h-28"
                 >
-                  <p className="text-5xl">{challenge.pointsBet}</p>
+                  <p className="text-5xl">{challenge.coinsBet}</p>
                   <p className="text-xs">coins</p>
                 </div>
                 <div className="text-2xl w-1/3 text-center">

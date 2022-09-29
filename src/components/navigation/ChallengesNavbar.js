@@ -81,8 +81,8 @@ const Navbar = (props) => {
             <h3>{profile.score}</h3>
           </div>
           <div id="rank" className="w-1/5 p-3">
-            <h1 className="text-2xl text-white font-medium">Issues Solved</h1>
-            <h3>{profile.noOfIssuesSolved}</h3>
+            <h1 className="text-2xl text-white font-medium">Rank</h1>
+            <h3>{profile.rank}</h3>
           </div>
         </div>
         <div id="Nav-items" className="flex ">
