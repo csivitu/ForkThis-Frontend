@@ -19,7 +19,19 @@ body {
 #sidemenu {
   border-right: 0.15rem solid #9092ff;
 }
+/* #sidemenu-svgs :hover {
+  stroke: yellow;
+} */
+#menu-icon:hover {
+  cursor: pointer;
+  color: #9092ff;
 
+  /* background-color: #a000c8; */
+  /* background: linear-gradient(135deg, transparent 1.6rem, #ffffffff 0); */
+}
+#menu-icon:hover #sidemenu-svgs {
+  stroke: #9092ff;
+}
 #scroll-nav-bar {
   /* overflow-y: auto; */
   /* height: 100v; */
@@ -34,12 +46,6 @@ body {
 
 #menu-icon {
   cursor: pointer;
-  /* background-color: #a000c8; */
-  /* background: linear-gradient(135deg, transparent 1.6rem, #ffffffff 0); */
-}
-#menu-icon:hover {
-  cursor: pointer;
-  color: gray;
   /* background-color: #a000c8; */
   /* background: linear-gradient(135deg, transparent 1.6rem, #ffffffff 0); */
 }

@@ -36,7 +36,12 @@ const SideMenu = (props) => {
             id="menu-icons-container"
             className="h-full flex flex-col justify-around "
           >
-            <img className="h-max" src="images/logo.svg" />
+            <img
+              id="menu-icon"
+              onClick={changeNavbarProfile}
+              className="h-max"
+              src="images/logo.svg"
+            />
             <div
               id="menu-icon"
               className=" h-1/5 flex flex-col justify-center items-center "
@@ -47,6 +52,7 @@ const SideMenu = (props) => {
                 className="text-center flex flex-col items-center justify-around"
               >
                 <svg
+                  id="sidemenu-svgs"
                   className="bg-HTpurple-900 w-6 h-6"
                   viewBox="0 0 24 24"
                   fill="none"
@@ -72,6 +78,7 @@ const SideMenu = (props) => {
                 className="text-center flex flex-col items-center justify-around"
               >
                 <svg
+                  id="sidemenu-svgs"
                   className="bg-HTpurple-900 w-7 h-7"
                   fill="none"
                   viewBox="0 0 24 24"
@@ -98,6 +105,7 @@ const SideMenu = (props) => {
                 className="text-center flex flex-col items-center justify-around"
               >
                 <svg
+                  id="sidemenu-svgs"
                   className="bg-HTpurple-900 w-7 h-7"
                   fill="none"
                   viewBox="0 0 24 24"
@@ -124,6 +132,7 @@ const SideMenu = (props) => {
                 className="text-center flex flex-col items-center justify-around "
               >
                 <svg
+                  id="sidemenu-svgs"
                   className="bg-HTpurple-900 w-7 h-7"
                   width="24"
                   height="24"
@@ -154,6 +163,7 @@ const SideMenu = (props) => {
                 className="text-center flex flex-col items-center justify-around"
               >
                 <svg
+                  id="sidemenu-svgs"
                   className="bg-HTpurple-900 w-7 h-7"
                   fill="none"
                   stroke="#D9D9D9"

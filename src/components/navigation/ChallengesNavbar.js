@@ -109,14 +109,14 @@ const Navbar = (props) => {
                   </div>
                 </Tabs.Content>
                 <Tabs.Content value="tab2">
-                  {activeChallenges.map((activechallenge) => (
+                  {/* {activeChallenges.map((activechallenge) => (
                     <ActiveChallengesSubMenu
                       key={activechallenge._id}
                       challenge={activechallenge}
                     />
-                  ))}
+                  ))} */}
                   {/* Map is above */}
-                  {/* <ActiveChallengesSubMenu /> */}
+                  <ActiveChallengesSubMenu challenge={activeChallenges} />
                 </Tabs.Content>
                 <Tabs.Content value="tab3">
                   <div className="flex flex-wrap justify-around items-center gap-y-3 gap-x-3">

@@ -64,11 +64,9 @@ const Charttttttt = () => {
               y: {
                 beginAtZero: true,
                 min: 0,
+
                 max: maxPRS > 10 ? maxPRS + 10 : 10,
-                ticks: {
-                  color: "#D9D9d9",
-                  stepSize: 2,
-                },
+                ticks: { padding: 10, color: "#D9D9d9", stepSize: 2 },
                 grid: {
                   color: "#271933",
                 },
@@ -84,7 +82,7 @@ const Charttttttt = () => {
             },
             plugins: {
               legend: {
-                display: true,
+                display: false,
                 labels: {
                   color: "white",
                 },

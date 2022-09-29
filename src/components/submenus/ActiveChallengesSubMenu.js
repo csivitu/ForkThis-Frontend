@@ -1,9 +1,9 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import moment from "moment";
-
+import UserRecents from "../miscellaneous/UserRecents";
 const ActiveChallengesSubMenu = ({ challenge }) => {
-  console.log(challenge);
+  // console.log(challenge.acceptedUserActivity);
   const [duration, setDuration] = useState("");
   const [minutes, setMinutes] = useState("");
   useEffect(() => {
@@ -14,7 +14,8 @@ const ActiveChallengesSubMenu = ({ challenge }) => {
     }
     setDuration(time);
   }, []);
-  console.log(minutes);
+
+  // console.log(minutes);
   return (
     <>
       <div className=" flex justify-around flex-wrap w-full gap-4 p-1 text-gray-250 ">
@@ -74,7 +75,8 @@ const ActiveChallengesSubMenu = ({ challenge }) => {
                 );
               })} */}
             </div>
-
+            <UserRecents recents={challenge.acceptedUserActivity} />
+            <UserRecents recents={challenge.raisedUserActivity} />
             <div className="bg-HTpurple-900 pt-6 flex justify-between relative items-center w-full">
               <div
                 id="card-dashed-line-end"
