@@ -1,8 +1,7 @@
 import React from "react";
 
 import { useState, useEffect } from "react";
-import projectsHandler from "../../controllers/projectsHandler";
-import * as SeparatorPrimitive from "@radix-ui/react-separator";
+
 import Issues from "../miscellaneous/Issues";
 import styled from "styled-components";
 import { mauve } from "@radix-ui/colors";

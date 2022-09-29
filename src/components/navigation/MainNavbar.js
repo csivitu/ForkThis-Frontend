@@ -9,7 +9,6 @@ import LeaderboardsSubMenu from "../submenus/LeaderboardsSubMenu";
 
 import profileHandler from "../../controllers/profileHandler.js";
 import leaderboardsHandler from "../../controllers/leaderboardHandler.js";
-import projectsHandler from "../../controllers/projectsHandler.js";
 
 import { useState } from "react";
 import { useEffect } from "react";
