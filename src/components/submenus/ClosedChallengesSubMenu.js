@@ -10,9 +10,9 @@ const ClosedChallengesSubMenu = ({ challenge, username }) => {
     const finalstarteddate = starteddate.toLocaleDateString();
     const winner = (challenge) => {
       if (challenge.acceptedUserScore > challenge.raisedUserScore) {
-        return `${challenge.acceptedBy.username} has won the challenge`;
+        return `@${challenge.acceptedBy.username} has won the challenge`;
       } else if (challenge.acceptedUserScore < challenge.raisedUserScore) {
-        return `${challenge.raisedBy.username} has won the challenge`;
+        return `@${challenge.raisedBy.username} has won the challenge`;
       } else {
         return `There is a tie`;
       }
@@ -83,18 +83,18 @@ const ClosedChallengesSubMenu = ({ challenge, username }) => {
                   id="active-challenge-card-left-down"
                   className="w-1/2 h-12 p-2 "
                 >
-                  <p className="text-2xl ">
+                  <p className="text-md ">
                     <span className="text-xs">Started At: </span>
-                    {moment(challenge.startsAt).format('MMMM Do h:mm:ss a')}
+                    {moment(challenge.startsAt).format("MMMM Do h:mm:ss a")}
                   </p>
                 </div>
                 <div
                   id="active-challenge-card-right-down"
                   className="w-1/2 h-12 p-2  text-right"
                 >
-                  <p className="text-2xl">
+                  <p className="text-md">
                     <span className="text-xs">Ended At: </span>
-                    {moment(challenge.endsAt).format('MMMM Do h:mm:ss a')}
+                    {moment(challenge.endsAt).format("MMMM Do h:mm:ss a")}
                   </p>
                 </div>
               </div>

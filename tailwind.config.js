@@ -9,6 +9,7 @@ module.exports = {
       backgroundImage: {},
       height: {
         "1/10": "10%",
+
         "9/10": "90%",
       },
       padding: {
@@ -25,6 +26,9 @@ module.exports = {
         },
         HTpurple: {
           900: "#170F1E",
+        },
+        ghwhite: {
+          100: "#FEFEFE",
         },
       },
       minWidth: {

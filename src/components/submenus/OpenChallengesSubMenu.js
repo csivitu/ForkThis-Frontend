@@ -3,8 +3,8 @@ import { ToastContainer } from "react-toastify";
 import moment from "moment";
 import acceptChallengeHandler from "../../controllers/acceptChallengeHandler";
 import AcceptAlert from "../miscellaneous/AcceptAlert";
-
-const OpenChallengesSubMenu = ({ challenge }) => {
+import DeleteAlert from "../miscellaneous/DeleteAlert";
+const OpenChallengesSubMenu = ({ challenge, profile }) => {
   const endsdate = new Date(challenge.endsAt);
   const finalendsdate = endsdate.toLocaleDateString();
   const starteddate = new Date(challenge.startsAt);
@@ -37,8 +37,9 @@ const OpenChallengesSubMenu = ({ challenge }) => {
                 <span className=" bg-HTpurple-900 text-xs mr-1 text-black-400">
                   Difficulty:
                 </span>
-                {challenge.difficulty[0].toUpperCase()+challenge.difficulty.slice(1,challenge.difficulty.length)}
-              </p>  
+                {challenge.difficulty[0].toUpperCase() +
+                  challenge.difficulty.slice(1, challenge.difficulty.length)}
+              </p>
             </div>
             <div className="bg-HTpurple-900 mt-5  flex flex-col items-center w-full">
               <div className="bg-HTpurple-900 mt-5 px-6 flex justify-around items-center w-full">
@@ -47,7 +48,7 @@ const OpenChallengesSubMenu = ({ challenge }) => {
                     Starts At:
                   </p>
                   <p className=" bg-HTpurple-900 leading-none text-justify text-black-800 dark:text-black-100 mt-1">
-                    {moment(challenge.startsAt).format('MMMM Do h:mm:ss a')}
+                    {moment(challenge.startsAt).format("MMMM Do h:mm:ss a")}
                   </p>
                 </div>
                 <div className=" bg-HTpurple-900 ml-14">
@@ -55,7 +56,7 @@ const OpenChallengesSubMenu = ({ challenge }) => {
                     Ends At:
                   </p>
                   <p className="bg-HTpurple-900  leading-none text-justify text-black-800 dark:text-black-100 mt-1">
-                  {moment(challenge.endsAt).format('MMMM Do h:mm:ss a')}
+                    {moment(challenge.endsAt).format("MMMM Do h:mm:ss a")}
                   </p>
                 </div>
               </div>
@@ -93,7 +94,11 @@ const OpenChallengesSubMenu = ({ challenge }) => {
                   id="requestbuttons"
                   className="bg-HTpurple-900 w-full mt-7 flex justify-around items-center"
                 >
-                  <AcceptAlert id={challenge._id} />
+                  {challenge.raisedBy.username == profile.username ? (
+                    <AcceptAlert id={challenge._id} />
+                  ) : (
+                    <DeleteAlert id={challenge.id} />
+                  )}
                 </div>
               </div>
             </div>

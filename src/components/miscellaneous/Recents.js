@@ -27,7 +27,7 @@ const Recents = () => {
             // console.log(el.data);
             return (
               <a href={el.URL}>
-                <div>{el.data}</div>
+                <div className="hover:text-HTpink-900">{el.data}</div>
               </a>
             );
           })}

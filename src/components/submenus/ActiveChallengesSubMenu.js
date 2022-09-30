@@ -2,6 +2,8 @@ import React from "react";
 import { useState, useEffect } from "react";
 import moment from "moment";
 import UserRecents from "../miscellaneous/UserRecents";
+import Surrender from "../miscellaneous/Surrender";
+import { ToastContainer } from "react-toastify";
 const ActiveChallengesSubMenu = ({ challenge }) => {
   const [duration, setDuration] = useState("");
   const [started, setStarted] = useState(true);
@@ -24,6 +26,7 @@ const ActiveChallengesSubMenu = ({ challenge }) => {
   if (challenge) {
     return (
       <>
+        <ToastContainer />
         <div className=" flex justify-around flex-wrap w-full gap-4 p-1 text-gray-250 ">
           <div
             id="card-design"
@@ -50,7 +53,7 @@ const ActiveChallengesSubMenu = ({ challenge }) => {
               </div>
               <div className="flex justify-around items-center w-full">
                 <div className="text-2xl w-1/3 text-center">
-                  {challenge.raisedBy.username}
+                  @{challenge.raisedBy.username}
                 </div>
                 {/* circle div */}
                 <div
@@ -61,7 +64,7 @@ const ActiveChallengesSubMenu = ({ challenge }) => {
                   <p className="text-xs">coins</p>
                 </div>
                 <div className="text-2xl w-1/3 text-center">
-                  {challenge.acceptedBy.username}
+                  @{challenge.acceptedBy.username}
                 </div>
               </div>
               <div className="flex w-full justify-around items-center">
@@ -88,13 +91,31 @@ const ActiveChallengesSubMenu = ({ challenge }) => {
                 className="flex w-full justify-around items-center"
               >
                 <div id="user-recents-left" className="w-full  ">
+                  <div
+                    id="graph-border-bottom"
+                    className="font-bold w-full text-center py-2 text-xl bg-HTpurple-900 "
+                  >
+                    {challenge.raisedBy.name}'s Activity
+                  </div>
                   <UserRecents recents={challenge.raisedUserActivity} />
                 </div>
                 <div id="user-recents-right" className="w-full ">
+                  <div
+                    id="graph-border-bottom"
+                    className="font-bold w-full text-center py-2 text-xl bg-HTpurple-900 "
+                  >
+                    {challenge.acceptedBy.name}'s Activity
+                  </div>
                   <UserRecents recents={challenge.acceptedUserActivity} />
                 </div>
               </div>
-              <div className="bg-HTpurple-900 pt-6 flex justify-between relative items-center w-full">
+              <div
+                id="surrender-btn"
+                className="flex justify-around items-center w-full mt-3"
+              >
+                <Surrender id={challenge._id} />
+              </div>
+              <div className="bg-HTpurple-900 pt-1 flex justify-between relative items-center w-full">
                 <div
                   id="card-dashed-line-end"
                   className="bg-HTpurple-900 w-3 h-5   rounded-r-3xl"

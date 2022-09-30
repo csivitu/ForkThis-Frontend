@@ -7,6 +7,8 @@ import ShopNav from "../components/navigation/ShopNav";
 import FAQnav from "../components/navigation/FAQnav";
 import ProjectsNav from "../components/navigation/ProjectsNav";
 const Homescreen = () => {
+  const stringhehe = `${process.env.SOMEVAR}`;
+  console.log(stringhehe);
   const [navbar, setNavbar] = useState(["Profile"]);
   return (
     <>

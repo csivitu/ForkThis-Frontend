@@ -127,10 +127,12 @@ body {
 #user-recents-left {
   border-right: 0.15rem solid #9092ff;
   border-top: 0.15rem solid #9092ff;
+  border-bottom: 0.15rem solid #9092ff;
 }
 #user-recents-right {
   border-left: 0.15rem solid #9092ff;
   border-top: 0.15rem solid #9092ff;
+  border-bottom: 0.15rem solid #9092ff;
 }
 
 #card-shadow {
@@ -193,4 +195,8 @@ body {
 }
 #startsAt-createchallenge {
   color-scheme: dark;
+}
+
+#github-logo {
+  fill: #fefefe;
 }

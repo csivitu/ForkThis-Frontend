@@ -10,18 +10,12 @@ const Recents = ({ recents }) => {
   if (recents)
     return (
       <>
-        <div
-          id="graph-border-bottom"
-          className="font-bold w-full text-center py-2 text-2xl bg-HTpurple-900 "
-        >
-          Recents
-        </div>
-        <div className="py-2 flex flex-col">
+        <div className="py-2 pl-2 flex flex-col">
           {recents ? (
             recents.map((el) => {
               return (
                 <a href={el.URL}>
-                  <div>{el.data}</div>
+                  <div className="hover:text-HTpink-900">{el.data}</div>
                 </a>
               );
             })

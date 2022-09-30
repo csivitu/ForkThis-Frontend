@@ -49,7 +49,7 @@ const ProjectsSubMenu = ({ project }) => {
               contributors.map((el) => {
                 return (
                   <div className="flex justify-around items-center">
-                    <div id="contributor-icons" className="w-1/4">
+                    <div id="contributor-icons" className="w-1/6">
                       <img
                         className="p-1 rounded-full"
                         src={el.avatar_url}
@@ -57,7 +57,7 @@ const ProjectsSubMenu = ({ project }) => {
                       />
                     </div>
                     <div className="flex items-center justify-start pl-2 w-3/4">
-                      <a className="text-xs" href={el.html_url}>
+                      <a className="text-sm" href={el.html_url}>
                         {el.login}
                       </a>
                     </div>
