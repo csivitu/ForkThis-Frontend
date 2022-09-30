@@ -15,9 +15,12 @@ const AuthTokenHandler2 = () => {
   const [user, setuser] = useState();
   useEffect(() => {
     const func = async () => {
-      const res = await postHandler("http://127.0.0.1:8000/users/gitUsername", {
-        githubUsername: cookie.githubUsername,
-      });
+      const res = await postHandler(
+        `${process.env.REACT_APP_DATABASE}/users/gitUsername`,
+        {
+          githubUsername: cookie.githubUsername,
+        }
+      );
       setuser(res);
     };
     func();

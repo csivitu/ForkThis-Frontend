@@ -11,9 +11,9 @@ const Recents = ({ recents }) => {
       <>
         <div className="py-2 pl-2 flex flex-col">
           {recents ? (
-            recents.map((el) => {
+            recents.map((el, index) => {
               return (
-                <a href={el.URL}>
+                <a key={index} href={el.URL}>
                   <div className="hover:text-HTpink-900">{el.data}</div>
                 </a>
               );

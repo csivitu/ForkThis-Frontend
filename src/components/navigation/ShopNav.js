@@ -182,13 +182,13 @@ const ShopNav = (props) => {
                   <div className="my-3">
                     <Tabs.Content value="tab1">
                       <div className="flex flex-wrap justify-around items-center gap-y-3 gap-x-1">
-                        {items.map((el) => {
+                        {items.map((el, index) => {
                           return (
                             <Shopitem
                               id={el._id}
                               name={el.name}
                               description={el.description}
-                              key={el.id}
+                              key={index}
                               countInStock={el.countInStock}
                               coins={el.coins}
                               reloader={setReload}
@@ -199,12 +199,12 @@ const ShopNav = (props) => {
                     </Tabs.Content>
                     <Tabs.Content value="tab2">
                       <div className="flex flex-wrap justify-around items-center gap-y-3 gap-x-1">
-                        {purchases.map((el) => {
+                        {purchases.map((el, index) => {
                           return (
                             <Purchaseitem
                               name={el.item.name}
                               purchasedAt={el.purchasedAt}
-                              key={el.id}
+                              key={index}
                               quantity={el.count}
                               coins={el.totalCoins}
                             />
