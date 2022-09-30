@@ -1,0 +1,202 @@
+* {
+  padding: 0;
+  margin: 0;
+  /* overflow: hidden; */
+  scroll-behavior: smooth;
+  font-family: "JetBrains";
+}
+@font-face {
+  font-family: "JetBrains";
+  src: local("GoldmanBold"),
+    url("../../public/fonts/JetBrainsMono-VariableFont_wght.ttf")
+      format("truetype");
+}
+body {
+  background-image: url(/public/designpack/backgroundvector.svg);
+  background-color: #0b0a12;
+}
+
+#sidemenu {
+  border-right: 0.15rem solid #9092ff;
+}
+/* #sidemenu-svgs :hover {
+  stroke: yellow;
+} */
+#menu-icon:hover {
+  cursor: pointer;
+  color: #9092ff;
+
+  /* background-color: #a000c8; */
+  /* background: linear-gradient(135deg, transparent 1.6rem, #ffffffff 0); */
+}
+#menu-icon:hover #sidemenu-svgs {
+  stroke: #9092ff;
+}
+#scroll-nav-bar {
+  /* overflow-y: auto; */
+  /* height: 100v; */
+}
+
+#profile-tab {
+  background-color: #170f1e;
+  border-radius: 0.75rem;
+  border: 0.15rem solid #9092ff;
+  padding: 1rem;
+}
+
+#menu-icon {
+  cursor: pointer;
+  /* background-color: #a000c8; */
+  /* background: linear-gradient(135deg, transparent 1.6rem, #ffffffff 0); */
+}
+
+#menu-icon img {
+  /* background-color: #a000c8; */
+}
+#menu-icon img:hover {
+  fill: #170f1e;
+  /* background-color: #a000c8; */
+}
+#menu-icon p {
+  /* background-color: #a000c8; */
+}
+
+#leaderboards-submenu {
+  border: 2px solid #e5e1e6;
+}
+
+#leaderboards-table-border {
+  border: 0.15rem solid #9092ff;
+  box-shadow: 18px 16px 11px -8px rgba(0, 0, 0, 0.75);
+}
+#graph-border {
+  border: 0.15rem solid #9092ff;
+  box-shadow: 18px 16px 11px -8px rgba(0, 0, 0, 0.75);
+}
+#only-border {
+  border: 0.15rem solid #9092ff;
+}
+#graph-border-bottom {
+  border-bottom: 0.15rem solid #9092ff;
+}
+#shop-item-border {
+  border: 0.15rem solid #9092ff;
+  box-shadow: 18px 16px 11px -8px rgba(0, 0, 0, 0.75);
+}
+#contributors {
+  border-left: 0.15rem solid #9092ff;
+  padding-left: 1rem;
+}
+#issues-container {
+  box-shadow: 18px 16px 11px -8px rgba(0, 0, 0, 0.75);
+  border: 0.15rem solid #9092ff;
+}
+#issues {
+}
+#card-design {
+  border-radius: 2rem;
+  border: 0.15rem solid #9092ff;
+  box-shadow: 18px 16px 11px -8px rgba(0, 0, 0, 0.75);
+}
+#cut-corner {
+  background: linear-gradient(135deg, transparent 1.6rem, #170f1e 0);
+  border-radius: 2rem;
+}
+#active-challenge-card-left {
+  border-top: 0.15rem solid #9092ff;
+
+  border-right: 0.15rem solid #9092ff;
+}
+#active-challenge-card-right {
+  border-top: 0.15rem solid #9092ff;
+  border-left: 0.15rem solid #9092ff;
+}
+#active-challenge-card-left-down {
+  border-bottom: 0.15rem solid #9092ff;
+  border-right: 0.15rem solid #9092ff;
+}
+#active-challenge-card-right-down {
+  border-bottom: 0.15rem solid #9092ff;
+  border-left: 0.15rem solid #9092ff;
+}
+
+#pointsbet-circle-active-challenge {
+  border: 0.3rem solid #9092ff;
+}
+
+#user-recents-left {
+  border-right: 0.15rem solid #9092ff;
+  border-top: 0.15rem solid #9092ff;
+  border-bottom: 0.15rem solid #9092ff;
+}
+#user-recents-right {
+  border-left: 0.15rem solid #9092ff;
+  border-top: 0.15rem solid #9092ff;
+  border-bottom: 0.15rem solid #9092ff;
+}
+
+#card-shadow {
+  box-shadow: 18px 16px 11px -8px rgba(0, 0, 0, 0.75);
+}
+
+#card-dashed-line {
+  border: 1px dashed #9092ff;
+}
+
+#card-dashed-line-end {
+  background-color: #9092ff;
+}
+
+#issues-separator {
+  border: 0.15rem solid #9092ff;
+}
+
+#loginbtn {
+  -webkit-box-shadow: inset 10px 10px 32px -21px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: inset 10px 10px 32px -21px rgba(0, 0, 0, 0.75);
+  box-shadow: inset 10px 10px 32px -21px rgba(0, 0, 0, 0.75);
+  background-image: linear-gradient(
+    to right,
+    #d8d479,
+    #afda8c,
+    #87dda8,
+    #65dbc6,
+    #57d7e0,
+    #4dd2ec,
+    #51cbf5,
+    #63c3fb,
+    #61baff,
+    #69b0ff,
+    #79a4ff,
+    #8e97ff
+  );
+}
+
+#create-challenge-submit-btn {
+  background-image: linear-gradient(
+    to right,
+    #d8d479,
+    #afda8c,
+    #87dda8,
+    #65dbc6,
+    #57d7e0,
+    #4dd2ec,
+    #51cbf5,
+    #63c3fb,
+    #61baff,
+    #69b0ff,
+    #79a4ff,
+    #8e97ff
+  );
+}
+
+#endsAt-createchallenge {
+  color-scheme: dark;
+}
+#startsAt-createchallenge {
+  color-scheme: dark;
+}
+
+#github-logo {
+  fill: #fefefe;
+}
