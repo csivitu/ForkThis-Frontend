@@ -27,8 +27,8 @@ const issues = ({ title, description, tags, isClosed, url }) => {
           )}
         </div>
         <div id="issuetags">
-          {tags.map((el) => {
-            return <Issuetags tag={el} />;
+          {tags.map((el, index) => {
+            return <Issuetags key={index} tag={el} />;
           })}
         </div>
       </div>
