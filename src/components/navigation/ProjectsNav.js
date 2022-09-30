@@ -165,12 +165,12 @@ const ShopNav = (props) => {
                       })}
                     </div>
                   </Tabs.List>
-                  <div className="my-3">
-                    <div className="flex">
+                  <div className="my-3 w-full">
+                    <div className="flex w-full">
                       {projects.map((el, index) => {
                         return (
                           <Tabs.Content value={`tab${index + 1}`}>
-                            <div>
+                            <div className="w-full">
                               <ProjectsSubMenu project={el} />
                             </div>
                           </Tabs.Content>

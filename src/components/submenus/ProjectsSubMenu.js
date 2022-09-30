@@ -27,7 +27,6 @@ const ProjectsSubMenu = ({ project }) => {
         }
       );
 
-
       setContributors(res.data);
     };
     const getIssues = async () => {
@@ -42,17 +41,17 @@ const ProjectsSubMenu = ({ project }) => {
     <div className=" w-full h-full text-gray-250">
       <div id="header" className="w-full">
         <div className="flex w-full">
-          <div className="w-4/5">
-            <h1 className="text-5xl mb-5">{project.name}</h1>
-            <div id="description" className="mt-3 ">
+          <div className="w-full">
+            <h1 className="text-5xl w-full mb-5">{project.name}</h1>
+            <div id="description" className="mt-3 w-full">
               {project.description ? (
-                project.description
+                <p className="w-full">{project.description}</p>
               ) : (
-                <>
+                <p className="w-full">
                   Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse
                   doloremque, labore non, quaerat enim recusandae voluptates
                   molestias voluptatibus, et at debitis ad! Aperiam, accusamus.
-                </>
+                </p>
               )}
             </div>
           </div>
@@ -88,11 +87,12 @@ const ProjectsSubMenu = ({ project }) => {
           <div>
             <h1 className="text-2xl mb-2 ">Issues</h1>
             <div>
-              {issues.map((el) => {
+              {issues.map((el, index) => {
                 return (
                   <Issues
                     title={el.title}
                     description=""
+                    key={index}
                     tags={el.labels}
                     isClosed={el.isClosed}
                     url={el.issueURL.replace("repos/", "").replace("api.", "")}
