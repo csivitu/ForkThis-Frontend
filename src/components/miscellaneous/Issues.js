@@ -1,8 +1,9 @@
 import React from "react";
 import Issuetags from "./Issuetags";
 
-const issues = ({ title, description, tags, isClosed }) => {
+const issues = ({ title, description, tags, isClosed, url }) => {
   return (
+    <a href={url}>
     <div
       id="issues-separator"
       className="w-full text-gray-250 p-2  bg-HTpurple-900"
@@ -32,6 +33,7 @@ const issues = ({ title, description, tags, isClosed }) => {
         </div>
       </div>
     </div>
+    </a>
   );
 };
 

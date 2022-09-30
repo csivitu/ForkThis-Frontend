@@ -90,6 +90,7 @@ const ProjectsSubMenu = ({ project }) => {
                     description=""
                     tags={el.labels}
                     isClosed={el.isClosed}
+                    url={el.issueURL.replace('repos/', '').replace('api.', '')}
                   />
                 );
               })}

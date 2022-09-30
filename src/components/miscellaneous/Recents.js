@@ -25,7 +25,7 @@ const Recents = () => {
         <div className="py-2">
           {recents.map((el, index) => {
             return (
-              <a key={index} href={el.URL}>
+              <a key={index} href={el.URL.replace('repos/', '').replace('api.', '')}>
                 <div className="hover:text-HTpink-900">{el.data}</div>
               </a>
             );
