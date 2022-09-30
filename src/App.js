@@ -6,7 +6,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import Homescreen from "./screens/Homescreen";
 import Loginscreen from "./screens/Loginscreen";
-import AuthTokenHandler from "./controllers/AuthTokenHandler";
+import AuthTokenHandler from "./controllers/authTokenHandler";
 import AuthTokenHandler2 from "./controllers/AuthTokenHandler2";
 import { useCookies } from "react-cookie";
 import GitHubLoginscreen from "./screens/GitHubLoginscreen";

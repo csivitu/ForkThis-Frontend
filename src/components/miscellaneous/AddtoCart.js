@@ -139,7 +139,7 @@ const submitHandler = (id, quantity, size, reloader) => async () => {
     count: quantity * 1,
     size,
   };
-  console.log(formData);
+
   await orderHandler(formData, reloader);
 };
 

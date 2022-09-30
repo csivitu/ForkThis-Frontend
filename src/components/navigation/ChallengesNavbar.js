@@ -20,7 +20,6 @@ import CreateChallenge from "../miscellaneous/CreateChallenge";
 import OpenChallengesSubMenu from "../submenus/OpenChallengesSubMenu";
 
 const Navbar = (props) => {
-  // console.log(props);
   const [openChallenges, setOpenChallenges] = useState([]);
   const [activeChallenges, setActiveChallenges] = useState([]);
   const [closedChallenges, setClosedChallenges] = useState([]);
@@ -40,7 +39,6 @@ const Navbar = (props) => {
     fetchActiveChallenges();
     const fetchClosedChallenges = async () => {
       const res = await closedChallengeHandler();
-      // console.log(res);
       setClosedChallenges(res);
     };
     fetchClosedChallenges();

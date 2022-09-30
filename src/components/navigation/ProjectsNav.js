@@ -108,7 +108,6 @@ const ShopNav = (props) => {
     fetchProjects();
   }, []);
 
-  // console.log(projectsURL);
   if (props.navbar == "Projects")
     return (
       <>

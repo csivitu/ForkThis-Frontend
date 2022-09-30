@@ -28,13 +28,11 @@ const postHandler = async (URL, formData) => {
       };
     })
     .catch((err) => {
-      console.log(err);
       response = {
         status: 0,
         data: err.response.data,
       };
     });
-  console.log(response)
   return response;
 };
 

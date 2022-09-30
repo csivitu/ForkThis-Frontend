@@ -6,7 +6,6 @@ import Loader from "../../utils/Loader";
 
 const Recents = ({ recents }) => {
   // const userRecents = [""].concat(recents).reverse();
-  //   console.log(userRecents);
   if (recents)
     return (
       <>

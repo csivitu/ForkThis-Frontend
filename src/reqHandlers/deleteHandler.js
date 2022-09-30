@@ -28,13 +28,11 @@ const deleteHandler = async (URL) => {
       };
     })
     .catch((err) => {
-      console.log(err);
       response = {
         status: 0,
         data: err.response.data,
       };
     });
-  console.log(response);
   return response;
 };
 

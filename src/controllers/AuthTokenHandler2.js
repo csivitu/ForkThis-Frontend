@@ -14,8 +14,6 @@ const AuthTokenHandler2 = () => {
   const [cookie, setCookie, removeCookie] = useCookies(["cookie"]);
   const [user, setuser] = useState();
   useEffect(() => {
-    console.log(cookie.token);
-    console.log(cookie.githubUsername);
     const func = async () => {
       const res = await postHandler("http://127.0.0.1:8000/users/gitUsername", {
         githubUsername: cookie.githubUsername,

@@ -24,7 +24,6 @@ const Recents = () => {
         </div>
         <div className="py-2">
           {recents.map((el) => {
-            // console.log(el.data);
             return (
               <a href={el.URL}>
                 <div className="hover:text-HTpink-900">{el.data}</div>

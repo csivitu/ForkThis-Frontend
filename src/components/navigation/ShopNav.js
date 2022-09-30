@@ -98,19 +98,16 @@ const ShopNav = (props) => {
     };
     const getItems = async () => {
       const res = await itemsHandler();
-      console.log("here in items");
       setItems(res);
     };
     const getPurchases = async () => {
       const res = await purchaseHandler();
-      console.log("here");
       setPurchases(res);
     };
     getPurchases();
     fetchProfile();
     getItems();
   }, [reload]);
-  // console.log(purchases);
   if (props.navbar == "Shop")
     return (
       <>

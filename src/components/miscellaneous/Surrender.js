@@ -130,7 +130,6 @@ const Button = styled("button", {
 //   await acceptChallengeHandler(formdata);
 // };
 const surrenderthischallenge = (id) => async () => {
-  console.log(id);
   await surrenderChallengeHandler(id);
 };
 

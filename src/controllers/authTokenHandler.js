@@ -15,9 +15,7 @@ const AuthTokenHandler = () => {
     if (cookies.token) navigate("/");
     const token = new URLSearchParams(search).get("token");
     if (!token) navigate("/");
-    console.log(token);
     const expiresOn = new Date(moment().add(1, "days").format());
-    console.log(expiresOn);
     setCookie("token", token, { path: "/", expires: expiresOn });
     const getUser = async () => {
       const user = await profileHandler();
