@@ -3,7 +3,7 @@ import { useState } from "react";
 import createChallengeHandler from "../../controllers/createChallengeHandler";
 import { ToastContainer } from "react-toastify";
 
-const CreateChallenge = () => {
+const CreateChallenge = (reloader) => {
   const [startsAt, setstartsAt] = useState([]);
   const [endsAt, setendsAt] = useState([]);
   const [tags, settags] = useState([]);
@@ -17,7 +17,7 @@ const CreateChallenge = () => {
       coinsBet,
       difficulty,
     };
-    await createChallengeHandler(formdata);
+    await createChallengeHandler(formdata, reloader);
   };
 
   return (

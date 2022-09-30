@@ -4,7 +4,7 @@ import moment from "moment";
 import acceptChallengeHandler from "../../controllers/acceptChallengeHandler";
 import AcceptAlert from "../miscellaneous/AcceptAlert";
 import DeleteAlert from "../miscellaneous/DeleteAlert";
-const OpenChallengesSubMenu = ({ challenge, profile }) => {
+const OpenChallengesSubMenu = ({ challenge, profile, reloader }) => {
   const endsdate = new Date(challenge.endsAt);
   const finalendsdate = endsdate.toLocaleDateString();
   const starteddate = new Date(challenge.startsAt);
@@ -97,10 +97,10 @@ const OpenChallengesSubMenu = ({ challenge, profile }) => {
                   id="requestbuttons"
                   className="bg-HTpurple-900 w-full mt-7 flex justify-around items-center"
                 >
-                  {challenge.raisedBy.username == profile.username ? (
-                    <AcceptAlert id={challenge._id} />
+                  {challenge.raisedBy.username != profile.username ? (
+                    <AcceptAlert id={challenge._id} reloader={reloader}/>
                   ) : (
-                    <DeleteAlert id={challenge.id} />
+                    <DeleteAlert id={challenge._id} reloader={reloader}/>
                   )}
                 </div>
               </div>
