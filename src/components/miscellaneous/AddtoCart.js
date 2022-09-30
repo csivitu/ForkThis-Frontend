@@ -179,8 +179,8 @@ const AlertDialogDemo = ({ id, name, coins, countInStock, reloader }) => {
                   <select
                     onChange={(element) => setQuantity(element.target.value)}
                   >
-                    {quantityarr.map((x) => (
-                      <option key={x} value={x}>
+                    {quantityarr.map((x, index) => (
+                      <option key={index} value={x}>
                         {x}
                       </option>
                     ))}
