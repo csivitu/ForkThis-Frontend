@@ -28,7 +28,7 @@ const Charttttttt = () => {
       labels: chartData.map((el) => el.timeStrap),
       datasets: [
         {
-          label: "Project 1",
+          label: "ArcadeGames",
           data: chartData.map((el) => el.noOfPRsOfProject1),
           backgroundColor: [
             "rgb(253,226,126,1)",
@@ -40,7 +40,7 @@ const Charttttttt = () => {
           borderWidth: 1,
         },
         {
-          label: "Project 2",
+          label: "VBay",
           data: chartData.map((el) => el.noOfPRsOfProject2),
           backgroundColor: [
             // "rgb(253,226,126,1)",
@@ -52,7 +52,7 @@ const Charttttttt = () => {
           borderWidth: 1,
         },
         {
-          label: "Project 3",
+          label: "WebDice",
           data: chartData.map((el) => el.noOfPRsOfProject3),
           backgroundColor: [
             // "rgb(253,226,126,1)",
@@ -64,25 +64,13 @@ const Charttttttt = () => {
           borderWidth: 1,
         },
         {
-          label: "Project 4",
+          label: "Penetrate-Me",
           data: chartData.map((el) => el.noOfPRsOfProject4),
           backgroundColor: [
             // "rgb(253,226,126,1)",
             // "rgb(157,227,207,1)",
             // "rgb(114,196,255,1)",
             "rgb(142,148,254,1)",
-          ],
-          borderColor: "#D9d9d9",
-          borderWidth: 1,
-        },
-        {
-          label: "Project 5",
-          data: chartData.map((el) => el.noOfPRsOfProject5),
-          backgroundColor: [
-            "rgb(253,226,126,1)",
-            // "rgb(157,227,207,1)",
-            // "rgb(114,196,255,1)",
-            // "rgb(142,148,254,1)",
           ],
           borderColor: "#D9d9d9",
           borderWidth: 1,
