@@ -3,13 +3,18 @@ import { useState, useEffect } from "react";
 import moment from "moment";
 import UserRecents from "../miscellaneous/UserRecents";
 const ActiveChallengesSubMenu = ({ challenge }) => {
-  // console.log(challenge.acceptedUserActivity);
   const [duration, setDuration] = useState("");
-
+  const [started, setStarted] = useState(true);
   useEffect(() => {
     if (challenge) {
-      const time = moment(challenge.endsAt).from(moment());
-      setDuration(time);
+      if (new Date(challenge.startsAt) > Date.now()) {
+        const startsIn = moment(challenge.startsAt).from(moment());
+        setStarted(false);
+        setDuration(startsIn);
+      } else {
+        const time = moment(challenge.endsAt).from(moment());
+        setDuration(time);
+      }
     }
   }, []);
   // console.log(challenge.endsAt + "asdasd");
@@ -29,7 +34,9 @@ const ActiveChallengesSubMenu = ({ challenge }) => {
               className="flex flex-col justify-around items-center pb-8 bg-HTpurple-900"
             >
               <div className="py-2 w-full justify-center items-center flex">
-                <p>Challenge ends {duration} </p>
+                <p>
+                  Challenge {started ? "ends" : "starts "} {duration}{" "}
+                </p>
               </div>
               <div className="flex w-full justify-around items-center">
                 <div
@@ -80,11 +87,11 @@ const ActiveChallengesSubMenu = ({ challenge }) => {
                 id="user-recents"
                 className="flex w-full justify-around items-center"
               >
-                <div id="user-recents-left" className="w-full ">
-                  <UserRecents recents={challenge.acceptedUserActivity} />
-                </div>
-                <div id="user-recents-right" className="w-full">
+                <div id="user-recents-left" className="w-full  ">
                   <UserRecents recents={challenge.raisedUserActivity} />
+                </div>
+                <div id="user-recents-right" className="w-full ">
+                  <UserRecents recents={challenge.acceptedUserActivity} />
                 </div>
               </div>
               <div className="bg-HTpurple-900 pt-6 flex justify-between relative items-center w-full">

@@ -5,6 +5,10 @@ import acceptChallengeHandler from "../../controllers/acceptChallengeHandler";
 import AcceptAlert from "../miscellaneous/AcceptAlert";
 
 const OpenChallengesSubMenu = ({ challenge }) => {
+  const endsdate = new Date(challenge.endsAt);
+  const finalendsdate = endsdate.toLocaleDateString();
+  const starteddate = new Date(challenge.startsAt);
+  const finalstarteddate = starteddate.toLocaleDateString();
   return (
     <>
       <div className=" flex justify-around flex-wrap gap-4 p-1 text-gray-250 ">
@@ -36,8 +40,8 @@ const OpenChallengesSubMenu = ({ challenge }) => {
                 {challenge.difficulty[0].toUpperCase()+challenge.difficulty.slice(1,challenge.difficulty.length)}
               </p>  
             </div>
-            <div className="bg-HTpurple-900 mt-5 px-6 flex flex-col items-center w-full">
-              <div className="bg-HTpurple-900 mt-5 px-6 flex items-center w-full">
+            <div className="bg-HTpurple-900 mt-5  flex flex-col items-center w-full">
+              <div className="bg-HTpurple-900 mt-5 px-6 flex justify-around items-center w-full">
                 <div className="bg-HTpurple-900">
                   <p className="text-xs text-black-400 bg-HTpurple-900">
                     Starts At:

@@ -3,7 +3,7 @@ import React from 'react'
 import { useState,useEffect } from 'react';
 import { useCookies } from 'react-cookie'
 import { useLocation, useNavigate } from 'react-router-dom'
-import profileHandler from '../controllers/profileHandler'
+import profileHandler from './profileHandler'
 
 const AuthTokenHandler = () => {
   const navigate = useNavigate()

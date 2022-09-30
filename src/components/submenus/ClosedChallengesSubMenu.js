@@ -1,9 +1,30 @@
 import React from "react";
 import Loader from "../../utils/Loader";
 import moment from "moment";
-const ClosedChallengesSubMenu = ({ challenge }) => {
-  console.log(challenge);
+const ClosedChallengesSubMenu = ({ challenge, username }) => {
+  // console.log(challenge);
   if (challenge) {
+    const endsdate = new Date(challenge.endsAt);
+    const finalendsdate = endsdate.toLocaleDateString();
+    const starteddate = new Date(challenge.startsAt);
+    const finalstarteddate = starteddate.toLocaleDateString();
+    const winner = (challenge) => {
+      if (challenge.acceptedUserScore > challenge.raisedUserScore) {
+        return `${challenge.acceptedBy.username} has won the challenge`;
+      } else if (challenge.acceptedUserScore < challenge.raisedUserScore) {
+        return `${challenge.raisedBy.username} has won the challenge`;
+      } else {
+        return `There is a tie`;
+      }
+    };
+    // challenge.raisedBy.username==username?(
+    //   challenge.raisedUserScore>challenge.acceptedUserScore?(
+    //   "You have won the Challenge!":challenge.raisedUserScore<challenge.acceptedUserScore?:(
+    //   `${challenge.acceptedBy.username} won the Challenge!`:"It was a tie.")
+    //   :challenge.acceptedBy.username==username?)
+    //   challenge.acceptedUserScore>challenge.raisedUserScore?
+    //   "You have won the Challenge!":challenge.acceptedUserScore<challenge.raisedUserScore?:
+    //   `${challenge.raisedBy.username} won the Challenge!`:"It was a tie."
     return (
       <>
         <div className=" flex justify-around flex-wrap w-full gap-4 p-1 text-gray-250 ">
@@ -16,8 +37,8 @@ const ClosedChallengesSubMenu = ({ challenge }) => {
               className="flex flex-col justify-around items-center pb-8 bg-HTpurple-900"
             >
               <div className="py-2 w-full justify-center items-center flex text-2xl">
-                <p>
-                  <span className="text-sm">Winner :</span>Name
+                <p className="2-1/3">
+                  <span className="text-xl">{winner(challenge)}</span>
                 </p>
               </div>
               <div className="flex w-full justify-around items-center">
@@ -25,6 +46,10 @@ const ClosedChallengesSubMenu = ({ challenge }) => {
                   <p className="text-2xl">
                     <span className="text-xs">Raised By: </span>
                     {challenge.raisedBy.name}
+                  </p>
+                  <p className="text-2xl">
+                    <span className="text-xs">Score: </span>
+                    {challenge.raisedUserScore}
                   </p>
                 </div>
                 <div
@@ -34,6 +59,10 @@ const ClosedChallengesSubMenu = ({ challenge }) => {
                   <p className="text-2xl">
                     <span className="text-xs">Accepted By: </span>
                     {challenge.acceptedBy.name}
+                  </p>
+                  <p className="text-2xl">
+                    <span className="text-xs">Score: </span>
+                    {challenge.acceptedUserScore}
                   </p>
                 </div>
               </div>

@@ -117,6 +117,7 @@ const Navbar = (props) => {
                       <ClosedChallengesSubMenu
                         key={closedchallenge._id}
                         challenge={closedchallenge}
+                        username={profile.username}
                       />
                     ))}
                   </div>
