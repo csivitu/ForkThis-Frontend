@@ -8,6 +8,7 @@ import FAQnav from "../components/navigation/FAQnav";
 import ProjectsNav from "../components/navigation/ProjectsNav";
 const Homescreen = () => {
   const [navbar, setNavbar] = useState(["Profile"]);
+
   return (
     <>
       <div id="screen-container" className="flex gap-1">
