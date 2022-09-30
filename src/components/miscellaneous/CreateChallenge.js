@@ -41,8 +41,8 @@ const CreateChallenge = () => {
                         Start Time :
                       </label>
                       <input
-                        className="bg-HTpurple-900 w-full px-3 py-2 text-sm leading-tight text-gray-250 border  shadow appearance-none focus:outline-none focus:shadow-outline"
-                        id="startsAt"
+                        className="bg-HTpurple-900  w-full px-3 py-2 text-sm leading-tight text-gray-250 border  shadow appearance-none focus:outline-none focus:shadow-outline"
+                        id="startsAt-createchallenge"
                         type="datetime-local"
                         value={startsAt}
                         onChange={(el) => setstartsAt(el.target.value)}
@@ -57,7 +57,7 @@ const CreateChallenge = () => {
                       </label>
                       <input
                         className="bg-HTpurple-900 w-full px-3 py-2 text-sm leading-tight text-gray-250 border  shadow appearance-none focus:outline-none focus:shadow-outline"
-                        id="endsAt"
+                        id="endsAt-createchallenge"
                         type="datetime-local"
                         value={endsAt}
                         onChange={(el) => setendsAt(el.target.value)}

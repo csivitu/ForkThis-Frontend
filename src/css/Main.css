@@ -187,3 +187,10 @@ body {
     #8e97ff
   );
 }
+
+#endsAt-createchallenge {
+  color-scheme: dark;
+}
+#startsAt-createchallenge {
+  color-scheme: dark;
+}

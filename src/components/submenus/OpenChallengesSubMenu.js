@@ -4,6 +4,10 @@ import acceptChallengeHandler from "../../controllers/acceptChallengeHandler";
 import AcceptAlert from "../miscellaneous/AcceptAlert";
 
 const OpenChallengesSubMenu = ({ challenge }) => {
+  const endsdate = new Date(challenge.endsAt);
+  const finalendsdate = endsdate.toLocaleDateString();
+  const starteddate = new Date(challenge.startsAt);
+  const finalstarteddate = starteddate.toLocaleDateString();
   return (
     <>
       <div className=" flex justify-around flex-wrap gap-4 p-1 text-gray-250 ">
@@ -24,19 +28,19 @@ const OpenChallengesSubMenu = ({ challenge }) => {
             <div className="mt-5 px-6 bg-HTpurple-900">
               <p className="bg-HTpurple-900 text-2xl leading-none text-justify text-black-800 dark:text-black-100 mt-1">
                 <span className=" bg-HTpurple-900 text-xs mr-1 text-black-400">
-                  Points Bet:
+                  Coins Bet:
                 </span>
-                {challenge.pointsBet}
+                {challenge.coinsBet}
               </p>
             </div>
-            <div className="bg-HTpurple-900 mt-5 px-6 flex flex-col items-center w-full">
-              <div className="bg-HTpurple-900 mt-5 px-6 flex items-center w-full">
+            <div className="bg-HTpurple-900 mt-5  flex flex-col items-center w-full">
+              <div className="bg-HTpurple-900 mt-5 px-6 flex justify-around items-center w-full">
                 <div className="bg-HTpurple-900">
                   <p className="text-xs text-black-400 bg-HTpurple-900">
                     Starts At:
                   </p>
                   <p className=" bg-HTpurple-900 leading-none text-justify text-black-800 dark:text-black-100 mt-1">
-                    {challenge.startsAt}
+                    {finalstarteddate}
                   </p>
                 </div>
                 <div className=" bg-HTpurple-900 ml-14">
@@ -44,7 +48,7 @@ const OpenChallengesSubMenu = ({ challenge }) => {
                     Ends At:
                   </p>
                   <p className="bg-HTpurple-900  leading-none text-justify text-black-800 dark:text-black-100 mt-1">
-                    {challenge.endsAt}
+                    {finalendsdate}
                   </p>
                 </div>
               </div>

@@ -4,10 +4,10 @@ import { useState, useEffect } from "react";
 import recentsHandler from "../../controllers/recentsHandler";
 import Loader from "../../utils/Loader";
 
-const Recents = (recents) => {
-  const userRecents = [""].concat(recents).reverse();
+const Recents = ({ recents }) => {
+  // const userRecents = [""].concat(recents).reverse();
   //   console.log(userRecents);
-  if (userRecents)
+  if (recents)
     return (
       <>
         <div
@@ -16,9 +16,9 @@ const Recents = (recents) => {
         >
           Recents
         </div>
-        <div id="graph-border-bottom" className="py-2 flex flex-col">
-          {userRecents ? (
-            userRecents.map((el) => {
+        <div className="py-2 flex flex-col">
+          {recents ? (
+            recents.map((el) => {
               return (
                 <a href={el.URL}>
                   <div>{el.data}</div>
