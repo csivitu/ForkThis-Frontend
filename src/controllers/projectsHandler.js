@@ -4,7 +4,7 @@ import { Octokit } from "octokit";
 
 const projectsHandler = async (user, repo) => {
   const octokit = new Octokit({
-    // auth: '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'
+    auth: "Bearer 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",
   });
 
   // const res= await octokit.request('GET /orgs/{org}/repos', {

@@ -4,8 +4,8 @@ import Toaster from "../utils/toaster.js";
 const acceptChallengeHandler = async (id) => {
   const URL = `http://localhost:8000/challenge/accept/${id}`;
   const res = await postHandler(URL);
-  if(res.status===1) Toaster.success("Challenge Accepted!")
-  else Toaster.error(res.data.message)
+  if (res.status === 1) Toaster.success("Challenge Accepted!");
+  else Toaster.error(res.data.message);
 };
 
 export default acceptChallengeHandler;

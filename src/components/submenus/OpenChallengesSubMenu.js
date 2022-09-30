@@ -61,9 +61,12 @@ const OpenChallengesSubMenu = ({ challenge, profile }) => {
                 </div>
               </div>
               <div className="bg-HTpurple-900 mt-5 px-1 flex flex-wrap items-center w-full">
-                {challenge.tags.map((el) => {
+                {challenge.tags.map((el, index) => {
                   return (
-                    <div class="mt-1 text-xs text-gray-400 inline-flex items-center font-bold leading-sm uppercase px-3 mx-2 py-1 rounded-full bg-HTpurple-900 text-gray-700 border">
+                    <div
+                      key={index}
+                      class="mt-1 text-xs text-gray-400 inline-flex items-center font-bold leading-sm uppercase px-3 mx-2 py-1 rounded-full bg-HTpurple-900 text-gray-700 border"
+                    >
                       {el}
                     </div>
                   );
