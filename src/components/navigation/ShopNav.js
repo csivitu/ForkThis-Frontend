@@ -98,6 +98,7 @@ const ShopNav = (props) => {
     };
     const getItems = async () => {
       const res = await itemsHandler();
+      console.log("here in items");
       setItems(res);
     };
     const getPurchases = async () => {
@@ -208,7 +209,7 @@ const ShopNav = (props) => {
                               purchasedAt={el.purchasedAt}
                               key={el.id}
                               quantity={el.count}
-                              coins={el.item.coins}
+                              coins={el.totalCoins}
                             />
                           );
                         })}

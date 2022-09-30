@@ -1,8 +1,7 @@
 import React from "react";
+import moment from 'moment'
 
 const Purchaseitem = ({ name, purchasedAt, quantity, coins }) => {
-  const purchasedAtTime = Date.parse(purchasedAt);
-  console.log(purchasedAtTime);
   return (
     <>
       <div className="py-6 w-5/12 text-gray-250">
@@ -18,7 +17,7 @@ const Purchaseitem = ({ name, purchasedAt, quantity, coins }) => {
 
             <div className="my-4">Quantity: {quantity}</div>
 
-            <div className="my-4">Ordered At: {purchasedAt}</div>
+            <div className="my-4">Ordered At: {moment(purchasedAt).format('MMMM Do h:mm:ss a')}</div>
 
             <div className="flex items-center justify-start bg-HTpurple-900">
               <div className="flex bg-HTpurple-900" id="profile-icon">
