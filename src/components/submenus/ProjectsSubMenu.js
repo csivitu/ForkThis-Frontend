@@ -8,13 +8,21 @@ import { mauve } from "@radix-ui/colors";
 import axios from "axios";
 import issuesHandler from "../../controllers/issuesHandler";
 import Loader from "../../utils/Loader";
+import { Octokit } from "octokit";
 
 const ProjectsSubMenu = ({ project }) => {
   const [contributors, setContributors] = useState();
   const [issues, setIssues] = useState();
   useEffect(() => {
     const getContributors = async () => {
-      const res = await axios.get(project.contributors_url);
+      const octokit = new Octokit({
+        auth: `Bearer ${process.env.REACT_APP_GITHUB_AUTH_TOKEN}`
+      });
+      const res = await octokit.request("GET /repos/{user}/{repo}/contributors", {
+        user: "Pratham-Mishra04",
+        repo: project.name,
+      });
+
       setContributors(res.data);
     };
     const getIssues = async () => {
