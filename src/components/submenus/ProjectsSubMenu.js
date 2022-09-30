@@ -16,12 +16,15 @@ const ProjectsSubMenu = ({ project }) => {
   useEffect(() => {
     const getContributors = async () => {
       const octokit = new Octokit({
-        auth: `Bearer ${process.env.REACT_APP_GITHUB_AUTH_TOKEN}`
+        auth: `Bearer ${process.env.REACT_APP_GITHUB_AUTH_TOKEN}`,
       });
-      const res = await octokit.request("GET /repos/{user}/{repo}/contributors", {
-        user: "Pratham-Mishra04",
-        repo: project.name,
-      });
+      const res = await octokit.request(
+        "GET /repos/{user}/{repo}/contributors",
+        {
+          user: "Pratham-Mishra04",
+          repo: project.name,
+        }
+      );
 
       setContributors(res.data);
     };
@@ -54,9 +57,9 @@ const ProjectsSubMenu = ({ project }) => {
           <div id="contributors" className="flex flex-col w-1/4 text-2xl">
             <h1>Contributors</h1>
             {contributors ? (
-              contributors.map((el) => {
+              contributors.map((el, index) => {
                 return (
-                  <div className="flex justify-around items-center">
+                  <div key={index} className="flex justify-around items-center">
                     <div id="contributor-icons" className="w-1/6">
                       <img
                         className="p-1 rounded-full"
@@ -90,7 +93,7 @@ const ProjectsSubMenu = ({ project }) => {
                     description=""
                     tags={el.labels}
                     isClosed={el.isClosed}
-                    url={el.issueURL.replace('repos/', '').replace('api.', '')}
+                    url={el.issueURL.replace("repos/", "").replace("api.", "")}
                   />
                 );
               })}
