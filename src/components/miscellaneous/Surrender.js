@@ -129,11 +129,11 @@ const Button = styled("button", {
 
 //   await acceptChallengeHandler(formdata);
 // };
-const surrenderthischallenge = (id) => async () => {
-  await surrenderChallengeHandler(id);
+const surrenderthischallenge = (id, reloader) => async () => {
+  await surrenderChallengeHandler(id, reloader);
 };
 
-const AlertDialogDemo = ({ id }) => (
+const AlertDialogDemo = ({ id, reloader }) => (
   <>
     <AlertDialog>
       <AlertDialogTrigger asChild>
@@ -157,7 +157,7 @@ const AlertDialogDemo = ({ id }) => (
         >
           <div className="bg-white">
             <AlertDialogAction asChild>
-              <Button variant="green" onClick={surrenderthischallenge(id)}>
+              <Button variant="green" onClick={surrenderthischallenge(id, reloader)}>
                 Accept
               </Button>
             </AlertDialogAction>

@@ -129,11 +129,12 @@ const Button = styled("button", {
 
 //   await acceptChallengeHandler(formdata);
 // };
-const deletethischallenge = (id) => async () => {
-  await deleteChallengeHandler(id);
+const deletethischallenge = (id, reloader) => async () => {
+  await deleteChallengeHandler(id, reloader);
 };
 
-const AlertDialogDemo = ({ id }) => (
+const AlertDialogDemo = ({ id, reloader }) => {
+  return(
   <AlertDialog>
     <AlertDialogTrigger asChild>
       <Button variant="red">Delete</Button>
@@ -156,7 +157,7 @@ const AlertDialogDemo = ({ id }) => (
       >
         <div className="bg-white">
           <AlertDialogAction asChild>
-            <Button variant="green" onClick={deletethischallenge(id)}>
+            <Button variant="green" onClick={deletethischallenge(id, reloader)}>
               Accept
             </Button>
           </AlertDialogAction>
@@ -169,6 +170,6 @@ const AlertDialogDemo = ({ id }) => (
       </Flex>
     </AlertDialogContent>
   </AlertDialog>
-);
+)};
 
 export default AlertDialogDemo;

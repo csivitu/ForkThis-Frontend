@@ -25,6 +25,7 @@ const ClosedChallengesSubMenu = ({ challenge, username }) => {
     //   challenge.acceptedUserScore>challenge.raisedUserScore?
     //   "You have won the Challenge!":challenge.acceptedUserScore<challenge.raisedUserScore?:
     //   `${challenge.raisedBy.username} won the Challenge!`:"It was a tie."
+    if(challenge)
     return (
       <>
         <div className=" flex justify-around flex-wrap w-full gap-4 p-1 text-gray-250 ">

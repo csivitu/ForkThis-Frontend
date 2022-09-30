@@ -4,7 +4,7 @@ import moment from "moment";
 import UserRecents from "../miscellaneous/UserRecents";
 import Surrender from "../miscellaneous/Surrender";
 import { ToastContainer } from "react-toastify";
-const ActiveChallengesSubMenu = ({ challenge }) => {
+const ActiveChallengesSubMenu = ({ challenge, reloader }) => {
   const [duration, setDuration] = useState("");
   const [started, setStarted] = useState(true);
   useEffect(() => {
@@ -113,7 +113,7 @@ const ActiveChallengesSubMenu = ({ challenge }) => {
                 id="surrender-btn"
                 className="flex justify-around items-center w-full mt-3"
               >
-                <Surrender id={challenge._id} />
+                <Surrender id={challenge._id} reloader={reloader} />
               </div>
               <div className="bg-HTpurple-900 pt-1 flex justify-between relative items-center w-full">
                 <div

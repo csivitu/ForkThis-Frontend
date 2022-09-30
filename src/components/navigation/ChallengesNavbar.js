@@ -24,6 +24,7 @@ const Navbar = (props) => {
   const [activeChallenges, setActiveChallenges] = useState([]);
   const [closedChallenges, setClosedChallenges] = useState([]);
   const [profile, setProfile] = useState([]);
+  const [reloader, setReloader] = useState()
   useEffect(() => {
     const fetchOpenChallenges = async () => {
       const res = await openchallengehandler();
@@ -48,7 +49,7 @@ const Navbar = (props) => {
       setProfile(res);
     };
     fetchProfile();
-  }, []);
+  }, [reloader]);
   if (props.navbar == "Challenges")
     return (
       <div
@@ -103,26 +104,34 @@ const Navbar = (props) => {
                         key={challenge._id}
                         challenge={challenge}
                         profile={profile}
+                        reloader={setReloader}
                       />
                     ))}
                   </div>
                 </Tabs.Content>
                 <Tabs.Content value="tab2">
-                  <ActiveChallengesSubMenu challenge={activeChallenges} />
+                  <ActiveChallengesSubMenu challenge={activeChallenges} reloader={setReloader}/>
                 </Tabs.Content>
                 <Tabs.Content value="tab3">
                   <div className="flex flex-wrap justify-around items-center gap-y-3 gap-x-3">
-                    {closedChallenges.map((closedchallenge) => (
-                      <ClosedChallengesSubMenu
-                        key={closedchallenge._id}
-                        challenge={closedchallenge}
-                        username={profile.username}
-                      />
-                    ))}
+                    {
+                      closedChallenges.length>0?
+                      closedChallenges.map((closedchallenge) => (
+                        <ClosedChallengesSubMenu
+                          key={closedchallenge._id}
+                          challenge={closedchallenge}
+                          username={profile.username}
+                        />
+                      )):
+                      <div className="w-full text-center text-2xl mt-6">
+                        You haven't taken part in any challenges yet.
+                    </div>
+                    }
+
                   </div>
                 </Tabs.Content>
                 <Tabs.Content value="tab4">
-                  <CreateChallenge />
+                  <CreateChallenge reloader={setReloader}/>
                 </Tabs.Content>
               </div>
             </Tabs.Root>
