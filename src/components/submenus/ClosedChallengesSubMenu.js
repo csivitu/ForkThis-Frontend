@@ -1,12 +1,9 @@
 import React from "react";
 import Loader from "../../utils/Loader";
+import moment from "moment";
 const ClosedChallengesSubMenu = ({ challenge }) => {
   console.log(challenge);
   if (challenge) {
-    const endsdate = new Date(challenge.endsAt);
-    const finalendsdate = endsdate.toLocaleDateString();
-    const starteddate = new Date(challenge.startsAt);
-    const finalstarteddate = starteddate.toLocaleDateString();
     return (
       <>
         <div className=" flex justify-around flex-wrap w-full gap-4 p-1 text-gray-250 ">
@@ -59,7 +56,7 @@ const ClosedChallengesSubMenu = ({ challenge }) => {
                 >
                   <p className="text-2xl ">
                     <span className="text-xs">Started At: </span>
-                    {finalstarteddate}
+                    {moment(challenge.startsAt).format('MMMM Do h:mm:ss a')}
                   </p>
                 </div>
                 <div
@@ -68,7 +65,7 @@ const ClosedChallengesSubMenu = ({ challenge }) => {
                 >
                   <p className="text-2xl">
                     <span className="text-xs">Ended At: </span>
-                    {finalendsdate}
+                    {moment(challenge.endsAt).format('MMMM Do h:mm:ss a')}
                   </p>
                 </div>
               </div>
