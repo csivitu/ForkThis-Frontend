@@ -162,7 +162,9 @@ const Navbar = (props) => {
                   <TabsTrigger value="tab1">Profile</TabsTrigger>
                   {/* <TabsTrigger value="tab2">Projects</TabsTrigger> */}
                   <TabsTrigger value="tab3">Leaderboards</TabsTrigger>
-                  <TabsTrigger value="tab4">Guide</TabsTrigger>
+                  <TabsTrigger className="visually-hidden" value="tab4">
+                    Guide
+                  </TabsTrigger>
                 </div>
               </Tabs.List>
               <div className="my-3">

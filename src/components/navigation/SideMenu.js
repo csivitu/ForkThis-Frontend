@@ -155,7 +155,7 @@ const SideMenu = (props) => {
             </div>
             <div
               id="menu-icon"
-              className="h-1/5 flex flex-col justify-center items-center"
+              className="h-1/5 flex flex-col justify-center visually-hidden items-center"
               onClick={changeNavbarFAQ}
             >
               <div
