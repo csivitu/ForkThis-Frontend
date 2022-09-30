@@ -18,13 +18,15 @@ const ProjectsSubMenu = ({ project }) => {
       const octokit = new Octokit({
         auth: `Bearer ${process.env.REACT_APP_GITHUB_AUTH_TOKEN}`,
       });
+
       const res = await octokit.request(
         "GET /repos/{user}/{repo}/contributors",
         {
-          user: "Pratham-Mishra04",
+          user: project.owner.login,
           repo: project.name,
         }
       );
+
 
       setContributors(res.data);
     };
@@ -38,8 +40,8 @@ const ProjectsSubMenu = ({ project }) => {
 
   return (
     <div className=" w-full h-full text-gray-250">
-      <div id="header">
-        <div className="flex">
+      <div id="header" className="w-full">
+        <div className="flex w-full">
           <div className="w-4/5">
             <h1 className="text-5xl mb-5">{project.name}</h1>
             <div id="description" className="mt-3 ">
