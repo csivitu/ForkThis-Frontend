@@ -9,8 +9,10 @@ import GitHubLoginscreen from "../screens/GitHubLoginscreen";
 import { useState } from "react";
 import { ToastContainer } from "react-toastify";
 import Toaster from "../utils/toaster";
+
 const AuthTokenHandler2 = () => {
   const navigate = useNavigate();
+  const search = useLocation().search;
   const [cookie, setCookie, removeCookie] = useCookies(["cookie"]);
   const [user, setuser] = useState();
   useEffect(() => {
@@ -18,7 +20,7 @@ const AuthTokenHandler2 = () => {
       const res = await postHandler(
         `${process.env.REACT_APP_DATABASE}/users/gitUsername`,
         {
-          githubUsername: cookie.githubUsername,
+          githubUsername: new URLSearchParams(search).get("payload")
         }
       );
       setuser(res);

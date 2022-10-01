@@ -40,7 +40,7 @@ const SideMenu = (props) => {
               id="menu-icon"
               onClick={changeNavbarProfile}
               className="h-max"
-              src="images/logo.svg"
+              src="images/Logo.svg"
             />
             <div
               id="menu-icon"
