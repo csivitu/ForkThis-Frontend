@@ -1,70 +1,98 @@
-# Getting Started with Create React App
+<!-- PROJECT LOGO -->
+<br />
+<p align="center">
+  <a href="https://github.com/csivitu/Template">
+    <img src="https://csivit.com/images/favicon.png" alt="Logo" width="80">
+  </a>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+  <h3 align="center">ForkThis</h3>
 
-## Available Scripts
+  <p align="center">
+    To live and breathe open source
+  </p>
 
-In the project directory, you can run:
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+<!-- TABLE OF CONTENTS -->
+## Table of Contents
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+* [About the Project](#about-the-project)
+  * [Built With](#built-with)
+* [Usage](#usage)
+* [Contributing](#contributing)
+* [Contributors](#contributors)
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<!-- ABOUT THE PROJECT -->
+## About The Project
 
-### `npm run build`
+A website for CSI-VIT's ForkThis, which was a Github workshop followed by a 3 day event wherein participants were supposed to solved the issues raised in the given CSI-VIT's projects, for which they were awarded points which were used to buy items available in the shop and to maintain the leaderboards. A complete track of participant's progress was also shown on the dashboard using Chart-JS.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+<strong> This Repository contains only the Backend of the project. </strong>
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Built With
 
-### `npm run eject`
+* React JS
+* Express JS
+* Node Scheduler
+* Github OAuth
+* Github Webhooks
+* Tailwind CSS
+* MongoDB
+* Chart JS
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+<!-- USAGE EXAMPLES -->
+## Usage
+<div>
+<img src="/screenshots/Landing%20Page.JPG" width="400px;" alt="Image not available"/>
+<p>1. The website opens here at the landing page where you are asked to sign up, which takes you to CSI Accounts page and then to Github for authentication.</p>
+</div>
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+<div>
+<img src="/screenshots/Home%20Page%201.JPG" width="400px;" alt=""/>
+<img src="/screenshots/Landing%20Page%202.JPG" width="400px;" alt=""/>
+<p>2. After the Login is complete, the tokens are stored in cookies, and the user lands onto the home page. Here all the data of the PRs merged is presented against the time, difficulty and the tags, and a recents section to display the 10 most recent acitivies of our participants, which include filing a PR, getting a PR merged and raising an issue.<br/> 
+<img src="/screenshots/Leaderboards.JPG" width="400px;" alt=""/>
+<br/>
+Then we also have a leaderboards section here to display the participants sorted based on their points.</p>
+</div>
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+<div>
+<img src="/screenshots/Shop.JPG" width="400px;" alt=""/>
+<p>3. Heading onto shop, we have items such as tshirts, pens, bags, etc which can be bought using the coins the user is awarded upon getting a PR merged and winning challenges.<br/> 
+<img src="/screenshots/Purchased%20Items.JPG" width="400px;" alt=""/>
+<br/>
+The purchased items can be viewed under the purchased section.</p>
+</div>
 
-## Learn More
+<div>
+<img src="/screenshots/Create%20Challenge.JPG" width="400px;" alt=""/>
+<p>4. The most intriguing feature which adds life to this event is Challenges. You can raise a challenge wherein you specify it's duration, tags of the issues to be solved under this challenge and coins the participant is willing to bet on this challenge. Once the challenge is up it shows up in the Open Challenges section and other participants can accept it. Once a challenge is accepted, the complete tack of both the users' activity is displayed but the final score of the opponent is disclosed when the challenge ends and the coins bet are reduced from the losing player and are added to the winner. Both the participants need to solve issues under the specified tags of the challenge to collect points and compete. After the challenge ends, it gets pushed to the closed challenges section. </p>
+</div>
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+<!-- CONTRIBUTING -->
+## Contributing
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are **greatly appreciated**.
 
-### Code Splitting
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'feat: Add some AmazingFeature'`)
+4. Push to the Branch (`git push -u origin feature/AmazingFeature`)
+5. Open a Pull Request
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+You are requested to follow the contribution guidelines specified in [CONTRIBUTING.md](./CONTRIBUTING.md) while contributing to the project :smile:.
 
-### Analyzing the Bundle Size
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Contributors
 
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+<table>
+<tr>
+    <td align="center"><a href="https://github.com/ShreyasNimkar"><img src="https://avatars.githubusercontent.com/u/100141248?v=4" width="100px;" alt=""/><br /><sub><b>Shreyas Nimkar</b></sub></a><br /></td>
+  </tr>
+  <tr>
+    <td align="center"><a href="https://github.com/Pratham-Mishra04"><img src="https://avatars.githubusercontent.com/u/99235987?s=400&v=4" width="100px;" alt=""/><br /><sub><b>Pratham Mishra</b></sub></a><br /></td>
+  </tr>
+</table>
