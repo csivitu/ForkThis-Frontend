@@ -91,8 +91,7 @@ You are requested to follow the contribution guidelines specified in [CONTRIBUTI
 <table>
 <tr>
     <td align="center"><a href="https://github.com/ShreyasNimkar"><img src="https://avatars.githubusercontent.com/u/100141248?v=4" width="100px;" alt=""/><br /><sub><b>Shreyas Nimkar</b></sub></a><br /></td>
-  </tr>
-  <tr>
+  
     <td align="center"><a href="https://github.com/Pratham-Mishra04"><img src="https://avatars.githubusercontent.com/u/99235987?s=400&v=4" width="100px;" alt=""/><br /><sub><b>Pratham Mishra</b></sub></a><br /></td>
   </tr>
 </table>
